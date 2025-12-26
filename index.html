@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="google-site-verification" content="SxwVmVmnDKjoKb2fvxJ1ji91J7XN6ZaE8IpU9az6nbE" />
+
+    <title>KABEX - Kurumsal Yazılım & Ürün Geliştirme</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    
+    <header>
+        <div class="header-left">
+            <span class="header-tag" data-key="header-tag">🚀 KABEX – Dijital Dünyanızı İnşa Edin</span>
+            <a href="#" class="header-logo">
+                <img src="k.png" alt="KABEX Logo">
+            </a>
+        </div>
+        <div class="header-right-actions">
+            <button id="lang-toggle" class="icon-button">TR</button>
+            <button id="dark-mode-toggle" class="icon-button">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="hamburger" id="hamburger-button">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+        </div>
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="#hizmetler" data-key="nav-services">Hizmetler</a></li>
+                <li><a href="#projeler" data-key="nav-projects">Projeler</a></li>
+                <li><a href="#hakkimizda" data-key="nav-about">Hakkımızda</a></li>
+                <li><a href="#iletisim" data-key="nav-contact">İletişim</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="hero" class="container">
+        <div class="hero-content-left">
+            <h2 data-aos="fade-up" data-aos-duration="1000" data-key="hero-heading">Web & Mobil Uygulama Çözümleri</h2>
+            <p data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" data-key="hero-text">Fikirlerinizi ürüne dönüştürüyoruz. Kurumsal ve ürün odaklı yazılımlar geliştirirken modern mimari, güvenlik ve performansa odaklanıyoruz.</p>
+            <div class="cta-buttons" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1000">
+                <a href="#iletisim" class="button" data-key="cta-contact">Teklif Al →</a>
+                <a href="#projeler" class="button-secondary" data-key="cta-projects">Projelerimizi Gör</a>
+            </div>
+        </div>
+        <div class="hero-content-right" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="hero-card">
+                <img src="11.png" alt="KABEX Logo" class="hero-kabex-logo">
+                <p data-key="hero-card-text">Kurumsal Yazılım ve Ürün Geliştirme</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="hizmetler" class="container">
+        <h2 data-aos="fade-down" data-aos-duration="1000" data-key="services-heading">Hizmetler</h2>
+        <div class="hizmet-grid">
+            <div class="hizmet-item" data-aos="fade-up" data-aos-delay="100">
+                <span class="icon">💻</span>
+                <h4 data-key="service1-heading">Web Geliştirme</h4>
+                <p class="category">Layers</p>
+                <p data-key="service1-text">Kurumsal web siteleri, admin panelleri ve özel yazılımlar. Modern, hızlı ve ölçeklenebilir mimari.</p>
+            </div>
+            <div class="hizmet-item" data-aos="fade-up" data-aos-delay="200">
+                <span class="icon">📱</span>
+                <h4 data-key="service2-heading">Mobil Uygulama</h4>
+                <p class="category">Mobile</p>
+                <p data-key="service2-text">React Native / Flutter çözümleri ile iOS & Android için yakın-native performans.</p>
+            </div>
+            <div class="hizmet-item" data-aos="fade-up" data-aos-delay="300">
+                <span class="icon">🎨</span>
+                <h4 data-key="service3-heading">UI / UX Tasarım</h4>
+                <p class="category">Design</p>
+                <p data-key="service3-text">Kullanıcı odaklı, temiz ve dönüşüm getiren arayüz tasarımları.</p>
+            </div>
+            <div class="hizmet-item" data-aos="fade-up" data-aos-delay="400">
+                <span class="icon">🛡️</span>
+                <h4 data-key="service4-heading">Danışmanlık</h4>
+                <p class="category">Consultant</p>
+                <p data-key="service4-text">Mimari danışmanlıktan performans optimizasyonuna kadar uçtan uca teknik mentörlük.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="teknolojiler" class="container">
+        <h2 data-aos="fade-down" data-key="tech-heading">Kullandığımız Teknolojiler</h2>
+        <ul class="teknoloji-list">
+            <li data-aos="zoom-in" data-aos-delay="100">Next.js</li>
+            <li data-aos="zoom-in" data-aos-delay="200">React</li>
+            <li data-aos="zoom-in" data-aos-delay="300">React Native</li>
+            <li data-aos="zoom-in" data-aos-delay="400">Node.js</li>
+            <li data-aos="zoom-in" data-aos-delay="500">GraphQL</li>
+            <li data-aos="zoom-in" data-aos-delay="600">Postgres</li>
+            <li data-aos="zoom-in" data-aos-delay="700">MongoDB</li>
+            <li data-aos="zoom-in" data-aos-delay="800">Docker</li>
+            <li data-aos="zoom-in" data-aos-delay="900">PWA</li>
+            <li data-aos="zoom-in" data-aos-delay="1000">Headless CMS</li>
+        </ul>
+    </section>
+
+    <section id="projeler" class="container">
+        <h2 data-aos="fade-down" data-key="projects-heading">Projelerimiz</h2>
+        <div class="proje-grid">
+            <div class="proje-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="proje-logo">
+                    <img src="flortzone_logo.png" alt="FlörtZone Logo">
+                </div>
+                <p class="category">Arkadaşlık</p>
+                <h3>FlörtZone</h3>
+                <p data-key="project1-text"> Yeni insanlarla tanışmak, sohbet etmek ve gerçek bağlantılar kurmak için tasarlanmış modern bir arkadaşlık platformu.</p>
+                <div class="proje-hover-content">
+                    <p class="technologies">React Native, Firebase, Redux</p>
+                    <a href="#" class="proje-detail-button" data-key="details">Detaylar →</a>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <section class="paralaks-section">
+        <h3 data-key="parallax-heading">Hayalinizdeki Ürünü Birlikte İnşa Edelim</h3>
+        <p data-key="parallax-text">Mobil uygulamalardan web sitelerine, özel yazılımlardan dijital dönüşüm projelerine kadar tüm ihtiyaçlarınız için buradayız.</p>
+        <a href="#iletisim" class="button" data-key="parallax-cta">Teklif Al</a>
+    </section>
+
+    <section id="hakkimizda" class="container">
+        <h2 data-aos="fade-down" data-key="about-heading">Hakkımızda <small>KABEX</small></h2>
+        <div class="hakkimizda-grid">
+            <div class="hakkimizda-item" data-aos="fade-up" data-aos-delay="100">
+                <span class="icon">💡</span>
+                <h4 data-key="vision-heading">Vizyonumuz</h4>
+                <p data-key="vision-text">İş hedeflerinizi teknolojiyle birleştirerek fikirlerinizi güvenilir ve ölçeklenebilir dijital ürünlere dönüştürüyoruz. Yarının dijital dünyasını bugünden inşa etmeyi hedefliyoruz.</p>
+            </div>
+            <div class="hakkimizda-item" data-aos="fade-up" data-aos-delay="200">
+                <span class="icon">⚙️</span>
+                <h4 data-key="principle-heading">Çalışma Prensibimiz</h4>
+                <p data-key="principle-text">Her projeye sadece bir kod bloku olarak değil, uzun vadeli bir çözüm olarak yaklaşıyoruz. Şeffaf süreçler, temiz kod ve performans odaklı bir mimariyle çalışıyoruz.</p>
+            </div>
+            <div class="hakkimizda-item" data-aos="fade-up" data-aos-delay="300">
+                <span class="icon">🤝</span>
+                <h4 data-key="partnership-heading">İş Ortaklığımız</h4>
+                <p data-key="partnership-text">Dijital yolculuğunuzun her adımında güvenilir bir iş ortağı olarak yanınızdayız. Hızlı MVP'lerden kesintisiz geliştirmeye kadar tüm süreçlerde destek sağlıyoruz.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="iletisim" class="container">
+        <h2 data-aos="fade-down" data-key="contact-heading">İletişim</h2>
+        <p class="iletisim-slogan" data-aos="fade-down" data-key="contact-slogan">Projenizi konuşmak için bize ulaşın.</p>
+        
+        <form action="https://formsubmit.co/kabexcompanytr@gmail.com" method="POST" data-aos="fade-up">
+            <input type="hidden" name="_subject" value="KABEX - Yeni İletişim Formu Başvurusu">
+
+            <label for="adsoyad" data-key="form-name">Ad Soyad</label>
+            <input type="text" id="adsoyad" name="adsoyad" required>
+
+            <label for="email" data-key="form-email">E-posta</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="butce" data-key="form-budget">Proje Bütçesi (Opsiyonel)</label>
+            <select id="butce" name="butce">
+                <option value="" data-key="form-select">Lütfen seçin</option>
+                <option value="5-10k">₺5,000 - ₺10,000</option>
+                <option value="10-25k">₺10,000 - ₺25,000</option>
+                <option value="25k+">₺25,000+</option>
+            </select>
+
+            <label for="zaman" data-key="form-timeline">Zaman Çizelgesi (Opsiyonel)</label>
+            <select id="zaman" name="zaman">
+                <option value="" data-key="form-select">Lütfen seçin</option>
+                <option value="1-3mo" data-key="timeline1">1-3 Ay</option>
+                <option value="3-6mo" data-key="timeline2">3-6 Ay</option>
+                <option value="6mo+" data-key="timeline3">6 Aydan Fazla</option>
+            </select>
+
+            <label for="mesaj" data-key="form-message">Mesajınız</label>
+            <textarea id="mesaj" name="mesaj" rows="5"></textarea>
+
+            <button type="submit" data-key="form-submit">Gönder</button>
+        </form>
+
+        <div class="iletisim-bilgileri" data-aos="fade-up">
+            <h3 data-key="contact-info-heading">İletişim Bilgileri</h3>
+            <ul>
+                <li><strong>E-posta:</strong> kabexcompanytr@gmail.com</li>
+                <li data-key="contact-address"><strong>Adres:</strong> Aydın, Türkiye</li>
+            </ul>
+        </div>
+    </section>
+    
+    <footer data-aos="fade-up">
+        <p data-key="footer-text">&copy; 2024 KABEX. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

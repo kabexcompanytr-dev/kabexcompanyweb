@@ -1,0 +1,1191 @@
+/* Genel Ayarlar ve Fontlar */
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 0;
+    color: #4a4a4a;
+    background-color: #f8f9fa;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Stilleri */
+body.dark-mode {
+    background-color: #1a202c;
+    color: #cbd5e0;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4 {
+    color: #f7fafc;
+}
+
+body.dark-mode header {
+    background: rgba(26, 32, 44, 0.95);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+body.dark-mode header a {
+    color: #e2e8f0;
+}
+
+body.dark-mode header nav ul li a {
+    color: #a0aec0;
+}
+
+body.dark-mode header nav ul li a:hover::after {
+    background-color: #4299e1;
+}
+
+body.dark-mode .header-tag {
+    background-color: #2d3748;
+    color: #4299e1;
+}
+
+body.dark-mode .hero-card,
+body.dark-mode .hizmet-item,
+body.dark-mode .proje-item,
+body.dark-mode .partner-item,
+body.dark-mode .hakkimizda-item,
+body.dark-mode #iletisim form,
+body.dark-mode .iletisim-bilgileri,
+body.dark-mode .teknoloji-list li {
+    background: #2d3748;
+    border-color: #4a5568;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+body.dark-mode #hero {
+    background: #1a202c;
+    border-bottom-color: #4a5568;
+}
+
+body.dark-mode #hero h2 {
+    color: #f7fafc;
+}
+
+body.dark-mode #hero p {
+    color: #cbd5e0;
+}
+
+body.dark-mode .hero-card .kabex-logo-placeholder,
+body.dark-mode .hero-card h3 {
+    color: #f7fafc;
+}
+
+body.dark-mode .hero-card p {
+    color: #a0aec0;
+}
+
+body.dark-mode .hizmet-item .icon,
+body.dark-mode .hakkimizda-item .icon {
+    background-color: #4a5568;
+    color: #4299e1;
+}
+
+body.dark-mode .hizmet-item .category,
+body.dark-mode .proje-item .category {
+    color: #4299e1;
+}
+
+body.dark-mode .partner-item img {
+    filter: invert(1) grayscale(100%);
+    opacity: 0.8;
+}
+
+body.dark-mode .partner-item:hover img {
+    filter: invert(0) grayscale(0%);
+    opacity: 1;
+}
+
+body.dark-mode #teknolojiler {
+    background-color: #2d3748;
+}
+
+body.dark-mode #iletisim {
+    background-color: #2d3748;
+}
+
+body.dark-mode #iletisim label {
+    color: #e2e8f0;
+}
+
+body.dark-mode #iletisim input,
+body.dark-mode #iletisim select,
+body.dark-mode #iletisim textarea {
+    background-color: #4a5568;
+    border-color: #6a7c93;
+    color: #f7fafc;
+}
+
+body.dark-mode #iletisim input::placeholder,
+body.dark-mode #iletisim textarea::placeholder {
+    color: #a0aec0;
+}
+
+body.dark-mode footer {
+    background: #0f172a;
+    color: #a0aec0;
+}
+
+body.dark-mode .hamburger .bar {
+    background-color: #f7fafc;
+}
+
+body.dark-mode .nav-menu {
+    background-color: #2d3748;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.4);
+}
+
+body.dark-mode .nav-menu ul li a {
+    color: #e2e8f0;
+}
+
+body.dark-mode .nav-menu ul li a:hover {
+    background-color: #4a5568;
+    color: #4299e1;
+}
+
+body.dark-mode .icon-button {
+    background-color: #4a5568;
+    color: #e2e8f0;
+}
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+
+/* Sayfayı Ortala */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 15px;
+}
+
+section {
+    padding: 5rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+h1, h2, h3, h4 {
+    color: #212529;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 4px;
+    background-color: #007bff;
+    border-radius: 2px;
+}
+
+h2 small {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #6c757d;
+    margin-top: 10px;
+}
+
+/* Header (Üst Kısım) ve Menü */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem 30px;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img {
+    height: 40px;
+    margin-right: 20px;
+    transition: all 0.3s ease;
+}
+
+.header-tag {
+    background-color: #e0f2f7;
+    color: #007bff;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-right: 15px;
+    white-space: nowrap;
+}
+
+.header-right-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-button {
+    background-color: #f0f4f8;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #555;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.icon-button:hover {
+    background-color: #e0e6eb;
+    transform: translateY(-2px);
+}
+
+.icon-button i {
+    font-size: 1.2rem;
+}
+
+header nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 2rem;
+}
+
+header nav ul li a {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #555;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
+}
+
+
+/* Hero (Giriş) Bölümü */
+#hero {
+    background: #fff;
+    color: #212529;
+    padding: 6rem 0;
+    text-align: left;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#hero .hero-content-left {
+    flex: 1;
+    padding-right: 30px;
+    max-width: 60%;
+}
+
+#hero .hero-content-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 30px;
+    max-width: 40%;
+}
+
+#hero h2 {
+    color: #212529;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+    text-align: left;
+}
+
+#hero h2::after {
+    left: 0;
+    transform: translateX(0);
+}
+
+#hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 0 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.cta-buttons .button {
+    display: inline-flex;
+    align-items: center;
+    background: #007bff;
+    color: #fff;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,123,255,0.2);
+    transition: all 0.3s ease;
+}
+
+.cta-buttons .button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,123,255,0.3);
+    background: #0056b3;
+}
+
+.cta-buttons .button-secondary {
+    display: inline-flex;
+    align-items: center;
+    color: #007bff;
+    padding: 12px 28px;
+    text-decoration: none;
+    border: 2px solid #007bff;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
+}
+
+.cta-buttons .button-secondary:hover {
+    background: #007bff;
+    color: #fff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,123,255,0.15);
+}
+
+.hero-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    padding: 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 350px;
+}
+
+.hero-card .hero-kabex-logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.hero-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+    color: #212529;
+}
+
+.hero-card p {
+    font-size: 1rem;
+    color: #6c757d;
+}
+
+/* Hizmetler Bölümü */
+.hizmet-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 0;
+}
+
+.hizmet-item {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.hizmet-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.hizmet-item .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+    background-color: #e0f2f7;
+    color: #007bff;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.hizmet-item .category {
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-weight: 500;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.hizmet-item h4 {
+    font-size: 1.4rem;
+    margin: 10px 0;
+    color: #212529;
+}
+
+.hizmet-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Teknolojiler Bölümü */
+#teknolojiler {
+    background-color: #f0f4f8;
+    border-bottom: none;
+}
+
+.teknoloji-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+    margin-top: 3rem;
+}
+
+.teknoloji-list li {
+    background: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-weight: 500;
+    color: #555;
+    transition: all 0.3s ease;
+    border: 1px solid #f0f0f0;
+    text-align: center;
+}
+
+.teknoloji-list li:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    color: #007bff;
+}
+
+/* İş Ortakları ve Sertifikalar Bölümü */
+.partner-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.partner-item {
+    background: #fff;
+    padding: 20px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.partner-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.partner-item img {
+    max-width: 80%;
+    height: auto;
+    max-height: 60px;
+    margin: 0 auto 10px;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.partner-item:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.partner-item p {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0;
+}
+
+/* Projeler Bölümü */
+.proje-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    padding: 0;
+}
+
+.proje-item {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+.proje-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.proje-item .proje-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    background-color: transparent;
+    overflow: hidden;
+}
+
+.proje-item .proje-logo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    height: auto;
+}
+
+.proje-item .category {
+    font-size: 0.9rem;
+    color: #007bff;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.proje-item h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #212529;
+}
+
+.proje-item p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Geliştirilmiş Proje Kartları (Hover Efektleri) */
+.proje-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.proje-item .proje-hover-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 123, 255, 0.95);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    color: #fff;
+}
+
+.proje-item:hover .proje-hover-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.proje-item .proje-logo,
+.proje-item .category,
+.proje-item h3,
+.proje-item p {
+    transition: all 0.4s ease;
+}
+
+.proje-item:hover .proje-logo,
+.proje-item:hover .category,
+.proje-item:hover h3,
+.proje-item:hover p {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.proje-item .technologies {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #e2e8f0;
+}
+
+.proje-item .proje-detail-button {
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.proje-item .proje-detail-button:hover {
+    background: #fff;
+    color: #007bff;
+}
+
+/* Dark Mode için Proje Kartları Hover Efekti */
+body.dark-mode .proje-item .proje-hover-content {
+    background: rgba(66, 153, 225, 0.95);
+}
+
+body.dark-mode .proje-item:hover .proje-detail-button {
+    background: #1a202c;
+    color: #4299e1;
+}
+
+/* Paralaks Bölümü */
+.paralaks-section {
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 15px;
+    overflow: hidden;
+}
+
+.paralaks-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.paralaks-section h3 {
+    font-size: 3rem;
+    margin: 0;
+    z-index: 1;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    color: #fff;
+    font-weight: 700;
+}
+
+.paralaks-section p {
+    font-size: 1.2rem;
+    margin: 15px 0 0;
+    max-width: 800px;
+    z-index: 1;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.paralaks-section a.button { /* Buradaki stil güncellendi */
+    margin-top: 25px;
+    z-index: 1;
+    /* CTA butonları ile aynı stile sahip olacak */
+    background: #007bff;
+    color: #fff;
+    padding: 12px 28px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,123,255,0.2);
+    transition: all 0.3s ease;
+}
+
+.paralaks-section a.button:hover { /* Hover efekti eklendi */
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0,123,255,0.3);
+    background: #0056b3;
+}
+
+/* Dark Mode Paralaks */
+body.dark-mode .paralaks-section {
+    filter: brightness(0.8);
+}
+}
+
+/* Dark Mode Paralaks */
+body.dark-mode .paralaks-section {
+    filter: brightness(0.8);
+}
+
+/* Hakkımızda Bölümü */
+#hakkimizda h2 small {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #007bff;
+}
+
+.hakkimizda-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 0;
+}
+
+.hakkimizda-item {
+    text-align: left;
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #f0f0f0;
+}
+
+.hakkimizda-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.hakkimizda-item .icon {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    display: block;
+    color: #007bff;
+    background-color: #e0f2f7;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.hakkimizda-item h4 {
+    font-size: 1.4rem;
+    margin: 10px 0;
+    color: #212529;
+}
+
+/* İletişim Formu */
+#iletisim {
+    text-align: center;
+    background-color: #f0f4f8;
+    border-bottom: none;
+}
+
+#iletisim .iletisim-slogan {
+    font-size: 1.4rem;
+    font-style: normal;
+    font-weight: 500;
+    margin-bottom: 2.5rem;
+    color: #555;
+}
+
+#iletisim form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 650px;
+    margin: auto;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+#iletisim label {
+    font-weight: 600;
+    margin-top: 20px;
+    color: #333;
+}
+
+#iletisim input,
+#iletisim select,
+#iletisim textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    background-color: #fdfdfd;
+}
+
+#iletisim textarea {
+    resize: vertical;
+}
+
+#iletisim button[type="submit"] {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 15px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 25px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+#iletisim button[type="submit"]:hover {
+    background: #0056b3;
+}
+
+.iletisim-bilgileri {
+    margin-top: 5rem;
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    max-width: 650px;
+    margin: 5rem auto 0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    text-align: left;
+}
+
+.iletisim-bilgileri h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    color: #212529;
+}
+
+.iletisim-bilgileri ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.iletisim-bilgileri li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.iletisim-bilgileri li strong {
+    color: #007bff;
+    font-weight: 600;
+}
+
+/* Alt Bölüm (Footer) */
+footer {
+    background: #1a1a1a;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+    margin-top: 5rem;
+}
+
+/* Responsive (Duyarlı) Tasarım */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 1001;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger .bar {
+    width: 28px;
+    height: 3px;
+    background-color: #333;
+    margin: 4px 0;
+    transition: 0.4s;
+    border-radius: 1.5px;
+}
+
+.hamburger.open .bar:nth-child(1) {
+    transform: translateY(7px) rotate(-45deg);
+}
+
+.hamburger.open .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(45deg);
+}
+
+@media (max-width: 992px) {
+    header {
+        padding: 1rem 20px;
+    }
+    .header-tag {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+        margin-right: 10px;
+    }
+    .header-logo img {
+        height: 35px;
+    }
+    .header-right-actions {
+        order: 3;
+        margin-left: auto;
+    }
+    header h1 {
+        font-size: 1.6rem;
+    }
+    #hero .hero-content-left {
+        max-width: 100%;
+        padding-right: 0;
+        text-align: center;
+    }
+    #hero .hero-content-right {
+        max-width: 100%;
+        padding-left: 0;
+        margin-top: 3rem;
+    }
+    #hero h2 {
+        font-size: 2.8rem;
+        text-align: center;
+    }
+    #hero h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    #hero p {
+        text-align: center;
+    }
+    .cta-buttons {
+        justify-content: center;
+    }
+    .hizmet-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .proje-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .teknoloji-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+
+    header nav {
+        display: none;
+    }
+    
+    header {
+        padding: 1rem 20px;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background-color: #fff;
+        padding-top: 100px;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+        transition: right 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        z-index: 999;
+    }
+    
+    .nav-menu.active {
+        right: 0;
+    }
+    
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 30px;
+    }
+    
+    .nav-menu ul li {
+        margin: 15px 0;
+        width: 100%;
+    }
+
+    .nav-menu ul li a {
+        display: block;
+        padding: 12px 15px;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+        border-radius: 8px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    .nav-menu ul li a:hover {
+        background-color: #e0f2f7;
+        color: #007bff;
+    }
+
+
+    #hero {
+        padding: 4rem 15px;
+    }
+
+    #hero h2 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    #hero p {
+        font-size: 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .cta-buttons .button,
+    .cta-buttons .button-secondary {
+        width: 100%;
+        text-align: center;
+        margin: 8px 0;
+    }
+    
+    .hizmet-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .proje-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hakkimizda-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .partner-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hizmet-item, .proje-item, .hakkimizda-item, .partner-item {
+        padding: 2rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .teknoloji-list {
+        flex-direction: column;
+        align-items: center;
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .teknoloji-list li, .partner-list li {
+        width: 90%;
+        margin: 8px 0;
+    }
+    
+    #iletisim form, .iletisim-bilgileri {
+        padding: 25px;
+    }
+    
+    #iletisim label, #iletisim input, #iletisim select, #iletisim textarea {
+        font-size: 0.9rem;
+    }
+    
+    .proje-item .proje-hover-content {
+        opacity: 1;
+        transform: translateY(0);
+        background: rgba(0, 123, 255, 0.9);
+    }
+    .proje-item:hover .proje-logo,
+    .proje-item:hover .category,
+    .proje-item:hover h3,
+    .proje-item:hover p {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    .proje-item .proje-hover-content .technologies {
+        display: none;
+    }
+    .proje-item .proje-hover-content .proje-detail-button {
+        display: none;
+    }
+    .paralaks-section {
+        background-attachment: scroll;
+        height: 350px;
+    }
+    .paralaks-section h3 {
+        font-size: 2rem;
+    }
+    .paralaks-section p {
+        font-size: 1rem;
+    }
+}
