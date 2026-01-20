@@ -1,0 +1,13 @@
+{
+  "name": "kabex-web",
+  "version": "1.0.0",
+  "description": "KABEX Kurumsal Yazılım Sitesi",
+  "main": "index.html",
+  "scripts": {
+    "dev": "browser-sync start --server --files '*.html, *.css, *.js'"
+  },
+  "devDependencies": {
+    "browser-sync": "^3.0.0",
+    "lite-server": "^2.6.1"
+  }
+}

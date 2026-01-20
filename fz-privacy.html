@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;">
+    
+    <link rel="icon" type="image/png" href="k.png">
+    <link rel="apple-touch-icon" href="k.png">
+
+    <title>FlörtZone - Gizlilik Politikası</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #ff0080 0%, #7928ca 100%);
+            --bg-dark: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+        }
+
+        body.dark-mode { 
+            background-color: var(--bg-dark); 
+            color: #cbd5e0; 
+            margin: 0; 
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .legal-wrapper { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            box-sizing: border-box;
+        }
+
+        /* Başlık ve Logo Alanı */
+        .legal-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .legal-header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            margin-bottom: 15px;
+            border: 2px solid #ff0080;
+            box-shadow: 0 5px 15px rgba(255, 0, 128, 0.2);
+        }
+        .legal-header h1 {
+            font-size: 2rem;
+            margin: 0;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        .update-date {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* İçerik Kutusu */
+        .content-box { 
+            background: var(--card-bg); 
+            padding: 40px; 
+            border-radius: 24px; 
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid #ff0080;
+            padding-left: 15px;
+        }
+
+        p, li {
+            font-size: 1rem;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .contact-link {
+            color: #ff0080;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Mobil Düzenlemeler */
+        @media (max-width: 600px) {
+            .legal-wrapper { padding: 20px 15px; }
+            .content-box { padding: 25px; border-radius: 18px; }
+            .legal-header h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.1rem; }
+            p, li { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <div class="legal-wrapper">
+        <header class="legal-header">
+            <img src="flortzone_logo.png" alt="FlörtZone Logo">
+            <h1>Flortzone Gizlilik Politikası</h1>
+            <span class="update-date"><strong>Son Güncelleme:</strong> 20 Ocak 2026</span>
+        </header>
+
+        <div class="content-box">
+            <h2>1. Veri Sorumlusu</h2>
+            <p>Bu Gizlilik Politikası, Kabex Company ("Şirket") tarafından işletilen Flortzone mobil uygulaması için geçerlidir. Kullanıcılarımızın gizliliği bizim önceliğimizdir.</p>
+
+            <h2>2. Toplanan Veriler</h2>
+            <p>Uygulamamıza Google ile giriş yaptığınızda aşağıdaki veriler işlenir:</p>
+            <ul>
+                <li><strong>Kimlik Bilgileri:</strong> Adınız, soyadınız ve profil fotoğrafınız.</li>
+                <li><strong>İletişim Bilgileri:</strong> E-posta adresiniz.</li>
+                <li><strong>Cihaz ve Kullanım Verileri:</strong> IP adresi, cihaz kimliği ve uygulama içi etkileşimler.</li>
+                <li><strong>Konum Verileri:</strong> Size en yakın kullanıcıları göstermek için (açık rızanız dahilinde) konum bilginiz.</li>
+            </ul>
+
+            <h2>3. Verilerin Kullanım Amacı</h2>
+            <p>Toplanan veriler şu amaçlarla kullanılır:</p>
+            <ul>
+                <li>Hesap oluşturmak ve kimlik doğrulaması yapmak.</li>
+                <li>Kullanıcı eşleşmelerini optimize etmek.</li>
+                <li>Güvenli bir platform sağlamak ve bot hesapları engellemek.</li>
+                <li>Uygulama içi satın alımları (Coin vb.) yönetmek.</li>
+            </ul>
+
+            <h2>4. Verilerin Paylaşımı ve Saklanması</h2>
+            <p>Verileriniz asla üçüncü taraflara satılmaz. Sadece yasal zorunluluk hallerinde veya hizmetin ifası için gerekli teknik iş ortaklarıyla (Firebase vb.) paylaşılır. Verileriniz, hesabınız aktif olduğu sürece güvenli sunucularımızda saklanır.</p>
+
+            <h2>5. Kullanıcı Hakları (KVKK ve GDPR)</h2>
+            <p>Kullanıcılar, verilerine erişme, düzeltme, silme (hesap kapatma) ve verilerinin işlenmesine itiraz etme hakkına sahiptir. Talepleriniz için <a href="mailto:kabexcompanytr@gmail.com" class="contact-link">kabexcompanytr@gmail.com</a> adresinden bize ulaşabilirsiniz.</p>
+        </div>
+    </div>
+</body>
+</html>
