@@ -1,19 +1,15 @@
-Options +FollowSymLinks -MultiViews
 RewriteEngine On
 RewriteBase /
 
-# 1. Uzantıyı ( .html ) açıkça yazanları uzantısız hale yönlendir (Yönlendirme)
+# 1. flortzone/gizlilik-politikasi yazınca fz-privacy.html dosyasını sessizce aç
+RewriteRule ^flortzone/gizlilik-politikasi$ fz-privacy.html [L,NC]
+
+# 2. flortzone/kullanim-kosullari yazınca fz-terms.html dosyasını sessizce aç
+RewriteRule ^flortzone/kullanim-kosullari$ fz-terms.html [L,NC]
+
+# 3. kabex.company/flortzone yazınca flortzone.html dosyasını sessizce aç
+RewriteRule ^flortzone$ flortzone.html [L,NC]
+
+# 4. Eğer kullanıcı .html yazarak gelirse, onu temiz adrese yönlendir
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.*)\.html [NC]
 RewriteRule ^ /%1 [R=301,L]
-
-# 2. flortzone/gizlilik-politikasi -> fz-privacy.html (Gölge Maskeleme)
-RewriteRule ^flortzone/gizlilik-politikasi$ fz-privacy.html [NC,L]
-
-# 3. flortzone/kullanim-kosullari -> fz-terms.html (Gölge Maskeleme)
-RewriteRule ^flortzone/kullanim-kosullari$ fz-terms.html [NC,L]
-
-# 4. Dosya varsa ama uzantı yazılmadıysa arkadan .html ekle
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^([^\.]+)$ $1.html [NC,L]
