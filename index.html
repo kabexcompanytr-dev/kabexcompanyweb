@@ -13,7 +13,7 @@
     <style>
         :root {
             --primary: #007aff;
-            --primary-light: rgba(0, 122, 255, 0.08);
+            --primary-light: rgba(0, 123, 255, 0.08);
             --bg-body: #fbfbfd;
             --bg-card: rgba(255, 255, 255, 0.85);
             --text-main: #1d1d1f;
@@ -75,7 +75,7 @@
         .hizmet-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; }
         .hizmet-card p { font-size: 0.85rem; color: var(--text-dim); }
 
-        /* --- PROJELERİMİZ (MODIFIED) --- */
+        /* --- PROJELERİMİZ --- */
         .proje-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
         .proje-card { 
             height: 380px; border-radius: var(--radius-lg); overflow: hidden; 
@@ -84,7 +84,7 @@
         }
         
         .proje-logo { transition: var(--transition); }
-        .proje-logo img { max-height: 100px; width: auto; object-fit: contain; } /* Logolar büyütüldü */
+        .proje-logo img { max-height: 110px; width: auto; object-fit: contain; }
 
         .proje-action { 
             position: absolute; bottom: -50px; opacity: 0; transition: var(--transition);
@@ -114,13 +114,12 @@
         }
 
         @media (max-width: 768px) {
-            .hizmet-grid { grid-template-columns: 1fr; }
-            .proje-grid { grid-template-columns: 1fr; }
+            header { padding: 15px 5%; }
+            .hizmet-grid, .proje-grid { grid-template-columns: 1fr; }
             .nav-menu { display: none; }
-            
-            /* Mobilde Hover Yerine Statik Düzen */
             .proje-card .proje-logo { transform: translateY(-20px) !important; }
             .proje-card .proje-action { position: relative; bottom: 0 !important; opacity: 1 !important; margin-top: 10px; }
+            .select-row { grid-template-columns: 1fr; gap: 0; }
         }
     </style>
 </head>
@@ -183,22 +182,16 @@
             <div class="section-header"><h2 data-key="w_t">Projelerimiz</h2></div>
             <div class="proje-grid">
                 <div class="proje-card" data-aos="zoom-in">
-                    <div class="proje-logo"><img src="flortzone_logo.png" alt="FlörtZone"></div>
-                    <div class="proje-action">
-                        <a href="flortzone.html" class="btn-mini" data-key="btn-view">İncele</a>
-                    </div>
+                    <div class="proje-logo"><img src="flortzone_logo.png"></div>
+                    <div class="proje-action"><a href="flortzone.html" class="btn-mini" data-key="btn-view">İncele</a></div>
                 </div>
                 <div class="proje-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="proje-logo"><img src="toptancim.png" alt="Toptancım"></div>
-                    <div class="proje-action">
-                        <span class="status-text" data-key="status-soon">Yakında</span>
-                    </div>
+                    <div class="proje-logo"><img src="toptancim.png"></div>
+                    <div class="proje-action"><span class="status-text" data-key="status-soon">Yakında</span></div>
                 </div>
                 <div class="proje-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="proje-logo"><img src="bütcetakip.png" alt="Bütçe Takip"></div>
-                    <div class="proje-action">
-                        <span class="status-text" data-key="status-soon">Yakında</span>
-                    </div>
+                    <div class="proje-logo"><img src="bütcetakip.png"></div>
+                    <div class="proje-action"><span class="status-text" data-key="status-soon">Yakında</span></div>
                 </div>
             </div>
         </section>
@@ -236,7 +229,7 @@
     </main>
 
     <footer style="padding: 40px 5%; text-align: center; border-top: 1px solid var(--border); font-weight: 600; font-size: 0.8rem; color: var(--text-dim);">
-        KABEX. <span style="opacity: 0.4; margin-left: 10px;">© 2025</span>
+        KABEX ENGINEERING <span style="opacity: 0.4; margin-left: 10px;">© 2026</span>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -246,18 +239,8 @@
             const langBtn = document.getElementById('lang-toggle');
             let lang = 'tr';
             const dict = {
-                tr: { 
-                    h_t: 'PRESTİJLİ MÜHENDİSLİK', h_h: 'Dijital Geleceğinizi <br> Birlikte Tasarlayalım.', h_p: 'Üst düzey yazılım mimarisi ve butik yaklaşımımızla fikirlerinizi zarif bir gerçekliğe dönüştürüyoruz.', 
-                    b1: 'Bir Proje Başlat', s_t: 'Hizmet Alanlarımız', s1: 'Web Geliştirme', s2: 'Mobil Uygulama', s3: 'UI / UX Tasarım', s4: 'Danışmanlık', 
-                    w_t: 'Projelerimiz', c1: 'Hadi <br> Başlayalım.', btn_view: 'İncele', status_soon: 'Yakında',
-                    p1: 'İsim Soyisim', p2: 'E-posta', p3: 'Mesajınız...', btn: 'Mesajı Gönder', 'sel-b': 'Tahmini Bütçe', 'sel-t': 'Zaman Aralığı' 
-                },
-                en: { 
-                    h_t: 'PRESTIGIOUS ENGINEERING', h_h: 'Designing Your <br> Digital Future.', h_p: 'With our high-level software architecture and boutique approach, we turn your ideas into elegant reality.', 
-                    b1: 'Start a Project', s_t: 'Our Expertise', s1: 'Web Development', s2: 'Mobile Application', s3: 'UI / UX Design', s4: 'Consultancy', 
-                    w_t: 'Our Projects', c1: 'Let\'s <br> Get Started.', btn_view: 'View', status_soon: 'Coming Soon',
-                    p1: 'Full Name', p2: 'Email Address', p3: 'Your Message...', btn: 'Send Message', 'sel-b': 'Estimated Budget', 'sel-t': 'Timeframe' 
-                }
+                tr: { h_t: 'PRESTİJLİ MÜHENDİSLİK', h_h: 'Dijital Geleceğinizi <br> Birlikte Tasarlayalım.', h_p: 'Üst düzey yazılım mimarisi ve butik yaklaşımımızla fikirlerinizi zarif bir gerçekliğe dönüştürüyoruz.', b1: 'Bir Proje Başlat', s_t: 'Hizmet Alanlarımız', s1: 'Web Geliştirme', s1d: 'Kurumsal web siteleri ve özel sistemler.', s2: 'Mobil Uygulama', s2d: 'iOS & Android için hibrit çözümler.', s3: 'UI / UX Tasarım', s3d: 'Kullanıcı dostu elit arayüzler.', s4: 'Danışmanlık', s4d: 'Teknik mentörlük ve optimizasyon.', w_t: 'Projelerimiz', c1: 'Hadi <br> Başlayalım.', btn_view: 'İncele', status_soon: 'Yakında', p1: 'İsim Soyisim', p2: 'E-posta', p3: 'Mesajınız...', btn: 'Mesajı Gönder', 'sel-b': 'Tahmini Bütçe', 'sel-t': 'Zaman Aralığı' },
+                en: { h_t: 'PRESTIGIOUS ENGINEERING', h_h: 'Designing Your <br> Digital Future.', h_p: 'With our high-level software architecture and boutique approach, we turn your ideas into elegant reality.', b1: 'Start a Project', s_t: 'Our Expertise', s1: 'Web Development', s1d: 'Corporate websites and custom systems.', s2: 'Mobile Application', s2d: 'Hybrid solutions for iOS & Android.', s3: 'UI / UX Design', s3d: 'User-friendly elite interfaces.', s4: 'Consultancy', s4d: 'Technical mentorship and optimization.', w_t: 'Our Projects', c1: 'Let\'s <br> Get Started.', btn_view: 'View', status_soon: 'Coming Soon', p1: 'Full Name', p2: 'Email Address', p3: 'Your Message...', btn: 'Send Message', 'sel-b': 'Estimated Budget', 'sel-t': 'Timeframe' }
             };
             langBtn.addEventListener('click', () => {
                 lang = lang === 'tr' ? 'en' : 'tr';
