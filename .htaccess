@@ -1,1 +1,9 @@
-DirectoryIndex index.html
+RewriteEngine On
+
+# 1. Klasör sonuna otomatik slash ekle (404'ü önler)
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.*[^/])$ /$1/ [L,R=301]
+
+# 2. index.html yazısını linkten gizle (Tertemiz görünüm)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /.*index\.html\ HTTP/
+RewriteRule ^(.*)index\.html$ /$1 [L,R=301]
