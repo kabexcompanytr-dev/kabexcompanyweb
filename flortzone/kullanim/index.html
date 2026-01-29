@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;">
     
-    <link rel="icon" type="image/png" href="/k.png">
-    <link rel="apple-touch-icon" href="/k.png">
+    <link rel="icon" type="image/png" href="k.png">
+    <link rel="apple-touch-icon" href="k.png">
 
-    <title>FlörtZone - Gizlilik Politikası</title>
+    <title>FlörtZone - Kullanım Koşulları</title>
     
     <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
             box-sizing: border-box;
         }
 
-        /* Başlık ve Logo Alanı */
+        /* Başlık Alanı */
         .legal-header {
             text-align: center;
             margin-bottom: 40px;
@@ -73,7 +73,7 @@
             color: #64748b;
         }
 
-        /* İçerik Kutusu */
+        /* İçerik Kartı */
         .content-box { 
             background: var(--card-bg); 
             padding: 40px; 
@@ -85,11 +85,11 @@
         h2 {
             color: #fff;
             font-size: 1.3rem;
-            margin-top: 30px;
+            margin-top: 35px;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
-            border-left: 4px solid #ff0080;
+            border-left: 4px solid #ff0080; 
             padding-left: 15px;
         }
 
@@ -109,7 +109,7 @@
             margin-bottom: 12px;
             position: relative;
         }
-
+        
         li::before {
             content: "•";
             color: #ff0080;
@@ -119,18 +119,19 @@
             margin-left: -1em;
         }
 
-        .contact-link {
+        /* Tıklanabilir Mail Linki */
+        .contact-mail {
             color: #ff0080;
             text-decoration: none;
             font-weight: 700;
             transition: opacity 0.2s;
         }
-        .contact-link:hover {
+        .contact-mail:hover {
             opacity: 0.8;
             text-decoration: underline;
         }
 
-        /* Mobil Düzenlemeler */
+        /* Mobil Görünüm */
         @media (max-width: 600px) {
             .legal-wrapper { padding: 20px 15px; }
             .content-box { padding: 25px; border-radius: 18px; }
@@ -144,45 +145,43 @@
     <div class="legal-wrapper">
         <header class="legal-header">
             <a href="/flortzone/">
-                <img src="/flortzone_logo.png" alt="FlörtZone Logo">
+                <img src="flortzone_logo.png" alt="FlörtZone Logo">
             </a>
-            <h1>Gizlilik Politikası</h1>
+            <h1>Kullanım Koşulları</h1>
             <span class="update-date"><strong>Son Güncelleme:</strong> 29 Ocak 2026</span>
         </header>
 
         <div class="content-box">
-            <h2>1. Veri Sorumlusu ve Kapsam</h2>
-            <p>İşbu Gizlilik Politikası, <strong>Kabex</strong> bünyesinde geliştirilen FlörtZone mobil uygulaması aracılığıyla toplanan verilerin işlenme süreçlerini açıklar. Kullanıcı gizliliği, teknik ve idari tedbirlerimizle en üst düzeyde korunmaktadır.</p>
+            <h2>1. Taraflar ve Kabul</h2>
+            <p>İşbu Kullanım Koşulları, FlörtZone platformuna erişim sağlayan veya kullanan her birey (Kullanıcı) ile FlörtZone yönetimi arasında hukuki olarak bağlayıcı bir sözleşmedir. Uygulamaya kayıt olmanız, bu şartların tamamını okuduğunuzu ve onayladığınızı beyan eder.</p>
 
-            <h2>2. Toplanan ve İşlenen Veriler</h2>
-            <p>Hizmet kalitemizi artırmak ve doğru eşleşmeleri sağlamak adına aşağıdaki veriler işlenmektedir:</p>
+            <h2>2. Üyelik ve Uygunluk</h2>
             <ul>
-                <li><strong>Profil Verileri:</strong> Ad, soyad, doğum tarihi, cinsiyet ve uygulama içi profil fotoğrafınız.</li>
-                <li><strong>İletişim Bilgileri:</strong> Kayıt sırasında kullanılan e-posta adresiniz.</li>
-                <li><strong>Teknik Veriler:</strong> IP adresi, cihaz modeli, işletim sistemi ve FCM bildirim jetonları.</li>
-                <li><strong>Konum Verileri:</strong> Yakındaki kullanıcıları filtreleyebilmeniz için paylaştığınız şehir ve bölge bilgisi.</li>
+                <li>FlörtZone kullanıcısı olabilmek için <strong>en az 18 yaşında</strong> olmanız gerekmektedir.</li>
+                <li>Kaydolurken sağladığınız tüm bilgilerin (isim, doğum tarihi, şehir vb.) doğru ve size ait olması zorunludur.</li>
+                <li>Daha önce herhangi bir ağır suçtan veya cinsel suçtan hüküm giymiş kişilerin platformu kullanması kesinlikle yasaktır.</li>
             </ul>
 
-            <h2>3. Verilerin İşlenme Amacı</h2>
-            <p>Verileriniz, KVKK ve uluslararası veri koruma standartlarına uygun olarak şu amaçlarla kullanılır:</p>
+            <h2>3. Kullanıcı Davranış İlkeleri</h2>
+            <p>Platform huzurunu ve güvenliğini sağlamak adına aşağıdaki eylemler hesabın kalıcı olarak kapatılmasına neden olur:</p>
             <ul>
-                <li>Kullanıcı hesabı oluşturulması ve kimlik doğrulaması.</li>
-                <li>Yapay zeka destekli eşleşme algoritmalarının optimize edilmesi.</li>
-                <li>Dolandırıcılık, taciz ve sahte hesapların engellenmesi.</li>
-                <li>Uygulama içi satın alımların ve Coin bakiyelerinin güvenli yönetimi.</li>
+                <li>Diğer kullanıcıları taciz etmek, tehdit etmek, aşağılamak veya zorbalık yapmak.</li>
+                <li>Sahte profil oluşturmak veya başkasının fotoğraflarını izinsiz kullanmak.</li>
+                <li>Ticari reklam, spam, zincirleme mesaj veya yasa dışı bağlantılar paylaşmak.</li>
+                <li>Cinsel içerikli, müstehcen veya nefret söylemi içeren materyal yüklemek.</li>
             </ul>
 
-            <h2>4. Veri Paylaşımı ve Üçüncü Taraflar</h2>
-            <p>Kişisel verileriniz asla ticari amaçlarla üçüncü şahıslara satılmaz. Verileriniz, sadece hizmetin teknik altyapısını sağlayan güvenli servis sağlayıcıları (Firebase, RevenueCat vb.) ve yasal mercilerin resmi talepleri doğrultusunda paylaşılabilir.</p>
+            <h2>4. Coin ve Dijital Ürünler</h2>
+            <p>Uygulama içerisinde satın alınan veya hediye edilen "Coin" ve "Premium" özellikleri sanal varlıklardır. Bu varlıkların gerçek paraya dönüştürülmesi veya iadesi mümkün değildir. FlörtZone, dijital ürünlerin fiyat ve içeriklerinde değişiklik yapma hakkını saklı tutar.</p>
 
-            <h2>5. Kullanıcı Hakları ve Veri Silme</h2>
-            <p>Kullanıcılar, diledikleri an profil ayarları üzerinden hesaplarını kalıcı olarak silme hakkına sahiptir. Hesap silme işlemiyle birlikte tüm kişisel verileriniz sunucularımızdan temizlenir. Veri erişim talepleriniz için <a href="mailto:kabexcompanytr@gmail.com" class="contact-link">kabexcompanytr@gmail.com</a> üzerinden bizimle iletişime geçebilirsiniz.</p>
+            <h2>5. İçerik Denetimi ve Güvenlik</h2>
+            <p>FlörtZone, kullanıcı güvenliğini sağlamak amacıyla profil bilgilerini ve görsellerini yapay zeka ve manuel yöntemlerle denetleyebilir. Topluluk kurallarını ihlal eden içerikler haber verilmeksizin silinebilir.</p>
 
-            <h2>6. Güvenlik Tedbirleri</h2>
-            <p>Tüm verileriniz uçtan uca şifreleme ve modern bulut güvenlik protokolleri ile korunmaktadır. Yetkisiz erişime karşı sunucularımız düzenli olarak denetlenmektedir.</p>
+            <h2>6. Sorumluluk Sınırlandırması</h2>
+            <p>FlörtZone, kullanıcılar arasındaki eşleşmeleri sağlayan aracı bir platformdur. Kullanıcıların birbirleriyle olan özel iletişimlerinden, paylaştıkları kişisel bilgilerden veya gerçek hayattaki buluşmalarından doğabilecek maddi/manevi zararlardan FlörtZone ve bağlı olduğu şirketler sorumlu tutulamaz.</p>
 
             <h2>7. İletişim</h2>
-            <p>Gizlilik süreçlerimizle ilgili daha detaylı bilgi veya şikayetleriniz için veri sorumlusu ekibimize <a href="mailto:kabexcompanytr@gmail.com" class="contact-link">kabexcompanytr@gmail.com</a> adresinden ulaşabilirsiniz.</p>
+            <p>Bu koşullar hakkında görüş bildirmek veya destek almak için <a href="mailto:kabexcompanytr@gmail.com" class="contact-mail">kabexcompanytr@gmail.com</a> adresine e-posta gönderebilirsiniz.</p>
         </div>
     </div>
 </body>
