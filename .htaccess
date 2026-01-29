@@ -1,10 +1,12 @@
 RewriteEngine On
 
-# 1. Adım: .html uzantısını gizle ve arka planda çalıştır
+# 1. flortzone/gizlilik-politikasi -> fz-privacy.html yönlendirmesi
+RewriteRule ^flortzone/gizlilik-politikasi$ fz-privacy.html [NC,L]
+
+# 2. flortzone/kullanim-kosullari -> fz-terms.html yönlendirmesi
+RewriteRule ^flortzone/kullanim-kosullari$ fz-terms.html [NC,L]
+
+# 3. Genel .html uzantısı gizleme (Diğer dosyalar için)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^([^\.]+)$ $1.html [NC,L]
-
-# 2. Adım: .html ile girilirse temiz adrese yönlendir (SEO için)
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.*)\.html [NC]
-RewriteRule ^ /%1 [R=301,L]
