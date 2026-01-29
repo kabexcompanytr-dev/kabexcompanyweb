@@ -77,11 +77,11 @@
         h2 {
             color: #fff;
             font-size: 1.3rem;
-            margin-top: 30px;
+            margin-top: 35px;
             margin-bottom: 15px;
             display: flex;
             align-items: center;
-            border-left: 4px solid #7928ca; /* Mor kenarlık */
+            border-left: 4px solid #ff0080; 
             padding-left: 15px;
         }
 
@@ -94,11 +94,33 @@
         ul {
             padding-left: 20px;
             margin-bottom: 25px;
+            list-style-type: none;
         }
 
         li {
             margin-bottom: 12px;
             position: relative;
+        }
+        
+        li::before {
+            content: "•";
+            color: #ff0080;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Tıklanabilir Mail Linki */
+        .contact-mail {
+            color: #ff0080;
+            text-decoration: none;
+            font-weight: 700;
+            transition: opacity 0.2s;
+        }
+        .contact-mail:hover {
+            opacity: 0.8;
+            text-decoration: underline;
         }
 
         /* Mobil Görünüm */
@@ -115,38 +137,41 @@
     <div class="legal-wrapper">
         <header class="legal-header">
             <img src="flortzone_logo.png" alt="FlörtZone Logo">
-            <h1>Flortzone Kullanım Koşulları</h1>
-            <span class="update-date"><strong>Son Güncelleme:</strong> 20 Ocak 2026</span>
+            <h1>Kullanım Koşulları</h1>
+            <span class="update-date"><strong>Son Güncelleme:</strong> 29 Ocak 2026</span>
         </header>
 
         <div class="content-box">
-            <h2>1. Kabul ve Şartlar</h2>
-            <p>Flortzone uygulamasını indirerek ve kullanarak, bu şartları kabul etmiş sayılırsınız. 18 yaşından küçüklerin uygulamayı kullanması kesinlikle yasaktır.</p>
+            <h2>1. Taraflar ve Kabul</h2>
+            <p>İşbu Kullanım Koşulları, FlörtZone platformuna erişim sağlayan veya kullanan her birey (Kullanıcı) ile FlörtZone yönetimi arasında hukuki olarak bağlayıcı bir sözleşmedir. Uygulamaya kayıt olmanız, bu şartların tamamını okuduğunuzu ve onayladığınızı beyan eder.</p>
 
-            <h2>2. Kullanıcı Hesabı ve Güvenlik</h2>
+            <h2>2. Üyelik ve Uygunluk</h2>
             <ul>
-                <li>Kullanıcılar, kayıt sırasında doğru ve güncel bilgi vermekle yükümlüdür.</li>
-                <li>Hesap güvenliğinden kullanıcı sorumludur.</li>
-                <li>Sahte profil oluşturmak, başkasının fotoğraflarını kullanmak hesap kapatma sebebidir.</li>
+                <li>FlörtZone kullanıcısı olabilmek için <strong>en az 18 yaşında</strong> olmanız gerekmektedir.</li>
+                <li>Kaydolurken sağladığınız tüm bilgilerin (isim, doğum tarihi, şehir vb.) doğru ve size ait olması zorunludur.</li>
+                <li>Daha önce herhangi bir ağır suçtan veya cinsel suçtan hüküm giymiş kişilerin platformu kullanması kesinlikle yasaktır.</li>
             </ul>
 
-            <h2>3. Davranış Kuralları</h2>
-            <p>Flortzone topluluğunda aşağıdaki eylemler kesinlikle yasaktır:</p>
+            <h2>3. Kullanıcı Davranış İlkeleri</h2>
+            <p>Platform huzurunu ve güvenliğini sağlamak adına aşağıdaki eylemler hesabın kalıcı olarak kapatılmasına neden olur:</p>
             <ul>
-                <li>Diğer kullanıcıları taciz etmek, tehdit etmek veya hakaret etmek.</li>
-                <li>Müstehcen, yasa dışı veya nefret söylemi içeren içerik paylaşmak.</li>
-                <li>Ticari reklam veya spam mesajlar göndermek.</li>
-                <li>Bot veya otomatik yazılımlar kullanmak.</li>
+                <li>Diğer kullanıcıları taciz etmek, tehdit etmek, aşağılamak veya zorbalık yapmak.</li>
+                <li>Sahte profil oluşturmak veya başkasının fotoğraflarını izinsiz kullanmak.</li>
+                <li>Ticari reklam, spam, zincirleme mesaj veya yasa dışı bağlantılar paylaşmak.</li>
+                <li>Cinsel içerikli, müstehcen veya nefret söylemi içeren materyal yüklemek.</li>
             </ul>
 
-            <h2>4. Uygulama İçi Satın Almalar</h2>
-            <p>Uygulama içinde sunulan "Coin" veya "Premium" özellikler iade edilemez. Satın alınan dijital varlıklar sadece Flortzone platformu içerisinde kullanılabilir.</p>
+            <h2>4. Coin ve Dijital Ürünler</h2>
+            <p>Uygulama içerisinde satın alınan veya hediye edilen "Coin" ve "Premium" özellikleri sanal varlıklardır. Bu varlıkların gerçek paraya dönüştürülmesi veya iadesi mümkün değildir. FlörtZone, dijital ürünlerin fiyat ve içeriklerinde değişiklik yapma hakkını saklı tutar.</p>
 
-            <h2>5. Hizmetin Durdurulması</h2>
-            <p>Kabex Company, kullanım koşullarını ihlal eden hesapları önceden haber vermeksizin askıya alma veya kalıcı olarak kapatma hakkını saklı tutar.</p>
+            <h2>5. İçerik Denetimi ve Güvenlik</h2>
+            <p>FlörtZone, kullanıcı güvenliğini sağlamak amacıyla profil bilgilerini ve görsellerini yapay zeka ve manuel yöntemlerle denetleyebilir. Topluluk kurallarını ihlal eden içerikler haber verilmeksizin silinebilir.</p>
 
-            <h2>6. Sorumluluk Reddi</h2>
-            <p>Flortzone, kullanıcılar arasındaki iletişimi sağlayan bir platformdur. Kullanıcıların birbirleriyle olan özel görüşmelerinden veya buluşmalarından doğabilecek sonuçlardan Flortzone sorumlu tutulamaz.</p>
+            <h2>6. Sorumluluk Sınırlandırması</h2>
+            <p>FlörtZone, kullanıcılar arasındaki eşleşmeleri sağlayan aracı bir platformdur. Kullanıcıların birbirleriyle olan özel iletişimlerinden, paylaştıkları kişisel bilgilerden veya gerçek hayattaki buluşmalarından doğabilecek maddi/manevi zararlardan FlörtZone ve bağlı olduğu şirketler sorumlu tutulamaz.</p>
+
+            <h2>7. İletişim</h2>
+            <p>Bu koşullar hakkında görüş bildirmek veya destek almak için <a href="mailto:kabexcompanytr@gmail.com" class="contact-mail">kabexcompanytr@gmail.com</a> adresine e-posta gönderebilirsiniz.</p>
         </div>
     </div>
 </body>

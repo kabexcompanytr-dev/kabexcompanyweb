@@ -94,10 +94,21 @@
         ul {
             padding-left: 20px;
             margin-bottom: 25px;
+            list-style-type: none;
         }
 
         li {
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        li::before {
+            content: "•";
+            color: #ff0080;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
         }
 
         .contact-link {
@@ -120,37 +131,43 @@
     <div class="legal-wrapper">
         <header class="legal-header">
             <img src="flortzone_logo.png" alt="FlörtZone Logo">
-            <h1>Flortzone Gizlilik Politikası</h1>
-            <span class="update-date"><strong>Son Güncelleme:</strong> 20 Ocak 2026</span>
+            <h1>Gizlilik Politikası</h1>
+            <span class="update-date"><strong>Son Güncelleme:</strong> 29 Ocak 2026</span>
         </header>
 
         <div class="content-box">
-            <h2>1. Veri Sorumlusu</h2>
-            <p>Bu Gizlilik Politikası, Kabex Company ("Şirket") tarafından işletilen Flortzone mobil uygulaması için geçerlidir. Kullanıcılarımızın gizliliği bizim önceliğimizdir.</p>
+            <h2>1. Veri Sorumlusu ve Kapsam</h2>
+            <p>İşbu Gizlilik Politikası, <strong>Kabex</strong> bünyesinde geliştirilen FlörtZone mobil uygulaması aracılığıyla toplanan verilerin işlenme süreçlerini açıklar. Kullanıcı gizliliği, teknik ve idari tedbirlerimizle en üst düzeyde korunmaktadır.</p>
 
-            <h2>2. Toplanan Veriler</h2>
-            <p>Uygulamamıza Google ile giriş yaptığınızda aşağıdaki veriler işlenir:</p>
+            <h2>2. Toplanan ve İşlenen Veriler</h2>
+            <p>Hizmet kalitemizi artırmak ve doğru eşleşmeleri sağlamak adına aşağıdaki veriler işlenmektedir:</p>
             <ul>
-                <li><strong>Kimlik Bilgileri:</strong> Adınız, soyadınız ve profil fotoğrafınız.</li>
-                <li><strong>İletişim Bilgileri:</strong> E-posta adresiniz.</li>
-                <li><strong>Cihaz ve Kullanım Verileri:</strong> IP adresi, cihaz kimliği ve uygulama içi etkileşimler.</li>
-                <li><strong>Konum Verileri:</strong> Size en yakın kullanıcıları göstermek için (açık rızanız dahilinde) konum bilginiz.</li>
+                <li><strong>Profil Verileri:</strong> Ad, soyad, doğum tarihi, cinsiyet ve uygulama içi profil fotoğrafınız.</li>
+                <li><strong>İletişim Bilgileri:</strong> Kayıt sırasında kullanılan e-posta adresiniz.</li>
+                <li><strong>Teknik Veriler:</strong> IP adresi, cihaz modeli, işletim sistemi ve FCM bildirim jetonları.</li>
+                <li><strong>Konum Verileri:</strong> Yakındaki kullanıcıları filtreleyebilmeniz için paylaştığınız şehir ve bölge bilgisi.</li>
             </ul>
 
-            <h2>3. Verilerin Kullanım Amacı</h2>
-            <p>Toplanan veriler şu amaçlarla kullanılır:</p>
+            <h2>3. Verilerin İşlenme Amacı</h2>
+            <p>Verileriniz, KVKK ve uluslararası veri koruma standartlarına uygun olarak şu amaçlarla kullanılır:</p>
             <ul>
-                <li>Hesap oluşturmak ve kimlik doğrulaması yapmak.</li>
-                <li>Kullanıcı eşleşmelerini optimize etmek.</li>
-                <li>Güvenli bir platform sağlamak ve bot hesapları engellemek.</li>
-                <li>Uygulama içi satın alımları (Coin vb.) yönetmek.</li>
+                <li>Kullanıcı hesabı oluşturulması ve kimlik doğrulaması.</li>
+                <li>Yapay zeka destekli eşleşme algoritmalarının optimize edilmesi.</li>
+                <li>Dolandırıcılık, taciz ve sahte hesapların engellenmesi.</li>
+                <li>Uygulama içi satın alımların ve Coin bakiyelerinin güvenli yönetimi.</li>
             </ul>
 
-            <h2>4. Verilerin Paylaşımı ve Saklanması</h2>
-            <p>Verileriniz asla üçüncü taraflara satılmaz. Sadece yasal zorunluluk hallerinde veya hizmetin ifası için gerekli teknik iş ortaklarıyla (Firebase vb.) paylaşılır. Verileriniz, hesabınız aktif olduğu sürece güvenli sunucularımızda saklanır.</p>
+            <h2>4. Veri Paylaşımı ve Üçüncü Taraflar</h2>
+            <p>Kişisel verileriniz asla ticari amaçlarla üçüncü şahıslara satılmaz. Verileriniz, sadece hizmetin teknik altyapısını sağlayan güvenli servis sağlayıcıları (Firebase, RevenueCat vb.) ve yasal mercilerin resmi talepleri doğrultusunda paylaşılabilir.</p>
 
-            <h2>5. Kullanıcı Hakları (KVKK ve GDPR)</h2>
-            <p>Kullanıcılar, verilerine erişme, düzeltme, silme (hesap kapatma) ve verilerinin işlenmesine itiraz etme hakkına sahiptir. Talepleriniz için <a href="mailto:kabexcompanytr@gmail.com" class="contact-link">kabexcompanytr@gmail.com</a> adresinden bize ulaşabilirsiniz.</p>
+            <h2>5. Kullanıcı Hakları ve Veri Silme</h2>
+            <p>Kullanıcılar, diledikleri an profil ayarları üzerinden hesaplarını kalıcı olarak silme hakkına sahiptir. Hesap silme işlemiyle birlikte tüm kişisel verileriniz sunucularımızdan temizlenir. Veri erişim talepleriniz için <a href="mailto:kabexcompanytr@gmail.com" class="contact-link">kabexcompanytr@gmail.com</a> üzerinden bizimle iletişime geçebilirsiniz.</p>
+
+            <h2>6. Güvenlik Tedbirleri</h2>
+            <p>Tüm verileriniz uçtan uca şifreleme ve modern bulut güvenlik protokolleri ile korunmaktadır. Yetkisiz erişime karşı sunucularımız düzenli olarak denetlenmektedir.</p>
+
+            <h2>7. İletişim</h2>
+            <p>Gizlilik süreçlerimizle ilgili daha detaylı bilgi veya şikayetleriniz için veri sorumlusu ekibimize <strong>kabexcompanytr@gmail.com</strong> adresinden ulaşabilirsiniz.</p>
         </div>
     </div>
 </body>

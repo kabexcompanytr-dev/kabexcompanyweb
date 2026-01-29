@@ -114,25 +114,50 @@
             margin-top: 3px;
         }
 
-        /* Play Store Butonu */
-        .play-store-btn { 
+        /* İndirme Butonları Alanı */
+        .download-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .download-btn { 
             display: inline-flex; 
             align-items: center; 
             background-color: #000; 
             color: #fff; 
-            padding: 12px 20px; 
+            padding: 10px 18px; 
             border-radius: 12px; 
             text-decoration: none; 
-            margin-top: 10px; 
             transition: all 0.3s ease; 
             border: 1px solid #334155; 
-            width: fit-content;
+            min-width: 170px;
         }
-        .play-store-btn:active { transform: scale(0.95); }
-        .play-store-btn i { font-size: 24px; margin-right: 12px; color: #fff; }
-        .play-store-text { display: flex; flex-direction: column; line-height: 1.2; }
-        .play-store-text small { font-size: 9px; text-transform: uppercase; opacity: 0.7; letter-spacing: 1px; }
-        .play-store-text span { font-size: 16px; font-weight: 700; }
+        .download-btn:active { transform: scale(0.95); }
+        .download-btn i { font-size: 24px; margin-right: 12px; color: #fff; }
+        
+        .download-text { display: flex; flex-direction: column; line-height: 1.2; }
+        .download-text small { font-size: 9px; text-transform: uppercase; opacity: 0.7; letter-spacing: 1px; }
+        .download-text span { font-size: 15px; font-weight: 700; }
+
+        /* Apple Çok Yakında Stili */
+        .btn-ios {
+            opacity: 0.6;
+            cursor: default;
+            border-style: dashed;
+            background-color: rgba(0,0,0,0.4);
+        }
+        .btn-ios:active { transform: none; }
+        .btn-ios .badge-soon {
+            font-size: 8px;
+            background: #f43f5e;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
 
         /* Yasal Bölüm */
         .legal-section { 
@@ -183,7 +208,7 @@
             .fz-navbar img { width: 50px; height: 50px; }
             .fz-navbar h1 { font-size: 1.4rem; }
             .fz-info-card h2 { font-size: 1.3rem; }
-            .play-store-btn { width: 100%; justify-content: center; box-sizing: border-box; }
+            .download-btn { width: 100%; justify-content: center; box-sizing: border-box; }
         }
     </style>
 </head>
@@ -211,13 +236,23 @@
                 <li><i class="fas fa-user-check"></i> Profil doğrulama ve güvenlik sistemleri.</li>
             </ul>
 
-            <a href="https://play.google.com/store/apps/details?id=com.flortzone.app&hl=tr" target="_blank" class="play-store-btn">
-                <i class="fab fa-google-play"></i>
-                <div class="play-store-text">
-                    <small>HEMEN İNDİRİN</small>
-                    <span>Google Play</span>
-                </div>
-            </a>
+            <div class="download-container">
+                <a href="https://play.google.com/store/apps/details?id=com.flortzone.app&hl=tr" target="_blank" class="download-btn">
+                    <i class="fab fa-google-play"></i>
+                    <div class="download-text">
+                        <small>HEMEN İNDİRİN</small>
+                        <span>Google Play</span>
+                    </div>
+                </a>
+
+                <a href="javascript:void(0)" class="download-btn btn-ios">
+                    <i class="fab fa-apple"></i>
+                    <div class="download-text">
+                        <small>YAKINDA <span class="badge-soon">V1.0.2</span></small>
+                        <span>App Store</span>
+                    </div>
+                </a>
+            </div>
         </main>
 
         <footer class="legal-section">

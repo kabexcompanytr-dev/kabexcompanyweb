@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# 1. Adım: .html uzantısını gizle ve arka planda çalıştır
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# 2. Adım: .html ile girilirse temiz adrese yönlendir (SEO için)
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+(.*)\.html [NC]
+RewriteRule ^ /%1 [R=301,L]

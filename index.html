@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" type="image/png" href="k.png">
-    <title>KABEX | Boutique Digital Engineering</title>
+    <title>KABEX.</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -49,7 +49,6 @@
 
         #lang-toggle { background: var(--bg-body); border: 1px solid var(--border); padding: 6px 12px; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 0.7rem; }
 
-        /* --- HERO --- */
         #hero { min-height: 90vh; display: flex; align-items: center; padding: 120px 8% 60px; background: radial-gradient(circle at 80% 20%, var(--primary-light), transparent 60%); }
         .hero-flex { display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 40px; }
         .hero-content { flex: 1.5; }
@@ -62,12 +61,10 @@
         .button { background: var(--text-main); color: #fff !important; padding: 16px 36px; border-radius: 16px; text-decoration: none; font-weight: 600; transition: var(--transition); font-size: 0.95rem; display: inline-flex; align-items: center; gap: 10px; border: none; }
         .button:hover { transform: translateY(-3px); background: var(--primary); }
 
-        /* --- SECTIONS --- */
         .container { padding: 80px 8%; }
         .section-header { text-align: center; margin-bottom: 50px; }
         .section-header h2 { font-size: 2.2rem; font-weight: 700; letter-spacing: -1px; }
 
-        /* --- HİZMETLER --- */
         .hizmet-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
         .hizmet-card { background: var(--bg-card); padding: 35px 25px; border-radius: var(--radius-lg); border: 1px solid var(--border); transition: var(--transition); }
         .hizmet-card:hover { transform: translateY(-8px); background: #fff; box-shadow: 0 15px 30px rgba(0,0,0,0.04); }
@@ -75,8 +72,7 @@
         .hizmet-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; }
         .hizmet-card p { font-size: 0.85rem; color: var(--text-dim); }
 
-        /* --- PROJELERİMİZ --- */
-        .proje-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        .proje-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .proje-card { 
             height: 380px; border-radius: var(--radius-lg); overflow: hidden; 
             background: #fff; transition: var(--transition); border: 1px solid var(--border);
@@ -86,25 +82,19 @@
         .proje-logo { transition: var(--transition); }
         .proje-logo img { max-height: 110px; width: auto; object-fit: contain; }
 
-        .proje-action { 
-            position: absolute; bottom: -50px; opacity: 0; transition: var(--transition);
-        }
-
-        /* Hover Efekti: Logo yukarı, Buton aşağıdan yukarı */
+        .proje-action { position: absolute; bottom: -50px; opacity: 0; transition: var(--transition); text-align: center; width: 100%; }
         .proje-card:hover .proje-logo { transform: translateY(-30px); }
         .proje-card:hover .proje-action { bottom: 60px; opacity: 1; }
 
         .btn-mini { background: var(--primary); color: #fff; padding: 10px 25px; border-radius: 12px; font-size: 0.8rem; font-weight: 700; text-decoration: none; }
         .status-text { color: var(--primary); font-weight: 800; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
 
-        /* --- CONTACT --- */
         .contact-box { background: #fff; border-radius: 40px; padding: 50px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; border: 1px solid var(--border); }
         .contact-info h2 { font-size: 2.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 15px; }
         .input-field { width: 100%; padding: 16px 20px; border-radius: var(--radius-md); border: 1px solid #e5e5ea; background: var(--bg-body); font-size: 0.9rem; font-weight: 500; margin-bottom: 15px; transition: var(--transition); }
         .input-field:focus { border-color: var(--primary); background: #fff; }
         .select-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
 
-        /* --- RESPONSIVE --- */
         @media (max-width: 1100px) {
             .hizmet-grid { grid-template-columns: repeat(2, 1fr); }
             .proje-grid { grid-template-columns: repeat(2, 1fr); }
@@ -182,15 +172,19 @@
             <div class="section-header"><h2 data-key="w_t">Projelerimiz</h2></div>
             <div class="proje-grid">
                 <div class="proje-card" data-aos="zoom-in">
-                    <div class="proje-logo"><img src="flortzone_logo.png"></div>
+                    <div class="proje-logo"><img src="flortzone_logo.png" alt="FlörtZone"></div>
                     <div class="proje-action"><a href="flortzone.html" class="btn-mini" data-key="btn-view">İncele</a></div>
                 </div>
                 <div class="proje-card" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="proje-logo"><img src="toptancim.png"></div>
-                    <div class="proje-action"><span class="status-text" data-key="status-soon">Yakında</span></div>
+                    <div class="proje-logo"><img src="mahjong.png" alt="Göktürk Mahjong"></div>
+                    <div class="proje-action"><h3 style="font-size: 1rem; margin-bottom: 5px;">Göktürk Mahjong</h3><span class="status-text" data-key="status-soon">Yakında</span></div>
                 </div>
                 <div class="proje-card" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="proje-logo"><img src="bütcetakip.png"></div>
+                    <div class="proje-logo"><img src="toptancim.png" alt="Toptancım"></div>
+                    <div class="proje-action"><span class="status-text" data-key="status-soon">Yakında</span></div>
+                </div>
+                <div class="proje-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="proje-logo"><img src="bütcetakip.png" alt="Bütçe Takip"></div>
                     <div class="proje-action"><span class="status-text" data-key="status-soon">Yakında</span></div>
                 </div>
             </div>
@@ -229,7 +223,7 @@
     </main>
 
     <footer style="padding: 40px 5%; text-align: center; border-top: 1px solid var(--border); font-weight: 600; font-size: 0.8rem; color: var(--text-dim);">
-        KABEX ENGINEERING <span style="opacity: 0.4; margin-left: 10px;">© 2026</span>
+        KABEX. <span style="opacity: 0.4; margin-left: 10px;">© 2026</span>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
