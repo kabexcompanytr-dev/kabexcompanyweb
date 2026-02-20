@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;">
+    
+    <link rel="icon" type="image/png" href="../../k.png">
+    <link rel="apple-touch-icon" href="../../k.png">
+
+    <title>PureFetch - Gizlilik Politikası</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --accent: #6366f1;
+            --bg-dark: #0b0f1a;
+            --card-bg: rgba(22, 30, 48, 0.7);
+        }
+
+        body.dark-mode { 
+            background-color: var(--bg-dark); 
+            color: #cbd5e0; 
+            margin: 0; 
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .legal-wrapper { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            box-sizing: border-box;
+        }
+
+        /* Başlık ve Logo Alanı */
+        .legal-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .legal-header a {
+            text-decoration: none;
+            display: inline-block;
+        }
+        .legal-header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            margin-bottom: 15px;
+            border: 2px solid var(--accent);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .legal-header img:hover {
+            transform: scale(1.05);
+        }
+        .legal-header h1 {
+            font-size: 2rem;
+            margin: 0;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        .update-date {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #64748b;
+        }
+
+        /* İçerik Kutusu */
+        .content-box { 
+            background: var(--card-bg); 
+            padding: 40px; 
+            border-radius: 24px; 
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 1.25rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+        }
+
+        p, li {
+            font-size: 1rem;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 25px;
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .contact-box {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+        .contact-link {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* Mobil Düzenlemeler */
+        @media (max-width: 600px) {
+            .legal-wrapper { padding: 20px 15px; }
+            .content-box { padding: 25px; border-radius: 18px; }
+            .legal-header h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.1rem; }
+            p, li { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <div class="legal-wrapper">
+        <header class="legal-header">
+            <a href="../index.html">
+                <img src="../purefetch.png" alt="PureFetch Logo">
+            </a>
+            <h1>Gizlilik Politikası</h1>
+            <span class="update-date"><strong>Yürürlük Tarihi:</strong> 21 Şubat 2026</span>
+        </header>
+
+        <div class="content-box">
+            <p>PureFetch ("biz", "bizim" veya "bize") olarak gizliliğinize önem veriyoruz. Bu Gizlilik Politikası, mobil uygulamamızı kullandığınızda bilgilerinizin nasıl işlendiğini açıklar.</p>
+
+            <h2>1. Bilgi Toplama ve Kullanımı</h2>
+            <p>PureFetch, hiçbir kişisel veriyi toplamaz, saklamaz veya paylaşmaz.</p>
+            <ul>
+                <li><strong>Kişisel Veriler:</strong> Uygulamayı kullanmak için kayıt olmanız, adınızı, e-posta adresinizi veya telefon numaranızı vermeniz gerekmez.</li>
+                <li><strong>İndirilen İçerikler:</strong> İndirdiğiniz videoları veya ses dosyalarını izlemiyoruz ve sunucularımızda kalıcı olarak saklamıyoruz.</li>
+            </ul>
+
+            <h2>2. Uygulama İzinleri</h2>
+            <p>Hizmet verebilmek için PureFetch şu izinleri talep edebilir:</p>
+            <ul>
+                <li><strong>Depolama/Medya Erişimi:</strong> İndirilen dosyaları doğrudan cihazınızın galerisine kaydetmek için kullanılır.</li>
+                <li><strong>İnternet Erişimi:</strong> Bağlantıları analiz etmek ve medya içeriğini indirmek için gereklidir.</li>
+            </ul>
+
+            <h2>3. Üçüncü Taraf Hizmetler</h2>
+            <p>Uygulamayı geliştirmek ve reklam sunmak için şu hizmetleri kullanmaktayız:</p>
+            <p><strong>Google AdMob:</strong> Uygulama içinde reklam göstermek için AdMob kullanıyoruz. AdMob, ilginize göre kişiselleştirilmiş reklamlar sunmak için reklam kimliklerini ve çerezleri kullanabilir.</p>
+
+            <h2>4. Telif Hakları ve Sorumluluk Reddi</h2>
+            <p>PureFetch, yalnızca kişisel kullanım için tasarlanmış teknik bir araçtır.</p>
+            <ul>
+                <li>İndirilen içeriklerin tüm sorumluluğu kullanıcıya aittir.</li>
+                <li>PureFetch, telif hakkıyla korunan materyallerin izinsiz indirilmesini onaylamaz.</li>
+                <li>Kullanıcılar, indirme yapmadan önce içerik sahibinden gerekli izinleri almış olmalıdır.</li>
+            </ul>
+
+            <h2>5. Diğer Sitelere Bağlantılar</h2>
+            <p>Hizmetimiz diğer sitelere (sosyal medya platformları) bağlantılar içerebilir. Bu sitelerin içerikleri veya gizlilik politikaları üzerinde hiçbir kontrolümüz yoktur.</p>
+
+            <h2>6. Gizlilik Politikası Değişiklikleri</h2>
+            <p>Gizlilik politikamızı zaman zaman güncelleyebiliriz. Herhangi bir değişiklik olması durumunda yeni metni bu sayfa üzerinden yayınlayarak sizi bilgilendiririz.</p>
+
+            <div class="contact-box">
+                <strong>7. İletişim</strong><br>
+                Gizlilik politikamızla ilgili herhangi bir sorunuz varsa bizimle iletişime geçin:<br>
+                <a href="mailto:kabexcompanytr@gmail.com" class="contact-link">kabexcompanytr@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;">
+    
+    <link rel="icon" type="image/png" href="../../k.png">
+    <link rel="apple-touch-icon" href="../../k.png">
+
+    <title>PureFetch - Kullanım Koşulları</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+            --accent: #6366f1;
+            --bg-dark: #0b0f1a;
+            --card-bg: rgba(22, 30, 48, 0.7);
+        }
+
+        body.dark-mode { 
+            background-color: var(--bg-dark); 
+            color: #cbd5e0; 
+            margin: 0; 
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .legal-wrapper { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            box-sizing: border-box;
+        }
+
+        /* Başlık Alanı */
+        .legal-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .legal-header a {
+            text-decoration: none;
+            display: inline-block;
+        }
+        .legal-header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            margin-bottom: 15px;
+            border: 2px solid var(--accent);
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .legal-header img:hover {
+            transform: scale(1.05);
+        }
+        .legal-header h1 {
+            font-size: 2rem;
+            margin: 0;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        .update-date {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* İçerik Kartı */
+        .content-box { 
+            background: var(--card-bg); 
+            padding: 40px; 
+            border-radius: 24px; 
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid var(--accent); 
+            padding-left: 15px;
+        }
+
+        p, li {
+            font-size: 1rem;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 25px;
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+        }
+        
+        li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Tıklanabilir Mail Linki */
+        .contact-box {
+            background: rgba(99, 102, 241, 0.1);
+            border: 1px solid rgba(99, 102, 241, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .contact-mail {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 700;
+            transition: opacity 0.2s;
+        }
+        .contact-mail:hover {
+            opacity: 0.8;
+        }
+
+        /* Mobil Görünüm */
+        @media (max-width: 600px) {
+            .legal-wrapper { padding: 20px 15px; }
+            .content-box { padding: 25px; border-radius: 18px; }
+            .legal-header h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.1rem; }
+            p, li { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <div class="legal-wrapper">
+        <header class="legal-header">
+            <a href="../index.html">
+                <img src="../purefetch.png" alt="PureFetch Logo">
+            </a>
+            <h1>Kullanım Koşulları</h1>
+            <span class="update-date"><strong>Son Güncelleme:</strong> 21 Şubat 2026</span>
+        </header>
+
+        <div class="content-box">
+            <p>PureFetch mobil uygulamasını indirerek ve kullanarak, aşağıdaki kullanım koşullarını kabul etmiş sayılırsınız. Lütfen bu koşulları dikkatlice okuyunuz.</p>
+
+            <h2>1. Hizmet Tanımı</h2>
+            <p>PureFetch, kullanıcıların sosyal medya platformlarında (Instagram, TikTok, Facebook, X vb.) herkese açık olarak paylaşılan içerikleri kişisel kullanımları için cihazlarına kaydetmelerine olanak tanıyan bir araçtır.</p>
+
+            <h2>2. Kullanım Sorumluluğu ve Telif Hakları</h2>
+            <ul>
+                <li><strong>Kullanıcı Sorumluluğu:</strong> PureFetch aracılığıyla indirilen her türlü içeriğin (video, ses, görsel) yasal sorumluluğu tamamen kullanıcıya aittir.</li>
+                <li><strong>Telif Hakları:</strong> Kullanıcılar, yalnızca telif hakkına sahip oldukları veya içerik sahibinden açık izin aldıkları içerikleri indirmelidir. PureFetch, telif hakkıyla korunan materyallerin izinsiz indirilmesini onaylamaz.</li>
+                <li><strong>Kötüye Kullanım:</strong> Uygulamanın, platformların hizmet şartlarını ihlal edecek şekilde kullanılması durumunda doğabilecek yasal sonuçlardan PureFetch ve Kabex sorumlu tutulamaz.</li>
+            </ul>
+
+            <h2>3. Fikri Mülkiyet</h2>
+            <p>PureFetch uygulamasının tasarımı, logosu, kaynak kodu ve yazılımı PureFetch/Kabex'in fikri mülkiyetidir. Uygulamanın tersine mühendislik yoluyla kopyalanması veya izinsiz dağıtılması yasaktır.</p>
+
+            <h2>4. Hizmet Değişiklikleri ve Kesintiler</h2>
+            <p>PureFetch, sosyal medya platformlarının teknik altyapı değişikliklerine bağlı olarak zaman zaman hizmet dışı kalabilir. Sunulan hizmetlerin sürekliliği konusunda garanti verilmez.</p>
+
+            <h2>5. Abonelikler ve İadeler (Pro Özellikler)</h2>
+            <p>Uygulama içi satın alınan "Pro" üyelikler, seçilen plan süresince geçerlidir. Ödemeler ve iade süreçleri tamamen <strong>Google Play Store</strong> politikalarına tabidir.</p>
+
+            <h2>6. Üçüncü Taraf Bağlantıları</h2>
+            <p>Uygulama, üçüncü taraf web sitelerine yönlendirmeler içerebilir. Bu sitelerin içeriklerinden veya politikalarından PureFetch sorumlu değildir.</p>
+
+            <h2>7. Feragatname</h2>
+            <p>PureFetch "olduğu gibi" sunulmaktadır. Uygulamanın kullanımı sırasında cihazınızda oluşabilecek herhangi bir veri kaybı veya teknik sorundan dolayı sorumluluk kabul edilmez.</p>
+
+            <div class="contact-box">
+                <strong>8. İletişim</strong><br>
+                Bu koşullar hakkında sorularınız varsa bizimle iletişime geçebilirsiniz:<br>
+                <a href="mailto:kabexcompanytr@gmail.com" class="contact-mail">kabexcompanytr@gmail.com</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
