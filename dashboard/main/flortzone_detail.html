@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="k.png">
+    <title>KABEX HQ | FlörtZone Yönetimi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --k-blue: #007AFF;
+            --glass-card: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --fz-pink: #e11d48;
+        }
+        
+        body { font-family: 'Inter', sans-serif; background: #000; margin: 0; height: 100vh; display: flex; color: #fff; -webkit-font-smoothing: antialiased; overflow: hidden; }
+        
+        /* Arka Plan Glow - FlörtZone Pembesi */
+        .bg-glow { position: absolute; inset: 0; background: radial-gradient(circle at 100% 0%, rgba(225, 29, 72, 0.08) 0%, #000 50%); z-index: -1; }
+
+        /* Sidebar - Değişmez Yapı */
+        aside { width: 280px; background: rgba(255, 255, 255, 0.01); backdrop-filter: blur(20px); border-right: 1px solid var(--glass-border); display: flex; flex-direction: column; padding: 40px 20px; z-index: 50; }
+        .sidebar-logo img { max-width: 160px; margin-bottom: 60px; padding-left: 10px; }
+        
+        .nav-item { display: flex; align-items: center; padding: 16px 20px; border-radius: 16px; color: rgba(255,255,255,0.4); transition: 0.4s; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
+        .nav-item:hover, .nav-item.active { background: rgba(255,255,255,0.05); color: #fff; }
+        .nav-item i { width: 24px; font-size: 1.1rem; }
+        .nav-item.active i { color: var(--fz-pink); }
+
+        main { flex: 1; padding: 40px 60px; overflow-y: auto; position: relative; }
+
+        /* Kartlar ve Grafikler */
+        .grid-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
+        .glass-panel { background: var(--glass-card); border: 1px solid var(--glass-border); border-radius: 35px; padding: 40px; }
+        .mini-stat { background: var(--glass-card); border: 1px solid var(--glass-border); border-radius: 25px; padding: 25px; margin-bottom: 20px; transition: 0.3s; }
+        .mini-stat:hover { border-color: var(--fz-pink); background: rgba(255,255,255,0.05); }
+
+        .btn-update { background: var(--fz-pink); color: #fff; font-weight: 800; font-size: 0.75rem; padding: 12px 24px; border-radius: 14px; letter-spacing: 1px; transition: 0.3s; }
+        .btn-update:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(225, 29, 72, 0.4); }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <aside>
+        <div class="sidebar-logo">
+            <img src="11.png" alt="KABEX">
+        </div>
+        <nav>
+            <a href="main.html" class="nav-item">
+                <i class="fas fa-th-large"></i> <span>Genel Merkez</span>
+            </a>
+            <a href="#" class="nav-item active">
+                <i class="fas fa-heart"></i> <span>FlörtZone</span>
+            </a>
+            <a href="purefetch_detail.html" class="nav-item">
+                <i class="fas fa-bolt"></i> <span>PureFetch</span>
+            </a>
+            <a href="falcim_detail.html" class="nav-item">
+                <i class="fas fa-crystal-ball"></i> <span>Falcım</span>
+            </a>
+            <div style="margin-top: 40px;" class="px-5 text-[10px] font-bold text-white/20 uppercase tracking-[2px]">Sistem</div>
+            <a href="#" class="nav-item"><i class="fas fa-cog"></i> <span>Ayarlar</span></a>
+            <a href="../gate.html" class="nav-item"><i class="fas fa-sign-out-alt"></i> <span>Çıkış</span></a>
+        </nav>
+    </aside>
+
+    <main>
+        <div class="flex justify-between items-end mb-12">
+            <div>
+                <span class="text-rose-500 font-black text-[10px] uppercase tracking-[3px]">Uygulama Analizi</span>
+                <h1 class="text-4xl font-black tracking-tighter mt-2">FlörtZone Kontrol <span class="text-rose-600">.</span></h1>
+            </div>
+            <button class="btn-update uppercase">Verileri Yenile</button>
+        </div>
+
+        <div class="grid-layout">
+            <div class="glass-panel">
+                <div class="flex justify-between items-center mb-10">
+                    <h3 class="font-bold text-xl tracking-tight">Gelir Projeksiyonu</h3>
+                    <div class="flex gap-4 text-[10px] font-bold uppercase tracking-widest text-white/30">
+                        <span>Haftalık</span>
+                        <span class="text-rose-500">Aylık</span>
+                    </div>
+                </div>
+                <canvas id="fzChart" style="max-height: 380px;"></canvas>
+            </div>
+
+            <div>
+                <div class="mini-stat">
+                    <div class="text-white/30 text-[9px] font-bold uppercase tracking-[2px] mb-1">Anlık Eşleşme</div>
+                    <div class="text-3xl font-black tracking-tighter">8,420</div>
+                    <div class="text-emerald-500 text-[10px] font-bold mt-2">▲ %14 Artış</div>
+                </div>
+                <div class="mini-stat">
+                    <div class="text-white/30 text-[9px] font-bold uppercase tracking-[2px] mb-1">Bekleyen Raporlar</div>
+                    <div class="text-3xl font-black tracking-tighter text-rose-500">24</div>
+                    <div class="text-white/20 text-[10px] font-bold mt-2">Acil İnceleme</div>
+                </div>
+                <div class="mini-stat">
+                    <div class="text-white/30 text-[9px] font-bold uppercase tracking-[2px] mb-1">Aylık Ciro</div>
+                    <div class="text-3xl font-black tracking-tighter">$28,450</div>
+                    <div class="text-blue-400 text-[10px] font-bold mt-2">★ Premium Odaklı</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        const ctx = document.getElementById('fzChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['1 Mar', '2 Mar', '3 Mar', '4 Mar', '5 Mar', '6 Mar', '7 Mar'],
+                datasets: [{
+                    label: 'Gelir',
+                    data: [2100, 2400, 1800, 2900, 3100, 3800, 3450],
+                    borderColor: '#e11d48',
+                    backgroundColor: 'rgba(225, 29, 72, 0.05)',
+                    fill: true,
+                    tension: 0.4,
+                    borderWidth: 4,
+                    pointRadius: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { grid: { color: 'rgba(255,255,255,0.03)' }, ticks: { color: 'rgba(255,255,255,0.2)', font: { size: 10 } } },
+                    x: { grid: { display: false }, ticks: { color: 'rgba(255,255,255,0.2)', font: { size: 10 } } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

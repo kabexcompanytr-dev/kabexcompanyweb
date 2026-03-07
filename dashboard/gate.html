@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="k.png">
+    <title>KABEX | Güvenli Erişim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --kabex-blue: #007AFF;
+        }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #000; /* Saf siyah zemin */
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- SOL PANEL: LOGO ALANI --- */
+        .brand-panel {
+            flex: 1.2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: radial-gradient(circle at center, #0a192f 0%, #000 100%);
+            border-right: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .brand-panel img {
+            max-width: 450px; /* Logonu büyükçe yerleştirdik */
+            width: 80%;
+            filter: drop-shadow(0 0 50px rgba(0, 122, 255, 0.2));
+            animation: float 8s ease-in-out infinite;
+            z-index: 2;
+        }
+
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+        /* --- SAĞ PANEL: GİRİŞ ALANI --- */
+        .auth-panel {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: #000;
+        }
+
+        /* Arka Plan Dekoratif Işıkları (Kartın tam arkasında kalacaklar) */
+        .ambient-light {
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: var(--kabex-blue);
+            filter: blur(120px);
+            opacity: 0.15;
+            z-index: 1;
+        }
+
+        /* --- HİÇ BOZULMAYAN CAM KARTIN --- */
+        .glass-card {
+            position: relative;
+            z-index: 10;
+            width: 420px;
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(30px) saturate(180%);
+            -webkit-backdrop-filter: blur(30px) saturate(180%);
+            border-radius: 40px;
+            padding: 50px 40px;
+            border: 1px solid rgba(255, 255, 255, 0.125);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 40px;
+            padding: 1px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%, rgba(255,255,255,0.2) 100%);
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+        }
+
+        .icon-circle {
+            width: 100px;
+            height: 100px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            margin: 0 auto 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .icon-circle img {
+            max-width: 60%;
+            filter: brightness(0) invert(1);
+            opacity: 0.8;
+        }
+
+        .input-wrapper {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            transition: 0.3s;
+        }
+        
+        .input-wrapper:focus-within {
+            border-color: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .input-wrapper i {
+            color: rgba(255, 255, 255, 0.4);
+            margin-right: 15px;
+            font-size: 0.9rem;
+        }
+
+        input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            padding: 18px 0;
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+        }
+        
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.2);
+            font-weight: 400;
+        }
+
+        .btn-login {
+            width: 100%;
+            background: linear-gradient(90deg, #0052D4, #4364F7, #6FB1FC);
+            color: #fff;
+            font-weight: 700;
+            font-size: 0.9rem;
+            padding: 18px;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            transition: 0.4s;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(67, 100, 247, 0.4);
+            filter: brightness(1.1);
+        }
+
+        .links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .links a {
+            text-decoration: none;
+            color: inherit;
+            transition: 0.3s;
+        }
+        
+        .links a:hover { color: #fff; }
+
+        @media (max-width: 1024px) {
+            .brand-panel { display: none; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="brand-panel">
+        <img src="11.png" alt="KABEX Logo">
+    </div>
+
+    <div class="auth-panel">
+        <div class="ambient-light" style="top: 20%; left: 30%;"></div>
+        <div class="ambient-light" style="bottom: 10%; right: 20%; background: #4364F7;"></div>
+
+        <div class="glass-card">
+            <div class="icon-circle">
+                <img src="k.png" alt="K">
+            </div>
+
+            <form action="main.html" method="GET">
+                <div class="input-wrapper">
+                    <i class="fas fa-user"></i>
+                    <input type="email" placeholder="E-POSTA" required>
+                </div>
+
+                <div class="input-wrapper">
+                    <i class="fas fa-lock"></i>
+                    <input type="password" placeholder="ŞİFRE" required>
+                </div>
+
+                <div class="links">
+                    <label style="display: flex; align-items: center; cursor: pointer;">
+                        <input type="checkbox" style="width: auto; margin-right: 8px; padding: 0;"> Beni Hatırla
+                    </label>
+                    <a href="#">Şifremi Unuttum?</a>
+                </div>
+
+                <button type="submit" class="btn-login">GİRİŞ YAP</button>
+            </form>
+
+            <div style="margin-top: 40px; font-size: 10px; color: rgba(255,255,255,0.1); letter-spacing: 2px; font-weight: 800;">
+                KABEX ADMINISTRATION SYSTEM
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	
+	<script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Sayfanın hemen yenilenmesini engelle
+
+        // Senin belirlediğin giriş bilgileri
+        const adminEmail = "admin@kabex.company";
+        const adminPass = "Umitkabakci1998";
+
+        // Kullanıcının girdiği bilgiler
+        const emailInput = document.querySelector('input[type="email"]').value;
+        const passInput = document.querySelector('input[type="password"]').value;
+
+        if (emailInput === adminEmail && passInput === adminPass) {
+            // Giriş başarılıysa main klasöründeki main.html'e git
+            window.location.href = "main/main.html";
+        } else {
+            // Hatalı girişte elite bir uyarı (istersen bunu cam karta da yazdırabiliriz)
+            alert("ERİŞİM REDDEDİLDİ: Kimlik bilgileri geçersiz.");
+            
+            // Inputları temizle ve salla (opsiyonel görsel efekt)
+            document.querySelector('.glass-card').classList.add('animate-shake');
+            setTimeout(() => {
+                document.querySelector('.glass-card').classList.remove('animate-shake');
+            }, 500);
+        }
+    });
+</script>
+
+<style>
+    /* Hatalı girişte kartın sallanması için küçük bir efekt */
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        25% { transform: translateX(-10px); }
+        75% { transform: translateX(10px); }
+    }
+    .animate-shake {
+        animation: shake 0.2s ease-in-out 0s 2;
+    }
+</style>
+
+</body>
+</html>

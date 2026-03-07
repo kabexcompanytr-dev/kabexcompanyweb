@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="k.png">
+    <title>KABEX HQ | Management Console</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --k-blue: #007AFF;
+            --glass-card: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+        
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: #000; 
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            color: #fff;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .bg-glow {
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 0% 0%, #0a192f 0%, #000 50%);
+            z-index: -1;
+        }
+
+        aside {
+            width: 280px;
+            background: rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(20px);
+            border-right: 1px solid var(--glass-border);
+            display: flex;
+            flex-direction: column;
+            padding: 40px 20px;
+            z-index: 50;
+        }
+
+        .sidebar-logo img {
+            max-width: 160px;
+            margin-bottom: 60px;
+            padding-left: 10px;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            border-radius: 16px;
+            color: rgba(255,255,255,0.4);
+            transition: 0.4s;
+            margin-bottom: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+        }
+
+        .nav-item:hover, .nav-item.active {
+            background: rgba(255,255,255,0.05);
+            color: #fff;
+        }
+
+        .nav-item i { width: 24px; font-size: 1.1rem; }
+        .nav-item.active i { color: var(--k-blue); }
+
+        main {
+            flex: 1;
+            padding: 40px 60px;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .top-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .stat-card {
+            background: var(--glass-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border);
+            border-radius: 30px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--k-blue);
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .app-box {
+            background: var(--glass-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 35px;
+            padding: 40px;
+            transition: 0.5s;
+            position: relative;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+
+        .app-box:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 122, 255, 0.3);
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* Logoların oturacağı kutu tasarımı (Hiç bozulmadı) */
+        .app-icon {
+            width: 50px; height: 50px;
+            border-radius: 15px;
+            display: flex; align-items: center; justify-content: center;
+            margin-bottom: 25px;
+            overflow: hidden; /* Logonun taşmaması için */
+        }
+
+        .app-icon img {
+            width: 70%; /* Logonun kutu içinde zarif durması için */
+            height: 70%;
+            object-fit: contain;
+        }
+
+        .status-badge {
+            position: absolute;
+            top: 40px; right: 40px;
+            font-size: 10px;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 100px;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+            letter-spacing: 1px;
+        }
+
+        h2 { font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.5px; }
+        .app-desc { color: rgba(255,255,255,0.3); font-size: 0.85rem; margin-bottom: 30px; }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .metric-label { color: rgba(255,255,255,0.5); }
+        .metric-value { font-weight: 700; color: #fff; }
+
+        .progress-bar {
+            width: 100%; height: 6px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+        .progress-fill { height: 100%; border-radius: 10px; }
+
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <div class="bg-glow"></div>
+
+    <aside>
+        <div class="sidebar-logo">
+            <img src="11.png" alt="KABEX">
+        </div>
+
+        <nav>
+            <a href="main.html" class="nav-item active">
+                <i class="fas fa-th-large"></i> <span>Genel Merkez</span>
+            </a>
+            <a href="flortzone_detail.html" class="nav-item">
+                <i class="fas fa-heart"></i> <span>FlörtZone</span>
+            </a>
+            <a href="purefetch_detail.html" class="nav-item">
+                <i class="fas fa-bolt"></i> <span>PureFetch</span>
+            </a>
+            <a href="falcim_detail.html" class="nav-item">
+                <i class="fas fa-crystal-ball"></i> <span>Falcım</span>
+            </a>
+            <div style="margin-top: 40px;" class="px-5 text-[10px] font-bold text-white/20 uppercase tracking-[2px]">Sistem</div>
+            <a href="#" class="nav-item">
+                <i class="fas fa-cog"></i> <span>Ayarlar</span>
+            </a>
+            <a href="../gate.html" class="nav-item">
+                <i class="fas fa-sign-out-alt"></i> <span>Çıkış</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main>
+        <div class="top-stats">
+            <div class="stat-card">
+                <div class="text-white/40 text-[10px] font-bold uppercase tracking-[2px]">Toplam Ciro</div>
+                <div class="text-3xl font-black mt-2 tracking-tighter">$42,180.00</div>
+                <div class="text-blue-500 text-xs font-bold mt-2">▲ %12 Bu Ay</div>
+            </div>
+            <div class="stat-card">
+                <div class="text-white/40 text-[10px] font-bold uppercase tracking-[2px]">Aktif Kullanıcı</div>
+                <div class="text-3xl font-black mt-2 tracking-tighter">128,450</div>
+                <div class="text-emerald-500 text-xs font-bold mt-2">● Canlı Yayın</div>
+            </div>
+            <div class="stat-card">
+                <div class="text-white/40 text-[10px] font-bold uppercase tracking-[2px]">Premium Üye</div>
+                <div class="text-3xl font-black mt-2 tracking-tighter">18,200</div>
+                <div class="text-purple-500 text-xs font-bold mt-2">★ %14.2 Oran</div>
+            </div>
+        </div>
+
+        <h3 class="text-xl font-black mb-8 tracking-tight">Uygulama Hub</h3>
+
+        <div class="app-grid">
+            <a href="flortzone_detail.html" class="app-box">
+                <span class="status-badge">AKTİF</span>
+                <div class="app-icon" style="background: rgba(225, 29, 72, 0.1);">
+                    <img src="flortzone_logo.png" alt="FlörtZone">
+                </div>
+                <h2>FlörtZone</h2>
+                <p class="app-desc">Sosyal etkileşim ve eşleşme istatistikleri.</p>
+                <div class="metric-row">
+                    <span class="metric-label">Kullanıcılar</span>
+                    <span class="metric-value">54.2K</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Premium</span>
+                    <span class="metric-value">6.8K</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 75%; background: #e11d48;"></div>
+                </div>
+            </a>
+
+            <a href="purefetch_detail.html" class="app-box">
+                <span class="status-badge">AKTİF</span>
+                <div class="app-icon" style="background: rgba(14, 165, 233, 0.1);">
+                    <img src="purefetch.png" alt="PureFetch">
+                </div>
+                <h2>PureFetch</h2>
+                <p class="app-desc">Veri çekme araçları ve API kullanım raporu.</p>
+                <div class="metric-row">
+                    <span class="metric-label">Kullanıcılar</span>
+                    <span class="metric-value">22.1K</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Premium</span>
+                    <span class="metric-value">2.4K</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 40%; background: #0ea5e9;"></div>
+                </div>
+            </a>
+
+            <a href="falcim_detail.html" class="app-box">
+                <span class="status-badge">AKTİF</span>
+                <div class="app-icon" style="background: rgba(139, 92, 246, 0.1);">
+                    <img src="falcim.png" alt="Falcım">
+                </div>
+                <h2>Falcım</h2>
+                <p class="app-desc">Günlük fallar ve kredi satın alım grafiği.</p>
+                <div class="metric-row">
+                    <span class="metric-label">Kullanıcılar</span>
+                    <span class="metric-value">68.6K</span>
+                </div>
+                <div class="metric-row">
+                    <span class="metric-label">Premium</span>
+                    <span class="metric-value">9.2K</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 85%; background: #8b5cf6;"></div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+</body>
+</html>

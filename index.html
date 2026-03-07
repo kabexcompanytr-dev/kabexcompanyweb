@@ -95,6 +95,14 @@
         .input-field:focus { border-color: var(--primary); background: #fff; }
         .select-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 15px; }
 
+        /* GİZLİ TETİKLEYİCİ STİLLERİ */
+        .secret-gate {
+            cursor: default !important;
+            user-select: none !important;
+            -webkit-user-select: none !important;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         @media (max-width: 1100px) {
             .hizmet-grid { grid-template-columns: repeat(2, 1fr); }
             .proje-grid { grid-template-columns: repeat(2, 1fr); }
@@ -240,7 +248,7 @@
     </main>
 
     <footer style="padding: 40px 5%; text-align: center; border-top: 1px solid var(--border); font-weight: 600; font-size: 0.8rem; color: var(--text-dim);">
-        KABEX. <span style="opacity: 0.4; margin-left: 10px;">© 2026</span>
+        <span class="secret-gate">KABEX.</span> <span style="opacity: 0.4; margin-left: 10px;">© 2026</span>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -264,6 +272,26 @@
                         else el.innerHTML = dict[lang][key];
                     }
                 });
+            });
+
+            // GİZLİ GİRİŞ: KABEX. yazısına 3 tık
+            let clickCount = 0;
+            let clickTimer;
+            const gateTrigger = document.querySelector('.secret-gate');
+
+            gateTrigger.addEventListener('click', () => {
+                clickCount++;
+                clearTimeout(clickTimer);
+                
+                if (clickCount === 3) {
+                    clickCount = 0;
+                    window.location.href = 'dashboard/gate.html';
+                } else {
+                    // Tıklamalar arası 500ms'den fazla geçerse sayacı sıfırla
+                    clickTimer = setTimeout(() => {
+                        clickCount = 0;
+                    }, 500);
+                }
             });
         });
     </script>
