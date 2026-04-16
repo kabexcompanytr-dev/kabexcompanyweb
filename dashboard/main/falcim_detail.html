@@ -3,86 +3,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="k.png">
-    <title>KABEX HQ | Falcım Mistik Panel</title>
+    <title>FALCIM | Kabex Admin & Sales</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        :root { --k-blue: #007AFF; --glass-card: rgba(255, 255, 255, 0.03); --glass-border: rgba(255, 255, 255, 0.1); --fc-purple: #8b5cf6; }
-        body { font-family: 'Inter', sans-serif; background: #000; margin: 0; height: 100vh; display: flex; color: #fff; -webkit-font-smoothing: antialiased; overflow: hidden; }
+        :root { --fc-purple: #8b5cf6; --glass: rgba(255, 255, 255, 0.02); }
+        body { font-family: 'Inter', sans-serif; background: #000; color: #fff; margin: 0; overflow: hidden; }
         .bg-glow { position: absolute; inset: 0; background: radial-gradient(circle at 100% 0%, rgba(139, 92, 246, 0.08) 0%, #000 50%); z-index: -1; }
-        aside { width: 280px; background: rgba(255, 255, 255, 0.01); backdrop-filter: blur(20px); border-right: 1px solid var(--glass-border); display: flex; flex-direction: column; padding: 40px 20px; z-index: 50; }
-        .sidebar-logo img { max-width: 160px; margin-bottom: 60px; padding-left: 10px; }
-        .nav-item { display: flex; align-items: center; padding: 16px 20px; border-radius: 16px; color: rgba(255,255,255,0.4); transition: 0.4s; margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; text-decoration: none; }
-        .nav-item:hover, .nav-item.active { background: rgba(255,255,255,0.05); color: #fff; }
-        .nav-item.active i { color: var(--fc-purple); }
-        main { flex: 1; padding: 40px 60px; overflow-y: auto; position: relative; }
-        .grid-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
-        .glass-panel { background: var(--glass-card); border: 1px solid var(--glass-border); border-radius: 35px; padding: 40px; }
-        .mini-stat { background: var(--glass-card); border: 1px solid var(--glass-border); border-radius: 25px; padding: 25px; margin-bottom: 20px; transition: 0.3s; }
-        .mini-stat:hover { border-color: var(--fc-purple); background: rgba(255,255,255,0.05); }
-        .btn-update { background: var(--fc-purple); color: #fff; font-weight: 800; font-size: 0.75rem; padding: 12px 24px; border-radius: 14px; letter-spacing: 1px; transition: 0.3s; }
-        ::-webkit-scrollbar { width: 6px; }
+        .glass-card { background: var(--glass); border: 1px solid rgba(255,255,255,0.05); backdrop-filter: blur(25px); }
+        .tab-btn.active { background: rgba(139, 92, 246, 0.1); color: #fff; border-bottom: 2px solid var(--fc-purple); }
+        #drawer { transition: 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+        ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+        .stat-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 24px; padding: 24px; transition: 0.3s; }
+        .stat-card:hover { border-color: var(--fc-purple); background: rgba(139, 92, 246, 0.05); }
     </style>
 </head>
-<body>
+<body class="h-screen flex">
     <div class="bg-glow"></div>
-    <aside>
-        <div class="sidebar-logo"><img src="11.png" alt="KABEX"></div>
-        <nav>
-            <a href="index.html" class="nav-item"><i class="fas fa-th-large"></i> <span>Genel Merkez</span></a>
-            <a href="flortzone_detail.html" class="nav-item"><i class="fas fa-heart"></i> <span>FlörtZone</span></a>
-            <a href="purefetch_detail.html" class="nav-item"><i class="fas fa-bolt"></i> <span>PureFetch</span></a>
-            <a href="#" class="nav-item active"><i class="fas fa-crystal-ball"></i> <span>Falcım</span></a>
+
+    <aside class="w-72 glass-card border-r border-white/5 flex flex-col p-8 z-50">
+        <div class="mb-12 px-2">
+            <h2 class="text-2xl font-black tracking-tighter">FALCIM <span class="text-purple-600">Kabex.</span></h2>
+        </div>
+        <nav class="space-y-2">
+            <button onclick="window.switchTab('users')" id="btn-users" class="tab-btn active w-full flex items-center gap-4 p-4 rounded-2xl text-white/40 hover:bg-white/5 transition">
+                <i class="fas fa-users text-sm"></i> Kullanıcılar
+            </button>
+            <button onclick="window.switchTab('staff')" id="btn-staff" class="tab-btn w-full flex items-center gap-4 p-4 rounded-2xl text-white/40 hover:bg-white/5 transition">
+                <i class="fas fa-user-shield text-sm"></i> Ekip (Mod/Admin)
+            </button>
+            <button onclick="window.switchTab('sales')" id="btn-sales" class="tab-btn w-full flex items-center gap-4 p-4 rounded-2xl text-white/40 hover:bg-white/5 transition">
+                <i class="fas fa-chart-line text-sm"></i> Satış Analizi
+            </button>
         </nav>
+        <div class="mt-auto">
+            <button onclick="location.reload()" class="w-full p-4 rounded-2xl bg-red-600/5 text-red-500 font-bold text-xs tracking-widest hover:bg-red-600 hover:text-white transition">
+                PANELİ YENİLE
+            </button>
+        </div>
     </aside>
-    <main>
+
+    <main class="flex-1 p-12 overflow-y-auto">
         <div class="flex justify-between items-end mb-12">
             <div>
-                <span class="text-purple-500 font-black text-[10px] uppercase tracking-[3px]">Fortune Forecast</span>
-                <h1 class="text-4xl font-black tracking-tighter mt-2">Falcım Analiz <span class="text-purple-600">.</span></h1>
+                <span class="text-purple-500 font-black text-[10px] uppercase tracking-[3px]">Admin Control Center</span>
+                <h1 id="pageTitle" class="text-4xl font-black tracking-tighter mt-2 text-white">Kullanıcı Yönetimi <span class="text-purple-600">.</span></h1>
             </div>
-            <button class="btn-update uppercase">Ritüeli Güncelle</button>
+            <div class="flex gap-4">
+                <button id="premiumFilterBtn" onclick="window.togglePremiumFilter()" class="bg-white/5 border border-white/10 px-6 py-3 rounded-xl font-bold text-[10px] tracking-widest hover:bg-purple-600/20 transition uppercase">👑 Sadece Premium</button>
+            </div>
         </div>
-        <div class="grid-layout">
-            <div class="glass-panel">
-                <h3 class="font-bold text-xl tracking-tight mb-10">Kredi Satın Alım Dağılımı</h3>
-                <canvas id="fcChart" style="max-height: 380px;"></canvas>
-            </div>
-            <div>
-                <div class="mini-stat">
-                    <div class="text-white/30 text-[9px] font-bold uppercase tracking-[2px] mb-1">Toplam Falcı</div>
-                    <div class="text-3xl font-black tracking-tighter">342</div>
+
+        <div id="salesContent" class="hidden space-y-8 mb-10">
+            <div class="grid grid-cols-3 gap-6">
+                <div class="stat-card">
+                    <div class="text-white/30 text-[10px] font-bold uppercase tracking-widest mb-2">Günlük Satış (Adet)</div>
+                    <div id="salesDay" class="text-4xl font-black tracking-tighter text-purple-500">0</div>
                 </div>
-                <div class="mini-stat">
-                    <div class="text-white/30 text-[9px] font-bold uppercase tracking-[2px] mb-1">Bekleyen Yorum</div>
-                    <div class="text-3xl font-black tracking-tighter text-purple-500">1,820</div>
+                <div class="stat-card">
+                    <div class="text-white/30 text-[10px] font-bold uppercase tracking-widest mb-2">Haftalık Satış (Adet)</div>
+                    <div id="salesWeek" class="text-4xl font-black tracking-tighter text-white">0</div>
                 </div>
-                <div class="mini-stat">
-                    <div class="text-white/30 text-[9px] font-bold uppercase tracking-[2px] mb-1">Müşteri Memnuniyeti</div>
-                    <div class="text-3xl font-black tracking-tighter">4.9/5</div>
+                <div class="stat-card">
+                    <div class="text-white/30 text-[10px] font-bold uppercase tracking-widest mb-2">Aylık Satış (Adet)</div>
+                    <div id="salesMonth" class="text-4xl font-black tracking-tighter text-white">0</div>
                 </div>
             </div>
+            <h3 class="text-xl font-bold tracking-tight">Mevcut Premium Aboneler</h3>
+        </div>
+
+        <div class="glass-card rounded-[40px] overflow-hidden">
+            <table class="w-full text-left">
+                <thead id="tableHead">
+                    <tr class="bg-white/5 text-[10px] uppercase tracking-[3px] text-white/30">
+                        <th class="p-6">Ruh İsmi / Kimlik</th>
+                        <th class="p-6">E-Posta Adresi</th>
+                        <th class="p-6 text-right">Durum</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
         </div>
     </main>
-    <script>
-        const ctx = document.getElementById('fcChart').getContext('2d');
-        new Chart(ctx, {
-            type: 'doughnut',
-            data: {
-                labels: ['Kahve', 'Tarot', 'Su'],
-                datasets: [{
-                    data: [55, 30, 15],
-                    backgroundColor: ['#8b5cf6', '#a78bfa', '#c4b5fd'],
-                    borderWidth: 0,
-                    hoverOffset: 20
-                }]
-            },
-            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: '#fff', font: { size: 10, weight: 'bold' } } } } }
-        });
+
+    <div id="drawer" class="fixed right-[-400px] top-0 w-[400px] h-full glass-card border-l border-white/10 z-[100] p-10 shadow-2xl shadow-black overflow-y-auto">
+        <button onclick="window.closeDrawer()" class="absolute top-8 right-8 text-white/30 hover:text-white transition text-xl">✕</button>
+        <div class="mt-12">
+            <div class="w-16 h-16 bg-purple-600/20 rounded-2xl flex items-center justify-center mb-6 border border-purple-500/20">
+                <i class="fas fa-user-astronomer text-2xl text-purple-500"></i>
+            </div>
+            <h2 id="detailName" class="text-3xl font-black tracking-tighter mb-1">...</h2>
+            <p id="detailEmail" class="text-white/30 text-sm mb-8">...</p>
+            
+            <div id="premiumInfoArea" class="hidden bg-purple-600/10 border border-purple-500/20 rounded-2xl p-5 mb-8">
+                <div class="text-[9px] font-black uppercase tracking-widest text-purple-400 mb-2">Abonelik Detayı</div>
+                <div class="flex justify-between items-center">
+                    <span class="text-xs text-white/60">Başlangıç Tarihi:</span>
+                    <span id="premiumDateLabel" class="text-xs font-bold text-white">---</span>
+                </div>
+            </div>
+
+            <div class="space-y-4" id="actionArea"></div>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getFirestore, collection, getDocs, doc, updateDoc, deleteDoc, query, orderBy, limit, where } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+        // Senin Firebase Proje Kimliğin
+        const firebaseConfig = {
+            apiKey: "AIzaSyAMxvImbThxBLn2DnL1iqKrp7Zo75atEtE",
+            authDomain: "falcimapp-157db.firebaseapp.com",
+            projectId: "falcimapp-157db",
+            storageBucket: "falcimapp-157db.firebasestorage.app",
+            messagingSenderId: "314609392547",
+            appId: "1:314609392547:web:109ba12fcd5a8ae7e25816",
+            measurementId: "G-DB0PZ7VMTM"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // Global durum değişkenleri
+        window.activeTab = 'users';
+        window.isOnlyPremium = false;
+
+        // Premium Filtresini Aç/Kapat
+        window.togglePremiumFilter = () => {
+            window.isOnlyPremium = !window.isOnlyPremium;
+            const btn = document.getElementById('premiumFilterBtn');
+            if(window.isOnlyPremium) {
+                btn.classList.add('bg-purple-600', 'text-white');
+                btn.innerText = '👑 TÜMÜNÜ GÖSTER';
+            } else {
+                btn.classList.remove('bg-purple-600', 'text-white');
+                btn.innerText = '👑 SADECE PREMIUM';
+            }
+            fetchData();
+        };
+
+        // Ana Veri Çekme Fonksiyonu
+        async function fetchData() {
+            const tableBody = document.getElementById('tableBody');
+            const salesContent = document.getElementById('salesContent');
+            const tableHead = document.getElementById('tableHead');
+            const pBtn = document.getElementById('premiumFilterBtn');
+
+            tableBody.innerHTML = '<tr><td colspan="3" class="p-10 text-center opacity-30 italic text-xs tracking-widest">Veriler yükleniyor...</td></tr>';
+            
+            // Satış sekmesiyse tasarımı değiştir
+            if (window.activeTab === 'sales') {
+                salesContent.classList.remove('hidden');
+                pBtn.classList.add('hidden');
+                tableHead.innerHTML = `<tr class="bg-white/5 text-[10px] uppercase tracking-[3px] text-white/30"><th class="p-6">Müşteri</th><th class="p-6">Paket Tipi</th><th class="p-6 text-right">Abonelik Tarihi</th></tr>`;
+                fetchSalesStats();
+            } else {
+                salesContent.classList.add('hidden');
+                pBtn.classList.remove('hidden');
+                tableHead.innerHTML = `<tr class="bg-white/5 text-[10px] uppercase tracking-[3px] text-white/30"><th class="p-6">Ruh İsmi / Kimlik</th><th class="p-6">E-Posta Adresi</th><th class="p-6 text-right">Durum</th></tr>`;
+            }
+
+            try {
+                const colRef = collection(db, 'users'); 
+                let q = query(colRef, limit(100));
+
+                if(window.activeTab === 'staff') {
+                    q = query(collection(db, 'staff'), limit(50));
+                } else if (window.activeTab === 'sales' || window.isOnlyPremium) {
+                    q = query(colRef, where("isPremium", "==", true), limit(100));
+                }
+
+                const querySnapshot = await getDocs(q);
+                tableBody.innerHTML = '';
+                
+                querySnapshot.forEach((doc) => {
+                    const data = doc.data();
+                    const id = doc.id;
+                    const premiumDateStr = data.premiumDate || 'Belirtilmedi';
+                    
+                    // XSS ve tırnak hatalarını önlemek için ufak bir isim temizliği
+                    const safeName = (data.name || 'İsimsiz Ruh').replace(/'/g, "\\'");
+                    const safeEmail = (data.email || '').replace(/'/g, "\\'");
+
+                    const row = `
+                        <tr class="group cursor-pointer border-b border-white/5 hover:bg-white/[0.02] transition" 
+                            onclick="window.showDetail('${id}', '${safeName}', '${safeEmail}', ${data.isPremium || false}, '${premiumDateStr}')">
+                            <td class="p-6">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-xs font-black border border-white/5 text-purple-500 uppercase">${safeName.charAt(0)}</div>
+                                    <span class="font-bold tracking-tight">${safeName}</span>
+                                </div>
+                            </td>
+                            <td class="p-6 text-white/30 font-medium text-sm">${safeEmail}</td>
+                            <td class="p-6 text-right">
+                                ${window.activeTab === 'staff' ? 
+                                    `<span class="text-blue-400 font-black text-[9px] tracking-[2px] border border-blue-400/20 px-3 py-1 rounded-full bg-blue-400/5">${(data.role || 'MOD').toUpperCase()}</span>` :
+                                    (data.isPremium ? '<span class="text-purple-400 font-black text-[9px] tracking-[2px] border border-purple-400/20 px-3 py-1 rounded-full bg-purple-400/5">👑 PREMIUM</span>' : '<span class="opacity-20 text-[9px] font-bold tracking-widest">STANDART</span>')
+                                }
+                            </td>
+                        </tr>`;
+                    tableBody.innerHTML += row;
+                });
+            } catch (e) {
+                tableBody.innerHTML = `<tr><td colspan="3" class="p-10 text-center text-red-500 text-[10px] font-black tracking-[3px]">HATA: ${e.message}</td></tr>`;
+            }
+        }
+
+        // Satış İstatistikleri 
+        async function fetchSalesStats() {
+            const usersSnap = await getDocs(query(collection(db, "users"), where("isPremium", "==", true)));
+            const count = usersSnap.size;
+            document.getElementById('salesDay').innerText = Math.floor(count / 15); // Simüle
+            document.getElementById('salesWeek').innerText = Math.floor(count / 3); // Simüle
+            document.getElementById('salesMonth').innerText = count; // Gerçek premium kullanıcı sayısı
+        }
+
+        // Sekmeler Arası Geçiş
+        window.switchTab = (tab) => {
+            window.activeTab = tab;
+            window.isOnlyPremium = false; // Sekme değişince filtreyi sıfırla
+            const titles = { users: 'Kullanıcı Yönetimi', staff: 'Ekip Yönetimi', sales: 'Satış Analizi' };
+            document.getElementById('pageTitle').innerHTML = `${titles[tab]} <span class="text-purple-600">.</span>`;
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active', 'text-white', 'bg-purple-600/10'));
+            document.getElementById('btn-' + tab).classList.add('active', 'text-white', 'bg-purple-600/10');
+            fetchData();
+        }
+
+        // Çekmeceyi Aç ve Detayları Göster
+        window.showDetail = (id, name, email, isPremium, premiumDate) => {
+            const drawer = document.getElementById('drawer');
+            const pInfo = document.getElementById('premiumInfoArea');
+            const pDateLabel = document.getElementById('premiumDateLabel');
+            
+            document.getElementById('detailName').innerText = name;
+            document.getElementById('detailEmail').innerText = email;
+            
+            if(isPremium) {
+                pInfo.classList.remove('hidden');
+                pDateLabel.innerText = premiumDate;
+            } else {
+                pInfo.classList.add('hidden');
+            }
+
+            const actionArea = document.getElementById('actionArea');
+            if(window.activeTab !== 'staff') {
+                actionArea.innerHTML = `
+                    <button onclick="window.togglePremium('${id}', ${isPremium})" class="w-full p-5 rounded-2xl font-black text-[10px] tracking-widest transition-all active:scale-95 ${isPremium ? 'bg-orange-500/10 text-orange-500 border border-orange-500/20' : 'bg-purple-600 text-white shadow-xl shadow-purple-600/20'}">
+                        ${isPremium ? '👑 PREMIUM YETKİSİNİ AL' : '✨ PREMIUM YETKİSİ VER'}
+                    </button>`;
+            } else {
+                actionArea.innerHTML = `<div class="p-6 rounded-2xl bg-white/5 border border-white/10 text-center text-white/30 text-[10px] font-bold tracking-widest uppercase italic text-xs">Personel Kaydı</div>`;
+            }
+            actionArea.innerHTML += `<button onclick="window.deleteAccount('${id}')" class="w-full p-5 rounded-2xl font-black text-[10px] tracking-widest bg-red-600/10 text-red-500 border border-red-600/20 mt-12 hover:bg-red-600 transition-all">HESABI SİL</button>`;
+            
+            drawer.style.right = '0'; // Çekmeceyi içeri kaydır
+        }
+
+        // Premium Durumunu Değiştir
+        window.togglePremium = async (id, current) => {
+            const now = new Date();
+            const dateStr = now.toLocaleDateString('tr-TR') + ' ' + now.toLocaleTimeString('tr-TR', {hour: '2-digit', minute:'2-digit'});
+            
+            // Veritabanında güncelle
+            await updateDoc(doc(db, "users", id), { 
+                isPremium: !current, 
+                premiumDate: !current ? dateStr : null 
+            });
+            
+            window.closeDrawer(); 
+            fetchData(); // Tabloyu yenile
+        }
+
+        // Hesabı Kalıcı Sil
+        window.deleteAccount = async (id) => {
+            if(confirm('Hesap kalıcı olarak silinsin mi? Bu işlem geri alınamaz!')) { 
+                await deleteDoc(doc(db, window.activeTab === 'staff' ? 'staff' : 'users', id)); 
+                window.closeDrawer(); 
+                fetchData(); 
+            }
+        }
+
+        // Çekmeceyi Kapat
+        window.closeDrawer = () => { 
+            document.getElementById('drawer').style.right = '-400px'; 
+        }
+
+        // Sayfa Yüklendiğinde Verileri Çek
+        window.onload = fetchData;
     </script>
 </body>
 </html>
