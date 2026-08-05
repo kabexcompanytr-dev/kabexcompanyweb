@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;">
+    
+    <link rel="icon" type="image/png" href="k.png">
+    <link rel="apple-touch-icon" href="k.png">
+
+    <title>FlörtZone - Kullanım Koşulları</title>
+    
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #ff0080 0%, #7928ca 100%);
+            --bg-dark: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+        }
+
+        body.dark-mode { 
+            background-color: var(--bg-dark); 
+            color: #cbd5e0; 
+            margin: 0; 
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .legal-wrapper { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            box-sizing: border-box;
+        }
+
+        /* Başlık Alanı */
+        .legal-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .legal-header a {
+            text-decoration: none;
+            display: inline-block;
+        }
+        .legal-header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            margin-bottom: 15px;
+            border: 2px solid #ff0080;
+            box-shadow: 0 5px 15px rgba(255, 0, 128, 0.2);
+            transition: transform 0.3s ease;
+        }
+        .legal-header img:hover {
+            transform: scale(1.05);
+        }
+        .legal-header h1 {
+            font-size: 2rem;
+            margin: 0;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        .update-date {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* İçerik Kartı */
+        .content-box { 
+            background: var(--card-bg); 
+            padding: 40px; 
+            border-radius: 24px; 
+            border: 1px solid rgba(255,255,255,0.08);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-top: 35px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid #ff0080; 
+            padding-left: 15px;
+        }
+
+        p, li {
+            font-size: 1rem;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 25px;
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+        }
+        
+        li::before {
+            content: "•";
+            color: #ff0080;
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        /* Tıklanabilir Mail Linki */
+        .contact-mail {
+            color: #ff0080;
+            text-decoration: none;
+            font-weight: 700;
+            transition: opacity 0.2s;
+        }
+        .contact-mail:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Mobil Görünüm */
+        @media (max-width: 600px) {
+            .legal-wrapper { padding: 20px 15px; }
+            .content-box { padding: 25px; border-radius: 18px; }
+            .legal-header h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.1rem; }
+            p, li { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <div class="legal-wrapper">
+        <header class="legal-header">
+            <a href="/flortzone/">
+                <img src="flortzone_logo.png" alt="FlörtZone Logo">
+            </a>
+            <h1>Kullanım Koşulları</h1>
+            <span class="update-date"><strong>Son Güncelleme:</strong> 29 Ocak 2026</span>
+        </header>
+
+        <div class="content-box">
+            <h2>1. Taraflar ve Kabul</h2>
+            <p>İşbu Kullanım Koşulları, FlörtZone platformuna erişim sağlayan veya kullanan her birey (Kullanıcı) ile FlörtZone yönetimi arasında hukuki olarak bağlayıcı bir sözleşmedir. Uygulamaya kayıt olmanız, bu şartların tamamını okuduğunuzu ve onayladığınızı beyan eder.</p>
+
+            <h2>2. Üyelik ve Uygunluk</h2>
+            <ul>
+                <li>FlörtZone kullanıcısı olabilmek için <strong>en az 18 yaşında</strong> olmanız gerekmektedir.</li>
+                <li>Kaydolurken sağladığınız tüm bilgilerin (isim, doğum tarihi, şehir vb.) doğru ve size ait olması zorunludur.</li>
+                <li>Daha önce herhangi bir ağır suçtan veya cinsel suçtan hüküm giymiş kişilerin platformu kullanması kesinlikle yasaktır.</li>
+            </ul>
+
+            <h2>3. Kullanıcı Davranış İlkeleri</h2>
+            <p>Platform huzurunu ve güvenliğini sağlamak adına aşağıdaki eylemler hesabın kalıcı olarak kapatılmasına neden olur:</p>
+            <ul>
+                <li>Diğer kullanıcıları taciz etmek, tehdit etmek, aşağılamak veya zorbalık yapmak.</li>
+                <li>Sahte profil oluşturmak veya başkasının fotoğraflarını izinsiz kullanmak.</li>
+                <li>Ticari reklam, spam, zincirleme mesaj veya yasa dışı bağlantılar paylaşmak.</li>
+                <li>Cinsel içerikli, müstehcen veya nefret söylemi içeren materyal yüklemek.</li>
+            </ul>
+
+            <h2>4. Coin ve Dijital Ürünler</h2>
+            <p>Uygulama içerisinde satın alınan veya hediye edilen "Coin" ve "Premium" özellikleri sanal varlıklardır. Bu varlıkların gerçek paraya dönüştürülmesi veya iadesi mümkün değildir. FlörtZone, dijital ürünlerin fiyat ve içeriklerinde değişiklik yapma hakkını saklı tutar.</p>
+
+            <h2>5. İçerik Denetimi ve Güvenlik</h2>
+            <p>FlörtZone, kullanıcı güvenliğini sağlamak amacıyla profil bilgilerini ve görsellerini yapay zeka ve manuel yöntemlerle denetleyebilir. Topluluk kurallarını ihlal eden içerikler haber verilmeksizin silinebilir.</p>
+
+            <h2>6. Sorumluluk Sınırlandırması</h2>
+            <p>FlörtZone, kullanıcılar arasındaki eşleşmeleri sağlayan aracı bir platformdur. Kullanıcıların birbirleriyle olan özel iletişimlerinden, paylaştıkları kişisel bilgilerden veya gerçek hayattaki buluşmalarından doğabilecek maddi/manevi zararlardan FlörtZone ve bağlı olduğu şirketler sorumlu tutulamaz.</p>
+
+            <h2>7. İletişim</h2>
+            <p>Bu koşullar hakkında görüş bildirmek veya destek almak için <a href="mailto:kabexcompanytr@gmail.com" class="contact-mail">kabexcompanytr@gmail.com</a> adresine e-posta gönderebilirsiniz.</p>
+        </div>
+    </div>
+</body>
+</html>

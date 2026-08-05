@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;">
+    
+    <link rel="icon" type="image/png" href="../k.png">
+    <link rel="apple-touch-icon" href="../k.png">
+
+    <title>Falcım - Gizlilik Politikası</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #8b5cf6 0%, #4c1d95 100%);
+            --bg-dark: #0f172a;
+            --card-bg: rgba(30, 41, 59, 0.7);
+            --accent-purple: #a78bfa;
+        }
+
+        body.dark-mode { 
+            background-color: var(--bg-dark); 
+            color: #cbd5e0; 
+            margin: 0; 
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .legal-wrapper { 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            box-sizing: border-box;
+        }
+
+        /* Başlık ve Logo Alanı */
+        .legal-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .legal-header a {
+            text-decoration: none;
+            display: inline-block;
+        }
+        .legal-header img {
+            width: 60px;
+            height: 60px;
+            border-radius: 14px;
+            margin-bottom: 15px;
+            border: 2px solid var(--accent-purple);
+            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+            transition: transform 0.3s ease;
+        }
+        .legal-header img:hover {
+            transform: scale(1.05);
+        }
+        .legal-header h1 {
+            font-size: 2rem;
+            margin: 0;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        .update-date {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        /* İçerik Kutusu */
+        .content-box { 
+            background: var(--card-bg); 
+            padding: 40px; 
+            border-radius: 24px; 
+            border: 1px solid rgba(139, 92, 246, 0.15);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            border-left: 4px solid var(--accent-purple);
+            padding-left: 15px;
+        }
+
+        p, li {
+            font-size: 1rem;
+            color: #94a3b8;
+            margin-bottom: 15px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-bottom: 25px;
+            list-style-type: none;
+        }
+
+        li {
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        li::before {
+            content: "✦";
+            color: var(--accent-purple);
+            font-weight: bold;
+            display: inline-block; 
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .contact-link {
+            color: var(--accent-purple);
+            text-decoration: none;
+            font-weight: 700;
+            transition: opacity 0.2s;
+        }
+        .contact-link:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* Mobil Düzenlemeler */
+        @media (max-width: 600px) {
+            .legal-wrapper { padding: 20px 15px; }
+            .content-box { padding: 25px; border-radius: 18px; }
+            .legal-header h1 { font-size: 1.5rem; }
+            h2 { font-size: 1.1rem; }
+            p, li { font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body class="dark-mode">
+    <div class="legal-wrapper">
+        <header class="legal-header">
+            <a href="../index.html">
+                <img src="../falcim.png" alt="Falcım Logo">
+            </a>
+            <h1>Gizlilik Politikası</h1>
+            <span class="update-date"><strong>Son Güncelleme:</strong> 3 Mart 2026</span>
+        </header>
+
+        <div class="content-box">
+            <p><strong>Falcım</strong> ("biz", "bize" veya "bizim") olarak, gizliliğinize önem veriyoruz. Bu Gizlilik Politikası, uygulamamızı kullandığınızda bilgilerinizin nasıl toplandığını, kullanıldığını ve korunduğunu açıklar.</p>
+
+            <h2>1. Toplanan Veriler</h2>
+            <p>Uygulamayı kullandığınızda aşağıdaki verileri işleyebiliriz:</p>
+            <ul>
+                <li><strong>Kullanıcı Bilgileri:</strong> Ad, doğum tarihi, cinsiyet ve burç bilgileri (Fallerin kişiselleştirilmesi için).</li>
+                <li><strong>Görsel Veriler:</strong> Kahve falı veya el falı analizi için kendi rızanızla yüklediğiniz fotoğraflar.</li>
+                <li><strong>Cihaz Bilgileri:</strong> Cihaz modeli, işletim sistemi sürümü ve uygulama içi hataları takip etmek için anonim kullanım istatistikleri.</li>
+                <li><strong>Ödeme Verileri:</strong> Uygulama içi satın alımlarınızda finansal bilgileriniz doğrudan Google/Apple tarafından işlenir; biz kart bilgilerinize erişemeyiz.</li>
+            </ul>
+
+            <h2>2. Verilerin Kullanım Amacı</h2>
+            <p>Topladığımız verileri şu amaçlarla kullanırız:</p>
+            <ul>
+                <li>Mistik analizler (Tarot, Fal, Astroloji) ve yorumlar oluşturmak.</li>
+                <li>Kullanıcı deneyimini iyileştirmek ve uygulama hatalarını gidermek.</li>
+                <li>Güvenli bir ödeme ve abonelik süreci sağlamak.</li>
+                <li>Gerekli durumlarda bildirimler aracılığıyla size güncellemeler göndermek.</li>
+            </ul>
+
+            <h2>3. Kamera ve Galeri Erişimi</h2>
+            <p>Kahve ve el falı özelliklerinin çalışabilmesi için cihazınızın kamerasına veya galerisine erişim izni istenir. Yüklenen görseller sadece analiz amacıyla kullanılır ve üçüncü şahıslarla asla paylaşılmaz.</p>
+
+            <h2>4. Veri Saklama ve Güvenlik</h2>
+            <p>Verileriniz, endüstri standardı güvenlik protokolleri ile korunmaktadır. Kişisel verileriniz, hesabınızı sildiğinizde veya hizmetin sunulması için gerekli süre dolduğunda sistemlerimizden temizlenir.</p>
+
+            <h2>5. Üçüncü Taraf Hizmetler</h2>
+            <p>Uygulamada analiz ve reklam hizmetleri sağlamak adına (örneğin Google AdMob veya Firebase) üçüncü taraf SDK'lar kullanılabilir. Bu platformlar kendi gizlilik politikalarına sahiptir.</p>
+
+            <h2>6. Çocukların Gizliliği</h2>
+            <p>Falcım, <strong>18 yaşın altındaki</strong> bireylere yönelik değildir. Bilerek veya isteyerek çocuklardan veri toplamıyoruz. Eğer bir çocuğun bize veri sunduğunu fark ederseniz, lütfen bizimle iletişime geçin; bu verileri derhal sileriz.</p>
+
+            <h2>7. Kullanıcı Hakları (KVKK ve GDPR)</h2>
+            <p>Dilediğiniz zaman hangi verilerinizin saklandığını öğrenebilir, hatalı verilerin düzeltilmesini isteyebilir veya verilerinizin silinmesini talep edebilirsiniz.</p>
+
+            <h2>8. İletişim</h2>
+            <p>Gizlilikle ilgili her türlü sorunuz için bizimle iletişime geçebilirsiniz:</p>
+            <ul>
+                <li><strong>Web:</strong> <a href="https://www.kabex.company" target="_blank" class="contact-link">www.kabex.company</a></li>
+                <li><strong>E-posta:</strong> <a href="mailto:kabexcompanytr@gmail.com" class="contact-link">kabexcompanytr@gmail.com</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
