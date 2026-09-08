@@ -162,7 +162,7 @@
         .hizmet-card h3 { font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; color: #fff; }
         .hizmet-card p { font-size: 0.9rem; color: var(--text-dim); }
 
-        .proje-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 900px; margin: 0 auto; }
+        .proje-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
         .proje-card { 
             height: 380px; border-radius: var(--radius-hud); overflow: hidden; 
             background: var(--glass-panel); transition: var(--transition); border: 1px solid var(--glass-border);
@@ -260,7 +260,7 @@
 
         @media (max-width: 900px) {
             .hizmet-grid { grid-template-columns: repeat(2, 1fr); }
-            .proje-grid { grid-template-columns: 1fr; }
+            .proje-grid { grid-template-columns: repeat(2, 1fr); }
             .contact-box { grid-template-columns: 1fr; padding: 35px 25px; }
             .hero-flex { flex-direction: column; text-align: center; gap: 30px; }
             .hero-content p { margin-left: auto; margin-right: auto; }
@@ -271,7 +271,7 @@
         @media (max-width: 600px) {
             header { padding: 15px 5%; }
             .nav-menu { display: none; }
-            .hizmet-grid { grid-template-columns: 1fr; }
+            .hizmet-grid, .proje-grid { grid-template-columns: 1fr; }
             .proje-card { height: 320px; }
             .proje-card .proje-logo { transform: translateY(-20px) !important; }
             .proje-card .proje-action { position: relative; bottom: 0 !important; opacity: 1 !important; margin-top: 15px; }
@@ -349,7 +349,7 @@
                     <div class="proje-logo"><img src="flortzone_logo.png" alt="FlörtZone"></div>
                     <div class="proje-action">
                         <h3>FlörtZone</h3>
-                        <a href="flortzone/index.html" target="_blank" class="btn-mini" data-key="btn-view">İncele</a>
+                        <a href="flortzone/index.html" class="btn-mini" data-key="btn-view">İncele</a>
                     </div>
                 </div>
 
@@ -357,7 +357,15 @@
                     <div class="proje-logo"><img src="falcim.png" alt="Falcım"></div>
                     <div class="proje-action">
                         <h3>Falcım</h3>
-                        <a href="falcim/index.html" target="_blank" class="btn-mini" data-key="btn-view">İncele</a>
+                        <a href="falcim/index.html" class="btn-mini" data-key="btn-view">İncele</a>
+                    </div>
+                </div>
+
+                <div class="proje-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="proje-logo"><img src="gokturk.png" alt="Göktürk Mahjong"></div>
+                    <div class="proje-action">
+                        <h3>Göktürk Mahjong</h3>
+                        <a href="gokturk/index.html" class="btn-mini" data-key="btn-view">İncele</a>
                     </div>
                 </div>
             </div>
@@ -396,7 +404,7 @@
                     </div>
 
                     <div class="social-row">
-                        <a href="https://instagram.com/kabexcompany" target="_blank" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://instagram.com/kabexcompany" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     </div>
@@ -447,76 +455,75 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-    AOS.init({ duration: 1000, once: true });
-    
-    const langBtn = document.getElementById('lang-toggle');
-    let lang = 'tr';
-    const dict = {
-        tr: { h_t: 'PRESTİJLİ MÜHENDİSLİK', h_h: 'Dijital Geleceğinizi <br> Birlikte Tasarlayalım.', h_p: 'Üst düzey yazılım mimarisi ve butik yaklaşımımızla fikirlerinizi zarif bir gerçekliğe dönüştürüyoruz.', b1: 'Bir Proje Başlat', s_t: 'Hizmet Alanlarımız', s1: 'Web Geliştirme', s1d: 'Kurumsal web siteleri ve özel yazılım sistemleri.', s2: 'Mobil Uygulama', s2d: 'iOS & Android için hibrit çözümler.', s3: 'UI / UX Tasarım', s3d: 'Kullanıcı dostu modern ve elit arayüzler.', s4: 'Danışmanlık', s4d: 'Teknik mentörlük ve mimari optimizasyon.', w_t: 'Projelerimiz', c1: 'Hadi <br> Başlayalım.', btn_view: 'İncele', p1: 'İsim Soyisim', p2: 'E-posta', p3: 'Mesajınız...', btn: 'Mesajı Gönder', 'sel-b': 'Tahmini Bütçe', 'sel-t': 'Zaman Aralığı', m_title: 'Mesajınız İletildi!', m_desc: 'Talebiniz ekibimize başarıyla ulaştı. En kısa sürede geri dönüş yapabilmemiz için lütfen e-posta kutunuzu kontrol ediniz.', m_btn: 'Tamam' },
-        en: { h_t: 'PRESTIGIOUS ENGINEERING', h_h: 'Designing Your <br> Digital Future.', h_p: 'With our high-level software architecture and boutique approach, we turn your ideas into elegant reality.', b1: 'Start a Project', s_t: 'Our Expertise', s1: 'Web Development', s1d: 'Corporate websites and custom software systems.', s2: 'Mobile Application', s2d: 'Hybrid solutions for iOS & Android.', s3: 'UI / UX Design', s3d: 'User-friendly modern elite interfaces.', s4: 'Consultancy', s4d: 'Technical mentorship and architectural optimization.', w_t: 'Our Projects', c1: 'Let\'s <br> Get Started.', btn_view: 'View', p1: 'Full Name', p2: 'Email Address', p3: 'Your Message...', btn: 'Send Message', 'sel-b': 'Estimated Budget', 'sel-t': 'Timeframe', m_title: 'Message Transmitted!', m_desc: 'Your inquiry has successfully reached our team. Please check your email inbox for our prompt response.', m_btn: 'Got it' }
-    };
-    
-    langBtn.addEventListener('click', () => {
-        lang = lang === 'tr' ? 'en' : 'tr';
-        langBtn.textContent = lang.toUpperCase();
-        document.querySelectorAll('[data-key]').forEach(el => {
-            const key = el.getAttribute('data-key');
-            if(dict[lang][key]) {
-                if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = dict[lang][key];
-                else if(el.tagName === 'OPTION') el.text = dict[lang][key];
-                else el.innerHTML = dict[lang][key];
-            }
+            AOS.init({ duration: 1000, once: true });
+            
+            const langBtn = document.getElementById('lang-toggle');
+            let lang = 'tr';
+            const dict = {
+                tr: { h_t: 'PRESTİJLİ MÜHENDİSLİK', h_h: 'Dijital Geleceğinizi <br> Birlikte Tasarlayalım.', h_p: 'Üst düzey yazılım mimarisi ve butik yaklaşımımızla fikirlerinizi zarif bir gerçekliğe dönüştürüyoruz.', b1: 'Bir Proje Başlat', s_t: 'Hizmet Alanlarımız', s1: 'Web Geliştirme', s1d: 'Kurumsal web siteleri ve özel yazılım sistemleri.', s2: 'Mobil Uygulama', s2d: 'iOS & Android için hibrit çözümler.', s3: 'UI / UX Tasarım', s3d: 'Kullanıcı dostu modern ve elit arayüzler.', s4: 'Danışmanlık', s4d: 'Teknik mentörlük ve mimari optimizasyon.', w_t: 'Projelerimiz', c1: 'Hadi <br> Başlayalım.', btn_view: 'İncele', p1: 'İsim Soyisim', p2: 'E-posta', p3: 'Mesajınız...', btn: 'Mesajı Gönder', 'sel-b': 'Tahmini Bütçe', 'sel-t': 'Zaman Aralığı', m_title: 'Mesajınız İletildi!', m_desc: 'Talebiniz ekibimize başarıyla ulaştı. En kısa sürede geri dönüş yapabilmemiz için lütfen e-posta kutunuzu kontrol ediniz.', m_btn: 'Tamam' },
+                en: { h_t: 'PRESTIGIOUS ENGINEERING', h_h: 'Designing Your <br> Digital Future.', h_p: 'With our high-level software architecture and boutique approach, we turn your ideas into elegant reality.', b1: 'Start a Project', s_t: 'Our Expertise', s1: 'Web Development', s1d: 'Corporate websites and custom software systems.', s2: 'Mobile Application', s2d: 'Hybrid solutions for iOS & Android.', s3: 'UI / UX Design', s3d: 'User-friendly modern elite interfaces.', s4: 'Consultancy', s4d: 'Technical mentorship and architectural optimization.', w_t: 'Our Projects', c1: 'Let\'s <br> Get Started.', btn_view: 'View', p1: 'Full Name', p2: 'Email Address', p3: 'Your Message...', btn: 'Send Message', 'sel-b': 'Estimated Budget', 'sel-t': 'Timeframe', m_title: 'Message Transmitted!', m_desc: 'Your inquiry has successfully reached our team. Please check your email inbox for our prompt response.', m_btn: 'Got it' }
+            };
+            
+            langBtn.addEventListener('click', () => {
+                lang = lang === 'tr' ? 'en' : 'tr';
+                langBtn.textContent = lang.toUpperCase();
+                document.querySelectorAll('[data-key]').forEach(el => {
+                    const key = el.getAttribute('data-key');
+                    if(dict[lang][key]) {
+                        if(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') el.placeholder = dict[lang][key];
+                        else if(el.tagName === 'OPTION') el.text = dict[lang][key];
+                        else el.innerHTML = dict[lang][key];
+                    }
+                });
+            });
+
+            // GARANTİ AJAX GÖNDERİMİ (FormSubmit AJAX Endpoint)
+            const form = document.getElementById('contactForm');
+            const modal = document.getElementById('successModal');
+            const submitBtn = document.getElementById('submitBtn');
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                submitBtn.style.opacity = '0.5';
+                submitBtn.disabled = true;
+
+                const formData = new FormData(form);
+                const object = {};
+                formData.forEach((value, key) => object[key] = value);
+                const json = JSON.stringify(object);
+
+                fetch('https://formsubmit.co/ajax/kabexcompanytr@gmail.com', {
+                    method: 'POST',
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: json
+                })
+                .then(response => response.json())
+                .then(data => {
+                    submitBtn.style.opacity = '1';
+                    submitBtn.disabled = false;
+                    if(data.success === "true" || response.ok) {
+                        modal.classList.add('active');
+                        form.reset();
+                    } else {
+                        alert("Mesaj iletilemedi, lütfen doğrudan e-posta gönderiniz.");
+                    }
+                })
+                .catch(error => {
+                    submitBtn.style.opacity = '1';
+                    submitBtn.disabled = false;
+                    modal.classList.add('active');
+                    form.reset();
+                });
+            });
         });
-    });
 
-    // GARANTİ AJAX GÖNDERİMİ (FormSubmit AJAX Endpoint)
-    const form = document.getElementById('contactForm');
-    const modal = document.getElementById('successModal');
-    const submitBtn = document.getElementById('submitBtn');
-
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        submitBtn.style.opacity = '0.5';
-        submitBtn.disabled = true;
-
-        const formData = new FormData(form);
-        const object = {};
-        formData.forEach((value, key) => object[key] = value);
-        const json = JSON.stringify(object);
-
-        fetch('https://formsubmit.co/ajax/kabexcompanytr@gmail.com', {
-            method: 'POST',
-            headers: { 
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: json
-        })
-        .then(response => response.json())
-        .then(data => {
-            submitBtn.style.opacity = '1';
-            submitBtn.disabled = false;
-            if(data.success === "true" || response.ok) {
-                modal.classList.add('active');
-                form.reset();
-            } else {
-                alert("Mesaj iletilemedi, lütfen doğrudan e-posta gönderiniz.");
-            }
-        })
-        .catch(error => {
-            submitBtn.style.opacity = '1';
-            submitBtn.disabled = false;
-            // Hata olsa dahi kullanıcıyı mağdur etmemek için bildirimi açıyoruz
-            modal.classList.add('active');
-            form.reset();
-        });
-    });
-});
-
-function closeModal() {
-    document.getElementById('successModal').classList.remove('active');
-}
+        function closeModal() {
+            document.getElementById('successModal').classList.remove('active');
+        }
     </script>
 </body>
 </html>

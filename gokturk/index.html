@@ -8,8 +8,9 @@
     <link rel="icon" type="image/png" href="../k.png">
     <link rel="apple-touch-icon" href="../k.png">
 
-    <title>Falcım - Mistik Bir Deneyim</title>
+    <title>Göktürk Mahjong - Oyunu Bilgileri</title>
     
+    <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     
@@ -41,8 +42,9 @@
             height: 60px; 
             border-radius: 14px; 
             margin-right: 15px; 
-            box-shadow: 0 8px 20px rgba(124, 58, 237, 0.3); /* Mistik mor gölge */
-            border: 2px solid rgba(139, 92, 246, 0.3); 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
+            border: 2px solid rgba(255,255,255,0.1); 
+            object-fit: cover;
         }
         .fz-navbar h1 { 
             font-size: 1.8rem; 
@@ -56,11 +58,11 @@
             background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.8)); 
             border-radius: 20px; 
             padding: 30px; 
-            border: 1px solid rgba(139, 92, 246, 0.15); 
+            border: 1px solid rgba(255,255,255,0.08); 
             box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
         }
         .fz-info-card h2 { 
-            color: #a78bfa; /* Mistik Lavanta rengi */
+            color: #38bdf8; 
             margin-top: 0; 
             font-size: 1.5rem; 
             font-weight: 700; 
@@ -80,12 +82,12 @@
             flex-wrap: wrap; 
         }
         .tech-tag { 
-            background: rgba(139, 92, 246, 0.1); 
+            background: rgba(56, 189, 248, 0.1); 
             padding: 6px 14px; 
-            border-radius: 100px; 
+            border-radius: 10px; 
             font-size: 0.8rem; 
-            color: #a78bfa; 
-            border: 1px solid rgba(139, 92, 246, 0.2); 
+            color: #38bdf8; 
+            border: 1px solid rgba(56, 189, 248, 0.2); 
             font-weight: 600; 
         }
         
@@ -97,13 +99,13 @@
         .fz-features li { 
             display: flex; 
             align-items: flex-start; 
-            margin-bottom: 15px; 
+            margin-bottom: 12px; 
             color: #e2e8f0; 
             font-size: 0.95rem; 
-            line-height: 1.5;
+            line-height: 1.4;
         }
         .fz-features li i { 
-            color: #8b5cf6; 
+            color: #10b981; 
             margin-right: 12px; 
             font-size: 1.1rem; 
             margin-top: 3px;
@@ -113,7 +115,7 @@
             display: flex;
             gap: 15px;
             flex-wrap: wrap;
-            margin-top: 30px;
+            margin-top: 20px;
         }
 
         .download-btn { 
@@ -125,7 +127,7 @@
             border-radius: 12px; 
             text-decoration: none; 
             transition: all 0.3s ease; 
-            border: 1px solid #4c1d95; 
+            border: 1px solid #334155; 
             min-width: 170px;
         }
         .download-btn:active { transform: scale(0.95); }
@@ -141,9 +143,9 @@
             border-style: dashed;
             background-color: rgba(0,0,0,0.4);
         }
-        .badge-soon {
+        .btn-soon .badge-soon {
             font-size: 8px;
-            background: #8b5cf6;
+            background: #f43f5e;
             color: #fff;
             padding: 2px 6px;
             border-radius: 4px;
@@ -169,12 +171,11 @@
             transition: all 0.3s ease; 
             border: 1px solid transparent; 
         }
-        .legal-box:hover { background: rgba(139, 92, 246, 0.05); border-color: rgba(139, 92, 246, 0.2); }
         .legal-box i { 
             font-size: 1.2rem; 
-            color: #a78bfa; 
+            color: #38bdf8; 
             margin-right: 12px; 
-            background: rgba(139, 92, 246, 0.1); 
+            background: rgba(56, 189, 248, 0.1); 
             width: 38px; 
             height: 38px; 
             display: flex; 
@@ -204,35 +205,33 @@
 <body class="dark-mode">
     <div class="fz-page-wrapper">
         <nav class="fz-navbar">
-            <img src="falcim.png" alt="Falcım Logo">
-            <h1>Falcım</h1>
+            <img src="gokturk.png" alt="Göktürk Mahjong Logo">
+            <h1>Göktürk Mahjong</h1>
         </nav>
 
         <main class="fz-info-card">
-            <h2>Mistik Bir Deneyim</h2>
-            <p>Kabex çatısı altında geliştirilen Falcım, kullanıcılarına sadece bir fal uygulaması değil, dijital bir manevi danışmanlık deneyimi sunuyor. Şık tasarımı ve karanlık temalı büyüleyici arayüzü ile kaderinizin kapılarını aralayın.</p>
+            <h2>Tarihin Derinliklerinden Gelen Kadim Bulmaca Deneyimi!</h2>
+            <p>Klasik Mahjong eşleştirme heyecanını Orhun Alfabesi'nin kadim simgeleriyle keşfedin. Zekanızı test edin, Türk tarihinin izlerini taşlara kazıyın!</p>
             
             <div class="tech-tags">
-                <span class="tech-tag">Mistik UI</span>
-                <span class="tech-tag">AI Tarot</span>
-                <span class="tech-tag">Palmistry</span>
-                <span class="tech-tag">Star Chart</span>
+                <span class="tech-tag">Bulmaca (Puzzle)</span>
+                <span class="tech-tag">Masa Oyunu (Board)</span>
+                <span class="tech-tag">Unity</span>
             </div>
 
-            <h3 style="margin-top: 25px; color: #fff; font-weight: 700; font-size: 1.1rem;">Yolculuğunuzda Sizi Neler Bekliyor?</h3>
+            <h3 style="margin-top: 25px; color: #fff; font-weight: 700; font-size: 1.1rem;">Öne Çıkan Özellikler</h3>
             <ul class="fz-features">
-                <li><i class="fas fa-coffee"></i> <strong>Kahve Falı:</strong> Fincanınızdaki sembollerin dilini çözün. Geleneksel yorum sanatı dijitalin hızıyla birleşiyor.</li>
-                <li><i class="fas fa-id-card"></i> <strong>Kişiselleştirilmiş Tarot:</strong> Kadim kartların enerjisine odaklanın ve hayatınıza dair derin anlamları keşfedin.</li>
-                <li><i class="fas fa-hand-paper"></i> <strong>El Falı:</strong> Avucunuzdaki çizgiler kaderinizin haritasıdır. Geleceğinize dair gizli ipuçlarını gün yüzüne çıkarın.</li>
-                <li><i class="fas fa-star-and-crescent"></i> <strong>Günlük Burçlar:</strong> Yıldızların ve gezegenlerin konumuna göre gününüzü en doğru şekilde planlayın.</li>
-                <li><i class="fas fa-moon"></i> <strong>Mistik Tasarım:</strong> Ruhunuzu dinlendiren, tamamen karanlık temalı, akıcı ve büyüleyici kullanıcı deneyimi.</li>
+                <li><i class="fas fa-cubes"></i> <strong>Kadim Göktürk Harfleri:</strong> Geleneksel semboller yerine Orhun Abideleri'nde yer alan otantik Göktürk damgaları.</li>
+                <li><i class="fas fa-brain"></i> <strong>Zihin Egzersizi & Strateji:</strong> Farklı katman ve dizilimlerle tasarlanmış bölümlerde odaklanma ve hafıza geliştirme.</li>
+                <li><i class="fas fa-palette"></i> <strong>Otantik Görsel Tasarım:</strong> Göz yormayan ahşap ve taş dokulu kadim Türk temalı arayüz.</li>
+                <li><i class="fas fa-smile"></i> <strong>Her Yaşa Uygun:</strong> Tamamen ücretsiz, her yaştan oyuncunun keyifle oynayabileceği zeka oyunu.</li>
             </ul>
 
             <div class="download-container">
-                <a href="javascript:void(0)" class="download-btn">
+                <a href="javascript:void(0)" class="download-btn btn-soon">
                     <i class="fab fa-google-play"></i>
                     <div class="download-text">
-                        <small>HEMEN İNDİRİN</small>
+                        <small>YAKINDA <span class="badge-soon">V1.0.0</span></small>
                         <span>Google Play</span>
                     </div>
                 </a>
@@ -240,7 +239,7 @@
                 <a href="javascript:void(0)" class="download-btn btn-soon">
                     <i class="fab fa-apple"></i>
                     <div class="download-text">
-                        <small>YAKINDA <span class="badge-soon">BETA</span></small>
+                        <small>YAKINDA <span class="badge-soon">V1.0.0</span></small>
                         <span>App Store</span>
                     </div>
                 </a>
@@ -252,7 +251,7 @@
                 <i class="fas fa-user-shield"></i>
                 <div class="legal-info">
                     <span class="legal-title">Gizlilik Politikası</span>
-                    <span class="legal-desc">Mistik verilerinizin korunması.</span>
+                    <span class="legal-desc">Verilerinizin korunması hakkında.</span>
                 </div>
             </a>
             
@@ -260,7 +259,7 @@
                 <i class="fas fa-file-contract"></i>
                 <div class="legal-info">
                     <span class="legal-title">Kullanım Koşulları</span>
-                    <span class="legal-desc">Manevi rehberlik kuralları.</span>
+                    <span class="legal-desc">Oyun kullanım kuralları.</span>
                 </div>
             </a>
         </footer>
