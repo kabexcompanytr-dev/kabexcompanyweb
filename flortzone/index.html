@@ -8,259 +8,409 @@
     <link rel="icon" type="image/png" href="../k.png">
     <link rel="apple-touch-icon" href="../k.png">
 
-    <title>FlörtZone - Uygulama Bilgileri</title>
+    <title>FlörtZone - Tanış, Sohbet Et & Özel İlişkiler Kur</title>
     
-    <link rel="stylesheet" href="../style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        body.dark-mode { 
-            background-color: #0f172a; 
-            color: #cbd5e0; 
-            margin: 0; 
+        :root {
+            --primary: #38bdf8;
+            --primary-glow: rgba(56, 189, 248, 0.25);
+            --pink-accent: #f43f5e;
+            --pink-glow: rgba(244, 63, 94, 0.25);
+            --star-gold: #f59e0b;
+            --bg-dark: #07090e;
+            --card-bg: rgba(15, 23, 42, 0.75);
+            --card-border: rgba(56, 189, 248, 0.15);
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
+            --radius-lg: 24px;
+            --radius-md: 16px;
+            --transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             font-family: 'Inter', sans-serif;
-            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(244, 63, 94, 0.15), transparent 45%),
+                radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.15), transparent 45%),
+                linear-gradient(to bottom, rgba(7, 9, 14, 0.95), rgba(7, 9, 14, 0.99));
+            background-attachment: fixed;
+            min-height: 100vh;
         }
 
-        .fz-page-wrapper { 
-            max-width: 900px; 
-            margin: 0 auto; 
-            padding: 40px 20px; 
-            box-sizing: border-box;
+        /* HEADER */
+        header {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            padding: 16px 8%; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(7, 9, 14, 0.85); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .brand-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+        .brand-logo img { width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--card-border); }
+        .brand-logo h1 { font-size: 1.35rem; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--text-sub); text-decoration: none; font-size: 0.85rem; font-weight: 600;
+            padding: 8px 16px; border-radius: 10px; border: 1px solid var(--card-border);
+            background: rgba(255,255,255,0.03); transition: var(--transition);
+        }
+        .back-link:hover { color: #fff; background: rgba(56, 189, 248, 0.1); border-color: var(--primary); }
+
+        /* WRAPPER */
+        .wrapper { max-width: 1100px; margin: 0 auto; padding: 125px 24px 60px; }
+
+        /* HERO SECTION */
+        .hero-section {
+            display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 40px; align-items: center;
+            margin-bottom: 90px;
+        }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(244, 63, 94, 0.1); color: var(--pink-accent);
+            padding: 6px 16px; border-radius: 100px; font-weight: 700; font-size: 0.78rem;
+            letter-spacing: 1px; border: 1px solid rgba(244, 63, 94, 0.25); margin-bottom: 20px;
+        }
+        .hero-badge i { font-size: 0.75rem; }
+
+        .hero-title {
+            font-size: clamp(2.3rem, 4.2vw, 3.5rem); font-weight: 900; line-height: 1.15;
+            color: #fff; margin-bottom: 18px; letter-spacing: -1px;
+        }
+        .hero-title span {
+            background: linear-gradient(135deg, var(--primary), var(--pink-accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc { font-size: 1.05rem; color: var(--text-sub); margin-bottom: 30px; font-weight: 400; line-height: 1.6; }
+
+        .tags-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 35px; }
+        .tag-pill {
+            background: rgba(56, 189, 248, 0.08); color: var(--primary);
+            padding: 6px 16px; border-radius: 100px; font-size: 0.82rem; font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.2); display: flex; align-items: center; gap: 6px;
+        }
+
+        /* DOWNLOAD BUTTONS */
+        .download-row { display: flex; gap: 16px; flex-wrap: wrap; }
+        .download-btn {
+            display: inline-flex; align-items: center; gap: 14px;
+            background: #000; color: #fff; padding: 12px 22px; border-radius: 14px;
+            text-decoration: none; border: 1px solid rgba(255,255,255,0.15);
+            transition: var(--transition); min-width: 180px;
+        }
+        .download-btn:hover {
+            transform: translateY(-3px); border-color: var(--primary);
+            box-shadow: 0 10px 25px var(--primary-glow);
+        }
+        .download-btn i { font-size: 26px; color: #fff; }
+        .btn-text { display: flex; flex-direction: column; line-height: 1.2; }
+        .btn-text small { font-size: 9px; text-transform: uppercase; opacity: 0.7; letter-spacing: 0.8px; }
+        .btn-text span { font-size: 15px; font-weight: 700; }
+
+        .btn-disabled {
+            opacity: 0.55; cursor: default; border-style: dashed; background: rgba(0,0,0,0.4);
+        }
+        .btn-disabled:hover { transform: none; box-shadow: none; border-color: rgba(255,255,255,0.15); }
+        .badge-soon {
+            font-size: 8px; background: var(--pink-accent); color: #fff;
+            padding: 2px 6px; border-radius: 4px; margin-left: 6px; vertical-align: middle;
+        }
+
+        /* GOOGLE PLAY RATING MOCKUP CARD */
+        .mockup-wrapper { position: relative; display: flex; justify-content: center; align-items: center; }
+        .mockup-card {
+            width: 100%; max-width: 330px; background: var(--card-bg);
+            border-radius: 28px; padding: 26px; border: 1px solid var(--card-border);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); backdrop-filter: blur(15px);
+            position: relative; overflow: hidden;
         }
         
-        .fz-navbar { 
-            display: flex; 
-            align-items: center; 
-            margin-bottom: 30px; 
-            padding-bottom: 20px; 
-            border-bottom: 1px solid rgba(255,255,255,0.05); 
-        }
-        .fz-navbar img { 
-            width: 60px; 
-            height: 60px; 
-            border-radius: 14px; 
-            margin-right: 15px; 
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3); 
-            border: 2px solid rgba(255,255,255,0.1); 
-        }
-        .fz-navbar h1 { 
-            font-size: 1.8rem; 
-            margin: 0; 
-            color: #fff; 
-            font-weight: 800; 
-            letter-spacing: -1px; 
-        }
-        
-        .fz-info-card { 
-            background: linear-gradient(145deg, rgba(30, 41, 59, 0.7), rgba(15, 23, 42, 0.8)); 
-            border-radius: 20px; 
-            padding: 30px; 
-            border: 1px solid rgba(255,255,255,0.08); 
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2); 
-        }
-        .fz-info-card h2 { 
-            color: #38bdf8; 
-            margin-top: 0; 
-            font-size: 1.5rem; 
-            font-weight: 700; 
-            margin-bottom: 15px; 
-        }
-        .fz-info-card p { 
-            font-size: 1rem; 
-            line-height: 1.6; 
-            color: #94a3b8; 
-            margin-bottom: 20px;
-        }
-        
-        .tech-tags { 
-            display: flex; 
-            gap: 8px; 
-            margin: 20px 0; 
-            flex-wrap: wrap; 
-        }
-        .tech-tag { 
-            background: rgba(56, 189, 248, 0.1); 
-            padding: 6px 14px; 
-            border-radius: 100px; 
-            font-size: 0.8rem; 
-            color: #38bdf8; 
-            border: 1px solid rgba(56, 189, 248, 0.2); 
-            font-weight: 600; 
-        }
-        
-        .fz-features { 
-            list-style: none; 
-            padding: 0; 
-            margin: 25px 0; 
-        }
-        .fz-features li { 
-            display: flex; 
-            align-items: flex-start; 
-            margin-bottom: 12px; 
-            color: #e2e8f0; 
-            font-size: 0.95rem; 
-            line-height: 1.4;
-        }
-        .fz-features li i { 
-            color: #10b981; 
-            margin-right: 12px; 
-            font-size: 1.1rem; 
-            margin-top: 3px;
-        }
+        .play-rating-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 15px; }
+        .play-brand { display: flex; align-items: center; gap: 10px; }
+        .play-brand i { font-size: 1.8rem; color: #34a853; }
+        .play-title { font-size: 0.88rem; font-weight: 800; color: #fff; letter-spacing: 0.5px; }
+        .play-subtitle { font-size: 0.72rem; color: var(--text-sub); }
 
-        .download-container {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
+        .rating-box { display: flex; align-items: center; gap: 18px; margin-bottom: 20px; }
+        .rating-score { font-size: 3.2rem; font-weight: 900; color: #fff; line-height: 1; letter-spacing: -1px; }
+        .rating-details { display: flex; flex-direction: column; gap: 4px; }
+        .rating-stars { color: var(--star-gold); font-size: 0.9rem; display: flex; gap: 3px; }
+        .rating-count { font-size: 0.78rem; color: var(--text-sub); font-weight: 600; }
 
-        .download-btn { 
-            display: inline-flex; 
-            align-items: center; 
-            background-color: #000; 
-            color: #fff; 
-            padding: 10px 18px; 
-            border-radius: 12px; 
-            text-decoration: none; 
-            transition: all 0.3s ease; 
-            border: 1px solid #334155; 
-            min-width: 170px;
+        .mockup-stat-box {
+            background: rgba(255,255,255,0.03); border-radius: var(--radius-md);
+            padding: 14px; border: 1px solid rgba(255,255,255,0.05);
         }
-        .download-btn:active { transform: scale(0.95); }
-        .download-btn i { font-size: 24px; margin-right: 12px; color: #fff; }
-        
-        .download-text { display: flex; flex-direction: column; line-height: 1.2; }
-        .download-text small { font-size: 9px; text-transform: uppercase; opacity: 0.7; letter-spacing: 1px; }
-        .download-text span { font-size: 15px; font-weight: 700; }
+        .mockup-stat-item { display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; margin-bottom: 8px; }
+        .mockup-stat-item:last-child { margin-bottom: 0; }
+        .mockup-stat-item span { color: var(--text-sub); }
+        .mockup-stat-item strong { color: var(--primary); }
 
-        .btn-ios {
-            opacity: 0.6;
-            cursor: default;
-            border-style: dashed;
-            background-color: rgba(0,0,0,0.4);
-        }
-        .btn-ios .badge-soon {
-            font-size: 8px;
-            background: #f43f5e;
-            color: #fff;
-            padding: 2px 6px;
-            border-radius: 4px;
-            margin-left: 5px;
-            vertical-align: middle;
-        }
+        /* FEATURES SECTION */
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h3 { font-size: 2rem; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+        .section-title p { color: var(--text-sub); font-size: 0.98rem; margin-top: 8px; }
 
-        .legal-section { 
-            margin-top: 40px; 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 15px; 
-            padding-top: 30px; 
-            border-top: 1px solid rgba(255,255,255,0.05); 
+        .features-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;
+            margin-bottom: 80px;
         }
-        .legal-box { 
-            background: rgba(255,255,255,0.03); 
-            padding: 15px; 
-            border-radius: 14px; 
-            display: flex; 
-            align-items: center; 
-            text-decoration: none; 
-            transition: all 0.3s ease; 
-            border: 1px solid transparent; 
+        .feature-card {
+            background: var(--card-bg); border-radius: var(--radius-lg); padding: 32px 26px;
+            border: 1px solid var(--card-border); transition: var(--transition);
+            backdrop-filter: blur(15px);
         }
-        .legal-box i { 
-            font-size: 1.2rem; 
-            color: #38bdf8; 
-            margin-right: 12px; 
-            background: rgba(56, 189, 248, 0.1); 
-            width: 38px; 
-            height: 38px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            border-radius: 10px; 
-            flex-shrink: 0;
+        .feature-card:hover {
+            transform: translateY(-6px); border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.4);
         }
-        .legal-info { display: flex; flex-direction: column; }
-        .legal-title { color: #f1f5f9; font-weight: 700; font-size: 0.9rem; }
-        .legal-desc { color: #64748b; font-size: 0.75rem; margin-top: 2px; }
+        .feature-icon {
+            width: 52px; height: 52px; border-radius: 16px;
+            background: rgba(56, 189, 248, 0.1); color: var(--primary);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.35rem; margin-bottom: 22px; border: 1px solid rgba(56, 189, 248, 0.2);
+        }
+        .feature-card.pink .feature-icon {
+            background: rgba(244, 63, 94, 0.1); color: var(--pink-accent); border-color: rgba(244, 63, 94, 0.2);
+        }
+        .feature-card h4 { font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
+        .feature-card p { font-size: 0.9rem; color: var(--text-sub); line-height: 1.65; }
 
-        @media (max-width: 768px) {
-            .fz-page-wrapper { padding: 30px 15px; }
-            .fz-navbar h1 { font-size: 1.6rem; }
+        /* BANNER SECTION */
+        .cta-banner {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(244, 63, 94, 0.12));
+            border-radius: 28px; padding: 45px 35px; border: 1px solid var(--card-border);
+            text-align: center; margin-bottom: 60px; backdrop-filter: blur(20px);
+        }
+        .cta-banner h4 { font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+        .cta-banner p { color: var(--text-sub); max-width: 620px; margin: 0 auto 25px; font-size: 0.98rem; }
+
+        /* FOOTER / LEGAL */
+        footer { border-top: 1px solid var(--card-border); padding-top: 40px; }
+        .legal-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px; }
+        .legal-card {
+            background: var(--card-bg); padding: 20px; border-radius: var(--radius-md);
+            display: flex; align-items: center; gap: 16px; text-decoration: none;
+            border: 1px solid var(--card-border); transition: var(--transition);
+        }
+        .legal-card:hover { background: rgba(56, 189, 248, 0.05); border-color: var(--primary); }
+        .legal-card i {
+            width: 42px; height: 42px; border-radius: 12px; background: rgba(56, 189, 248, 0.1);
+            color: var(--primary); display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; flex-shrink: 0;
+        }
+        .legal-info h5 { color: #fff; font-size: 0.95rem; font-weight: 700; }
+        .legal-info p { color: var(--text-sub); font-size: 0.78rem; margin-top: 2px; }
+
+        .copyright { text-align: center; color: var(--text-sub); font-size: 0.8rem; font-weight: 500; opacity: 0.75; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero-section { grid-template-columns: 1fr; text-align: center; gap: 50px; }
+            .tags-row, .download-row { justify-content: center; }
+            .hero-desc { margin-left: auto; margin-right: auto; max-width: 600px; }
+            .mockup-wrapper { order: -1; }
         }
 
         @media (max-width: 600px) {
-            .legal-section { grid-template-columns: 1fr; }
-            .fz-navbar { margin-bottom: 20px; }
-            .fz-navbar img { width: 50px; height: 50px; }
-            .fz-navbar h1 { font-size: 1.4rem; }
-            .download-btn { width: 100%; justify-content: center; box-sizing: border-box; }
+            header { padding: 14px 5%; }
+            .wrapper { padding: 100px 16px 40px; }
+            .legal-grid { grid-template-columns: 1fr; }
+            .download-btn { width: 100%; justify-content: center; }
+            .cta-banner { padding: 30px 20px; }
         }
     </style>
 </head>
 <body class="dark-mode">
-    <div class="fz-page-wrapper">
-        <nav class="fz-navbar">
-            <img src="flortzone_logo.png" alt="FlörtZone Logo">
+
+    <!-- HEADER NAV -->
+    <header>
+        <a href="../index.html" class="brand-logo">
+            <img src="flortzone_logo.png" alt="FlörtZone">
             <h1>FlörtZone</h1>
-        </nav>
+        </a>
+        <a href="../index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> KABEX'e Dön
+        </a>
+    </header>
 
-        <main class="fz-info-card">
-            <h2>Uygulama Hakkında</h2>
-            <p>FlörtZone, kullanıcıların gerçek ve samimi bağlantılar kurmasını sağlayan, modern algoritmalarla desteklenmiş bir arkadaşlık uygulamasıdır. Gizlilik ve kullanıcı güvenliğini ön planda tutarak, en iyi eşleşme deneyimini sunmayı amaçlar.</p>
-            
-            <div class="tech-tags">
-                <span class="tech-tag">Arkadaşlık</span>
-                <span class="tech-tag">Flört</span>
-                <span class="tech-tag">Tanışma</span>
+    <!-- MAIN CONTENT -->
+    <div class="wrapper">
+        
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fas fa-fire"></i> TANIŞ & SOHBET ET</span>
+                <h2 class="hero-title">Hayalindeki İnsanla <span>Aynı Şehirde Buluş.</span></h2>
+                <p class="hero-desc">FlörtZone’a hoş geldin! Hayatındaki o özel kişiyi bulmak, ciddi bir ilişkiye adım atmak ya da çevre illerdeki yeni insanlarla tanışıp kaliteli vakit geçirmek için tasarlandı. Samimi, güvenli ve beklentilerine tam uygun ortama hemen adım at.</p>
+
+                <div class="tags-row">
+                    <span class="tag-pill"><i class="fas fa-video"></i> Görüntülü Sohbet</span>
+                    <span class="tag-pill"><i class="fas fa-location-arrow"></i> Çevre İller Radarı</span>
+                    <span class="tag-pill"><i class="fas fa-heart"></i> Ciddi İlişki & Flört</span>
+                </div>
+
+                <div class="download-row">
+                    <a href="https://play.google.com/store/apps/details?id=com.flortzone.app&hl=tr" class="download-btn">
+                        <i class="fab fa-google-play"></i>
+                        <div class="btn-text">
+                            <small>HEMEN İNDİRİN</small>
+                            <span>Google Play</span>
+                        </div>
+                    </a>
+
+                    <a href="javascript:void(0)" class="download-btn btn-disabled">
+                        <i class="fab fa-apple"></i>
+                        <div class="btn-text">
+                            <small>YAKINDA <span class="badge-soon">V1.0.2</span></small>
+                            <span>App Store</span>
+                        </div>
+                    </a>
+                </div>
             </div>
 
-            <h3 style="margin-top: 25px; color: #fff; font-weight: 700; font-size: 1.1rem;">Öne Çıkan Özellikler</h3>
-            <ul class="fz-features">
-                <li><i class="fas fa-check-circle"></i> Yapay zeka destekli eşleşme algoritması.</li>
-                <li><i class="fas fa-shield-alt"></i> Uçtan uca şifreli mesajlaşma.</li>
-                <li><i class="fas fa-user-check"></i> Profil doğrulama ve güvenlik sistemleri.</li>
-            </ul>
+            <!-- GOOGLE PLAY RATING DISPLAY -->
+            <div class="mockup-wrapper">
+                <div class="mockup-card">
+                    <div class="play-rating-header">
+                        <div class="play-brand">
+                            <i class="fab fa-google-play"></i>
+                            <div>
+                                <div class="play-title">Google Play</div>
+                                <div class="play-subtitle">Resmi Mağaza Puanı</div>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="download-container">
-                <a href="https://play.google.com/store/apps/details?id=com.flortzone.app&hl=tr" target="_blank" class="download-btn">
+                    <div class="rating-box">
+                        <div class="rating-score">4.7</div>
+                        <div class="rating-details">
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="rating-count">Kullanıcı Değerlendirmesi</div>
+                        </div>
+                    </div>
+
+                    <div class="mockup-stat-box">
+                        <div class="mockup-stat-item">
+                            <span>Toplam İndirme</span>
+                            <strong>5.000+</strong>
+                        </div>
+                        <div class="mockup-stat-item">
+                            <span>Günlük Eşleşme</span>
+                            <strong>500+</strong>
+                        </div>
+                        <div class="mockup-stat-item">
+                            <span>Kullanıcı Memnuniyeti</span>
+                            <strong>%98.4</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section>
+            <div class="section-title">
+                <h3>Neden FlörtZone?</h3>
+                <p>Sosyal bağlarınızı güçlendiren ve flört deneyimini kusursuz kılan yenilikçi özellikler</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-map-location-dot"></i></div>
+                    <h4>Gelişmiş Eşleşme</h4>
+                    <p>Yakın çevrendeki veya çevre illerdeki tanışma isteklerine en uygun kişilerle anında eşleş, mesafe sınırına takılmadan sosyalleş.</p>
+                </div>
+
+                <div class="feature-card pink">
+                    <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                    <h4>Sesli ve Görüntülü Konuşma</h4>
+                    <p>Sadece yazışarak kalma; yüksek kaliteli sesli ve görüntülü arama özellikleriyle karşındakini daha yakından tanı, sohbeti bir üst seviyeye taşı.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-rings-wedding"></i></div>
+                    <h4>Esnek İlişki Seçenekleri</h4>
+                    <p>İster sadece keyifli bir sohbet, ister hayatını birleştirecek ciddi bir ilişki ara; kendi beklentilerine uygun adayları kolayca filtrele ve bul.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-comments"></i></div>
+                    <h4>Anlık Mesajlaşma</h4>
+                    <p>Dilediğin kişiye mesaj gönder, fotoğraflarını paylaş, sohbetin ve kesintisiz etkileşimin tadını çıkar.</p>
+                </div>
+
+                <div class="feature-card pink">
+                    <div class="feature-icon"><i class="fas fa-crown"></i></div>
+                    <h4>Öne Çıkar & Ayrıcalıklar</h4>
+                    <p>Profilini öne çıkararak bölgenizdeki yüzlerce kişiye daha fazla görün, premium özelliklerle etkileşim oranını 10'a katla.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-cat"></i></div>
+                    <h4>Güvenli ve Kullanıcı Odaklı</h4>
+                    <p>Yenilenen kullanıcı odaklı arayüzümüz ve korumalı altyapımız ile tamamen güvenli bir ortamda tanışmanın keyfini çıkar.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA BANNER -->
+        <div class="cta-banner">
+            <h4>FlörtZone Dünyasına Katılın!</h4>
+            <p>Hemen ücretsiz indir, profilini oluştur ve çevrendeki doğru insanlarla tanışmaya başla.</p>
+            <div class="download-row" style="justify-content: center;">
+                <a href="https://play.google.com/store/apps/details?id=com.flortzone.app&hl=tr" class="download-btn">
                     <i class="fab fa-google-play"></i>
-                    <div class="download-text">
-                        <small>HEMEN İNDİRİN</small>
-                        <span>Google Play</span>
-                    </div>
-                </a>
-
-                <a href="javascript:void(0)" class="download-btn btn-ios">
-                    <i class="fab fa-apple"></i>
-                    <div class="download-text">
-                        <small>YAKINDA <span class="badge-soon">V1.0.2</span></small>
-                        <span>App Store</span>
+                    <div class="btn-text">
+                        <small>ÜCRETSİZ İNDİR</small>
+                        <span>Google Play Store</span>
                     </div>
                 </a>
             </div>
-        </main>
+        </div>
 
-        <footer class="legal-section">
-            <a href="gizlilik/index.html" class="legal-box">
-                <i class="fas fa-user-shield"></i>
-                <div class="legal-info">
-                    <span class="legal-title">Gizlilik Politikası</span>
-                    <span class="legal-desc">Verilerinizin korunması hakkında.</span>
-                </div>
-            </a>
-            
-            <a href="kullanim/index.html" class="legal-box">
-                <i class="fas fa-file-contract"></i>
-                <div class="legal-info">
-                    <span class="legal-title">Kullanım Koşulları</span>
-                    <span class="legal-desc">Uygulama kullanım kuralları.</span>
-                </div>
-            </a>
+        <!-- FOOTER & LEGAL -->
+        <footer>
+            <div class="legal-grid">
+                <a href="gizlilik/index.html" class="legal-card">
+                    <i class="fas fa-user-shield"></i>
+                    <div class="legal-info">
+                        <h5>Gizlilik Politikası</h5>
+                        <p>Kişisel verilerinizin korunması ve işlenme detayları.</p>
+                    </div>
+                </a>
+
+                <a href="kullanim/index.html" class="legal-card">
+                    <i class="fas fa-file-contract"></i>
+                    <div class="legal-info">
+                        <h5>Kullanım Koşulları</h5>
+                        <p>Uygulama kullanım kuralları ve sözleşme detayları.</p>
+                    </div>
+                </a>
+            </div>
+
+            <p class="copyright">FlörtZone bir KABEX Bilişim A.Ş. ürünüdür. © 2026 Tüm Hakları Saklıdır.</p>
         </footer>
+
     </div>
+
 </body>
 </html>

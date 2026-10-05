@@ -8,17 +8,17 @@
     <link rel="icon" type="image/png" href="../../k.png">
     <link rel="apple-touch-icon" href="../../k.png">
 
-    <title>Göktürk Mahjong - Gizlilik Politikası</title>
+    <title>Kabit - Gizlilik Politikası</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #38bdf8;
+            --primary: #007aff;
             --bg-dark: #07090e;
             --card-bg: rgba(15, 23, 42, 0.75);
-            --card-border: rgba(56, 189, 248, 0.15);
+            --card-border: rgba(0, 122, 255, 0.15);
             --text-main: #f8fafc;
             --text-sub: #94a3b8;
         }
@@ -32,7 +32,7 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
             background-image: 
-                radial-gradient(circle at 50% 10%, rgba(56, 189, 248, 0.1), transparent 50%),
+                radial-gradient(circle at 50% 10%, rgba(0, 122, 255, 0.1), transparent 50%),
                 linear-gradient(to bottom, rgba(7, 9, 14, 0.95), rgba(7, 9, 14, 0.99));
             background-attachment: fixed;
             min-height: 100vh;
@@ -47,7 +47,7 @@
         }
 
         .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .brand-logo img { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--card-border); object-fit: cover; }
+        .brand-logo img { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--card-border); object-fit: contain; background: rgba(15, 23, 42, 0.9); padding: 3px; }
         .brand-logo h1 { font-size: 1.2rem; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
 
         .back-link {
@@ -56,7 +56,7 @@
             padding: 8px 16px; border-radius: 8px; border: 1px solid var(--card-border);
             background: rgba(255,255,255,0.02); transition: all 0.3s ease;
         }
-        .back-link:hover { color: #fff; background: rgba(56, 189, 248, 0.1); border-color: var(--primary); }
+        .back-link:hover { color: #fff; background: rgba(0, 122, 255, 0.1); border-color: var(--primary); }
 
         /* WRAPPER */
         .wrapper {
@@ -143,41 +143,39 @@
 
     <header>
         <a href="../index.html" class="brand-logo">
-            <img src="../gokturk.png" alt="Göktürk Mahjong Logo">
-            <h1>Göktürk Mahjong</h1>
+            <img src="../kabit.png" alt="Kabit Logo">
+            <h1>Kabit</h1>
         </a>
         <a href="../index.html" class="back-link">
-            <i class="fas fa-arrow-left"></i> Geri Dön
+            <i class="fas fa-arrow-left"></i> KABEX'e Dön
         </a>
     </header>
 
     <div class="wrapper">
         <div class="legal-header">
             <h2>Gizlilik Politikası</h2>
-            <div class="update-date">Son Güncelleme: Eylül 2026</div>
+            <div class="update-date">Son Güncelleme Tarihi: 5 Ekim 2026</div>
         </div>
 
         <div class="content-box">
-            <p><strong>Kabex Bilişim A.Ş.</strong> ("Şirket") olarak geliştirdiğimiz Göktürk Mahjong mobil uygulamasında ve web sitemizde kullanıcılarımızın gizliliğine ve kişisel verilerinin korunmasına büyük önem veriyoruz. Bu Gizlilik Politikası, uygulamamızı ve web sitemizi kullanırken verilerinizin nasıl işlendiği hakkında sizi bilgilendirmek amacıyla hazırlanmıştır.</p>
+            <p>Kabex Bilişim AŞ olarak, Kabit kullanıcılarının gizliliğine ve verilerinin güvenliğine en üst düzeyde önem veriyoruz. Bu politika, verilerinizin nerede saklandığını ve nasıl korunduğunu açıklar.</p>
 
-            <h3>1. Toplanan Veriler</h3>
-            <p>Göktürk Mahjong mobil uygulaması ve web sitesi, kullanıcılarından isim, e-posta adresi, telefon numarası, cihaz konumu veya kimlik bilgileri gibi hiçbir kişisel veriyi toplamaz, saklamaz ve işlemez.</p>
+            <h3>1. Verilerinizin Güvenliği ve Yerel Depolama</h3>
+            <p><strong>Buluta Değil, Size Ait:</strong> Kabit, geleneksel bulut tabanlı yazılımlardan farklı olarak hassas ticari ve operasyonel verilerinizi harici veya üçüncü taraf bulut sunucularında depolamaz.</p>
+            <p>Tüm verileriniz, tamamen sizin kontrolünüz altında olan kendi bilgisayarınızda veya yerel veritabanınızda (SQLite) şifreli ve güvenli bir şekilde saklanır. Kabex Bilişim AŞ, yerel verilerinize uzaktan erişemez veya bu verileri üçüncü taraflarla paylaşmaz.</p>
 
-            <h3>2. Uygulama İçi İzinler</h3>
-            <p>Uygulamamız cihazınızda kamera, rehber, mikrofon veya hassas konum gibi hiçbir özel erişim izni talep etmez.</p>
+            <h3>2. Mobil Takip ve Senkronizasyon</h3>
+            <p>Eğer yazılımın mobil takip özelliklerini kullanıyorsanız, masaüstü uygulamanız ile mobil cihazınız arasındaki veri akışı yalnızca sizin belirlediğiniz ve yetkilendirdiğiniz güvenli uçtan uca kanallar üzerinden gerçekleştirilir. Bu veriler hiçbir reklam veya pazarlama amacıyla 3. şahıslara satılmaz veya devredilmez.</p>
 
-            <h3>3. Çerezler ve Analitik</h3>
-            <p>Web sitemizde ve mobil uygulamamızda kullanıcı hareketlerini takip eden üçüncü taraf reklam veya profil oluşturma çerezleri kullanılmamaktadır.</p>
+            <h3>3. Çerezler ve Web Sitesi Verileri</h3>
+            <p>Kabex Bilişim AŞ resmi web sitesi üzerinden yapılan ziyaretlerde, kullanıcı deneyimini iyileştirmek ve site trafiğini analiz etmek amacıyla standart analitik araçlar kullanılabilir. Kişisel bilgileriniz asla izinsiz olarak toplanmaz.</p>
 
-            <h3>4. Veri Güvenliği</h3>
-            <p>Herhangi bir kişisel veri toplanmadığı için üçüncü taraflarla veri paylaşımı veya veri sızıntısı riski bulunmamaktadır.</p>
-
-            <h3>5. İletişim</h3>
-            <p>Gizlilik politikamızla ilgili her türlü soru, görüş ve talepleriniz için <a href="mailto:info@kabex.company" class="contact-mail">info@kabex.company</a> e-posta adresi üzerinden bizimle iletişime geçebilirsiniz.</p>
+            <h3>4. İletişim</h3>
+            <p>Gizlilik politikamız veya kullanım koşullarıyla ilgili her türlü soru ve öneriniz için <a href="mailto:info@kabex.company" class="contact-mail">info@kabex.company</a> e-posta adresi üzerinden veya resmi Kabex Bilişim AŞ kanalları aracılığıyla bizimle iletişime geçebilirsiniz.</p>
         </div>
 
         <footer>
-            Göktürk Mahjong bir KABEX Bilişim A.Ş. ürünüdür. © 2026 Tüm Hakları Saklıdır.
+            Kabit bir KABEX Bilişim A.Ş. ürünüdür. © 2026 Tüm Hakları Saklıdır.
         </footer>
     </div>
 

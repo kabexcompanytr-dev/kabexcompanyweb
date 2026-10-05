@@ -5,197 +5,214 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;">
     
-    <link rel="icon" type="image/png" href="../k.png">
-    <link rel="apple-touch-icon" href="../k.png">
+    <link rel="icon" type="image/png" href="../../k.png">
+    <link rel="apple-touch-icon" href="../../k.png">
 
     <title>Falcım - Kullanım Koşulları</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #8b5cf6 0%, #4c1d95 100%);
-            --bg-dark: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --accent-purple: #a78bfa;
+            --primary: #8b5cf6;
+            --bg-dark: #07090e;
+            --card-bg: rgba(15, 23, 42, 0.75);
+            --card-border: rgba(139, 92, 246, 0.15);
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
         }
 
-        body.dark-mode { 
-            background-color: var(--bg-dark); 
-            color: #cbd5e0; 
-            margin: 0; 
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
+            background-image: 
+                radial-gradient(circle at 50% 10%, rgba(139, 92, 246, 0.1), transparent 50%),
+                linear-gradient(to bottom, rgba(7, 9, 14, 0.95), rgba(7, 9, 14, 0.99));
+            background-attachment: fixed;
+            min-height: 100vh;
         }
 
-        .legal-wrapper { 
-            max-width: 800px; 
-            margin: 0 auto; 
-            padding: 40px 20px; 
-            box-sizing: border-box;
+        /* HEADER */
+        header {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            padding: 16px 8%; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(7, 9, 14, 0.85); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--card-border);
         }
 
-        /* Başlık Alanı */
+        .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .brand-logo img { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--card-border); object-fit: cover; }
+        .brand-logo h1 { font-size: 1.2rem; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--text-sub); text-decoration: none; font-size: 0.85rem; font-weight: 600;
+            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--card-border);
+            background: rgba(255,255,255,0.02); transition: all 0.3s ease;
+        }
+        .back-link:hover { color: #fff; background: rgba(139, 92, 246, 0.1); border-color: var(--primary); }
+
+        /* WRAPPER */
+        .wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 130px 24px 60px;
+        }
+
         .legal-header {
-            text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding-bottom: 25px;
         }
-        .legal-header a {
-            text-decoration: none;
-            display: inline-block;
-        }
-        .legal-header img {
-            width: 60px;
-            height: 60px;
-            border-radius: 14px;
-            margin-bottom: 15px;
-            border: 2px solid var(--accent-purple);
-            box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
-            transition: transform 0.3s ease;
-        }
-        .legal-header img:hover {
-            transform: scale(1.05);
-        }
-        .legal-header h1 {
+
+        .legal-header h2 {
             font-size: 2rem;
-            margin: 0;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             font-weight: 800;
-        }
-        .update-date {
-            display: block;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #64748b;
-        }
-
-        /* İçerik Kartı */
-        .content-box { 
-            background: var(--card-bg); 
-            padding: 40px; 
-            border-radius: 24px; 
-            border: 1px solid rgba(139, 92, 246, 0.15);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-
-        h2 {
             color: #fff;
-            font-size: 1.3rem;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            border-left: 4px solid var(--accent-purple); 
-            padding-left: 15px;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
 
-        p, li {
-            font-size: 1rem;
-            color: #94a3b8;
-            margin-bottom: 15px;
+        .update-date {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            font-weight: 500;
         }
 
-        ul {
-            padding-left: 20px;
-            margin-bottom: 25px;
-            list-style-type: none;
+        /* CONTENT */
+        .content-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
-        li {
-            margin-bottom: 12px;
-            position: relative;
-        }
-        
-        li::before {
-            content: "✦";
-            color: var(--accent-purple);
-            font-weight: bold;
-            display: inline-block; 
-            width: 1em;
-            margin-left: -1em;
-        }
-
-        /* Tıklanabilir Mail Linki */
-        .contact-mail {
-            color: var(--accent-purple);
-            text-decoration: none;
+        .content-box h3 {
+            color: #fff;
+            font-size: 1.15rem;
             font-weight: 700;
-            transition: opacity 0.2s;
+            margin-top: 25px;
+            margin-bottom: 10px;
         }
-        .contact-mail:hover {
-            opacity: 0.8;
-            text-decoration: underline;
+        .content-box h3:first-of-type { margin-top: 0; }
+
+        .content-box p, .content-box li {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            margin-bottom: 15px;
+            line-height: 1.7;
         }
 
-        /* Mobil Görünüm */
+        .content-box ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+            list-style-type: square;
+        }
+
+        .content-box p strong, .content-box li strong {
+            color: #e2e8f0;
+        }
+
+        .contact-mail {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-mail:hover { text-decoration: underline; }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-sub);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--card-border);
+            margin-top: 40px;
+        }
+
         @media (max-width: 600px) {
-            .legal-wrapper { padding: 20px 15px; }
-            .content-box { padding: 25px; border-radius: 18px; }
-            .legal-header h1 { font-size: 1.5rem; }
-            h2 { font-size: 1.1rem; }
-            p, li { font-size: 0.95rem; }
+            .wrapper { padding: 110px 16px 40px; }
+            .content-box { padding: 25px 20px; }
+            .legal-header h2 { font-size: 1.6rem; }
         }
     </style>
 </head>
 <body class="dark-mode">
-    <div class="legal-wrapper">
-        <header class="legal-header">
-            <a href="../index.html">
-                <img src="../falcim.png" alt="Falcım Logo">
-            </a>
-            <h1>Kullanım Koşulları</h1>
-            <span class="update-date"><strong>Son Güncelleme:</strong> 3 Mart 2026</span>
-        </header>
+
+    <header>
+        <a href="../index.html" class="brand-logo">
+            <img src="../falcim.png" alt="Falcım Logo">
+            <h1>Falcım</h1>
+        </a>
+        <a href="../index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Geri Dön
+        </a>
+    </header>
+
+    <div class="wrapper">
+        <div class="legal-header">
+            <h2>Kullanım Koşulları</h2>
+            <div class="update-date">Son Güncelleme: 3 Mart 2026</div>
+        </div>
 
         <div class="content-box">
             <p>Lütfen Falcım mobil uygulamasını kullanmadan önce bu Kullanım Şartlarını dikkatlice okuyunuz. Uygulamayı kullanarak bu şartları kabul etmiş sayılırsınız.</p>
 
-            <h2>1. Taraflar ve Tanımlar</h2>
+            <h3>1. Taraflar ve Tanımlar</h3>
             <p>İşbu sözleşme, <strong>Kabex</strong> (Bundan sonra "Şirket" olarak anılacaktır) ile uygulamayı indiren ve kullanan bireysel kullanıcı (Bundan sonra "Kullanıcı" olarak anılacaktır) arasında akdedilmiştir.</p>
 
-            <h2>2. Hizmetin Kapsamı ve Amacı</h2>
+            <h3>2. Hizmetin Kapsamı ve Amacı</h3>
             <ul>
                 <li><strong>Eğlence Amaçlı Kullanım:</strong> Falcım; kahve falı, tarot, el falı ve burç yorumları sunan bir eğlence platformudur.</li>
                 <li><strong>Kesinlik Taahhüdü Yoktur:</strong> Uygulama tarafından sunulan yorumlar, tahminler ve analizler bilimsel bir dayanağa sahip değildir ve kesinlik içermez. Bu içerikler sadece kişisel gelişim ve eğlence amaçlıdır.</li>
             </ul>
 
-            <h2>3. Sorumluluk Reddi (Disclaimer)</h2>
+            <h3>3. Sorumluluk Reddi (Disclaimer)</h3>
             <ul>
                 <li><strong>Karar Verme Sorumluluğu:</strong> Kullanıcı, uygulamadaki yorumlara dayanarak aldığı hayati kararlardan (mali, tıbbi, hukuki, ilişkisel vb.) tamamen kendisi sorumludur. Şirket, bu kararlar neticesinde doğabilecek maddi veya manevi zararlardan sorumlu tutulamaz.</li>
                 <li><strong>Tıbbi Tavsiye Değildir:</strong> Uygulama hiçbir şekilde tıbbi, psikolojik veya profesyonel danışmanlık hizmeti yerine geçmez.</li>
             </ul>
 
-            <h2>4. Kullanım Şartları ve Reşitlik</h2>
+            <h3>4. Kullanım Şartları ve Reşitlik</h3>
             <p>Uygulamayı kullanmak için <strong>en az 18 yaşında</strong> olmanız gerekmektedir. 18 yaşından küçüklerin uygulamayı kullanması durumunda doğabilecek sorumluluk ebeveynlerine veya yasal vasilerine aittir.</p>
 
-            <h2>5. Kullanıcı Yükümlülükleri ve Veri Girişi</h2>
+            <h3>5. Kullanıcı Yükümlülükleri ve Veri Girişi</h3>
             <ul>
                 <li>Kullanıcı, kahve falı veya el falı için yüklediği görsellerin kendisine ait olduğunu veya kullanım iznine sahip olduğunu taahhüt eder.</li>
                 <li>Uygulamanın tersine mühendislik yoluyla kopyalanması, verilerinin çekilmesi (scraping) veya kötü amaçlı yazılımlarla müdahale edilmesi yasaktır.</li>
             </ul>
 
-            <h2>6. Fikri Mülkiyet Hakları</h2>
+            <h3>6. Fikri Mülkiyet Hakları</h3>
             <p>Uygulamanın tasarımı, logoları, kod yapısı ve içeriği Kabex'e aittir. Yazılı izin olmaksızın kısmen veya tamamen kopyalanamaz, ticari amaçla kullanılamaz.</p>
 
-            <h2>7. Abonelik ve Ödemeler</h2>
+            <h3>7. Abonelik ve Ödemeler</h3>
             <p>Uygulama içi satın alımlar ve abonelik işlemleri Google Play Store ve Apple App Store ödeme sistemleri üzerinden yürütülür. İade süreçlerinde ilgili mağazaların kuralları geçerlidir.</p>
 
-            <h2>8. Gizlilik Politikası</h2>
+            <h3>8. Gizlilik Politikası</h3>
             <p>Kullanıcı verilerinin işlenmesi, KVKK (Kişisel Verilerin Korunması Kanunu) ve GDPR uyumlu "Gizlilik Politikası" metnimizde belirtilen esaslara göre yapılmaktadır.</p>
 
-            <h2>9. Sözleşme Değişiklikleri</h2>
+            <h3>9. Sözleşme Değişiklikleri</h3>
             <p>Kabex, gerekli gördüğü takdirde kullanım şartlarını güncelleme hakkını saklı tutar. Güncel şartlar uygulama içinde yayınlandığı andan itibaren geçerlilik kazanır.</p>
 
-            <h2>10. Yetkili Mahkemeler</h2>
+            <h3>10. Yetkili Mahkemeler</h3>
             <p>İşbu sözleşmeden doğacak uyuşmazlıklarda Türkiye Cumhuriyeti Mahkemeleri ve İcra Daireleri yetkilidir.</p>
 
-            <h2>İletişim</h2>
+            <h3>İletişim</h3>
             <p>Uygulama ile ilgili her türlü soru ve geri bildiriminiz için <a href="mailto:info@kabex.company" class="contact-mail">info@kabex.company</a> adresi üzerinden bizimle iletişime geçebilirsiniz.</p>
         </div>
+
+        <footer>
+            Falcım bir KABEX Bilişim A.Ş. ürünüdür. © 2026 Tüm Hakları Saklıdır.
+        </footer>
     </div>
+
 </body>
 </html>

@@ -8,20 +8,20 @@
     <link rel="icon" type="image/png" href="../k.png">
     <link rel="apple-touch-icon" href="../k.png">
 
-    <title>Göktürk Mahjong - Çok Yakında!</title>
+    <title>Kabit - Esnafın ve Küçük İşletmelerin Dijital Hafızası</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #38bdf8;
-            --primary-glow: rgba(56, 189, 248, 0.35);
+            --primary: #007aff;
+            --primary-glow: rgba(0, 122, 255, 0.35);
             --gold-accent: #fbbf24;
             --gold-glow: rgba(251, 191, 36, 0.25);
             --bg-dark: #07090e;
             --card-bg: rgba(15, 23, 42, 0.75);
-            --card-border: rgba(56, 189, 248, 0.2);
+            --card-border: rgba(0, 122, 255, 0.2);
             --text-main: #f8fafc;
             --text-sub: #94a3b8;
             --radius-lg: 24px;
@@ -39,8 +39,8 @@
             line-height: 1.6;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 50% 30%, rgba(56, 189, 248, 0.18), transparent 55%),
-                radial-gradient(circle at 50% 80%, rgba(251, 191, 36, 0.1), transparent 50%),
+                radial-gradient(circle at 50% 30%, rgba(0, 122, 255, 0.18), transparent 55%),
+                radial-gradient(circle at 50% 80%, rgba(112, 0, 255, 0.1), transparent 50%),
                 linear-gradient(to bottom, rgba(7, 9, 14, 0.95), rgba(7, 9, 14, 0.99));
             background-attachment: fixed;
             min-height: 100vh;
@@ -58,7 +58,7 @@
         }
 
         .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .brand-logo img { width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--card-border); }
+        .brand-logo img { width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--card-border); object-fit: contain; }
         .brand-logo h1 { font-size: 1.25rem; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
 
         .back-link {
@@ -67,11 +67,11 @@
             padding: 8px 16px; border-radius: 10px; border: 1px solid var(--card-border);
             background: rgba(255,255,255,0.03); transition: var(--transition);
         }
-        .back-link:hover { color: #fff; background: rgba(56, 189, 248, 0.1); border-color: var(--primary); }
+        .back-link:hover { color: #fff; background: rgba(0, 122, 255, 0.1); border-color: var(--primary); }
 
         /* CENTERED HERO / COMING SOON CONTAINER */
         .wrapper {
-            max-width: 800px;
+            max-width: 850px;
             margin: 0 auto;
             padding: 140px 24px 60px;
             text-align: center;
@@ -104,56 +104,59 @@
             width: 180px;
             height: 180px;
             border-radius: 38px;
-            border: 3px solid rgba(56, 189, 248, 0.4);
+            border: 3px solid rgba(0, 122, 255, 0.4);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px var(--primary-glow);
-            object-fit: cover;
+            object-fit: contain;
+            background: rgba(15, 23, 42, 0.9);
             position: relative;
             z-index: 1;
             animation: pulseGlow 4s infinite alternate ease-in-out;
+            padding: 15px;
         }
 
         @keyframes pulseGlow {
             0% { transform: scale(1); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px var(--primary-glow); }
-            100% { transform: scale(1.03); box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(251, 191, 36, 0.4); }
+            100% { transform: scale(1.03); box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(0, 122, 255, 0.5); }
         }
 
         .coming-badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(251, 191, 36, 0.1);
-            color: var(--gold-accent);
+            background: rgba(0, 122, 255, 0.1);
+            color: var(--primary);
             padding: 8px 20px;
             border-radius: 100px;
             font-weight: 800;
             font-size: 0.85rem;
             letter-spacing: 1.5px;
-            border: 1px solid rgba(251, 191, 36, 0.3);
+            border: 1px solid rgba(0, 122, 255, 0.3);
             margin-bottom: 24px;
             text-transform: uppercase;
         }
 
         .main-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-size: clamp(2.3rem, 5vw, 3.8rem);
             font-weight: 900;
-            line-height: 1.1;
+            line-height: 1.15;
             color: #fff;
             margin-bottom: 16px;
             letter-spacing: -1.5px;
         }
 
         .main-title span {
-            background: linear-gradient(135deg, var(--primary), var(--gold-accent));
+            background: linear-gradient(135deg, var(--primary), #00f0ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .sub-desc {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             color: var(--text-sub);
-            max-width: 580px;
-            margin: 0 auto 40px;
+            max-width: 650px;
+            margin: 0 auto 35px;
             font-weight: 400;
+            line-height: 1.6;
         }
 
         .status-card {
@@ -173,7 +176,7 @@
             color: var(--primary);
         }
 
-        .status-card text {
+        .status-card span {
             font-size: 0.95rem;
             font-weight: 600;
             color: #fff;
@@ -207,7 +210,7 @@
         }
 
         .legal-card:hover {
-            background: rgba(56, 189, 248, 0.05);
+            background: rgba(0, 122, 255, 0.05);
             border-color: var(--primary);
         }
 
@@ -215,7 +218,7 @@
             width: 40px;
             height: 40px;
             border-radius: 10px;
-            background: rgba(56, 189, 248, 0.1);
+            background: rgba(0, 122, 255, 0.1);
             color: var(--primary);
             display: flex;
             align-items: center;
@@ -249,8 +252,8 @@
     <!-- HEADER NAV -->
     <header>
         <a href="../index.html" class="brand-logo">
-            <img src="gokturk.png" alt="Göktürk Mahjong">
-            <h1>Göktürk Mahjong</h1>
+            <img src="kabit.png" alt="Kabit Logo">
+            <h1>Kabit</h1>
         </a>
         <a href="../index.html" class="back-link">
             <i class="fas fa-arrow-left"></i> KABEX'e Dön
@@ -260,20 +263,20 @@
     <!-- CENTERED CONTENT -->
     <div class="wrapper">
         <div class="huge-logo-wrapper">
-            <img src="gokturk.png" alt="Göktürk Mahjong Dev Logo" class="huge-logo">
+            <img src="kabit.png" alt="Kabit Dev Logo" class="huge-logo">
         </div>
 
         <span class="coming-badge"><i class="fas fa-hourglass-half"></i> ÇOK YAKINDA</span>
 
-        <h2 class="main-title">Kadim Simgeler <span>Geri Dönüyor!</span></h2>
+        <h2 class="main-title">Esnafın ve Küçük İşletmelerin <span>Dijital Hafızası</span></h2>
         
         <p class="sub-desc">
-            Orhun Alfabesi ve Türk tarihinin izlerini taşıyan Göktürk Mahjong çok yakında Google Play ve App Store mağazalarında yerini alacak.
+            Karmaşık bulut yazılımlarına son! Tamamen öz finansmanla geliştirilen, yerel veritabanlı masaüstü otomasyonu ve mobil takip çözümü Kabit çok yakında hizmetinizde.
         </p>
 
         <div class="status-card">
-            <i class="fas fa-code-commit"></i>
-            <span>Geliştirme Süreci Devam Ediyor</span>
+            <i class="fas fa-desktop"></i>
+            <span>Windows Masaüstü & Mobil Takip Sürümü Hazırlanıyor</span>
         </div>
     </div>
 
@@ -284,7 +287,7 @@
                 <i class="fas fa-user-shield"></i>
                 <div class="legal-info">
                     <h5>Gizlilik Politikası</h5>
-                    <p>Oyuncu verilerinin korunması hakkında.</p>
+                    <p>Verilerinizin yerel ve güvenli saklanması hakkında.</p>
                 </div>
             </a>
 
@@ -292,12 +295,12 @@
                 <i class="fas fa-file-contract"></i>
                 <div class="legal-info">
                     <h5>Kullanım Koşulları</h5>
-                    <p>Oyun kullanım kuralları ve şartları.</p>
+                    <p>Yazılım kullanım şartları ve detaylar.</p>
                 </div>
             </a>
         </div>
 
-        <p class="copyright">Göktürk Mahjong bir KABEX Bilişim A.Ş. ürünüdür. © 2026 Tüm Hakları Saklıdır.</p>
+        <p class="copyright">Kabit bir KABEX Bilişim A.Ş. ürünüdür. © 2026 Tüm Hakları Saklıdır.</p>
     </footer>
 
 </body>

@@ -5,156 +5,169 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com;">
     
-    <link rel="icon" type="image/png" href="k.png">
-    <link rel="apple-touch-icon" href="k.png">
+    <link rel="icon" type="image/png" href="../../k.png">
+    <link rel="apple-touch-icon" href="../../k.png">
 
     <title>FlörtZone - Gizlilik Politikası</title>
     
-    <link rel="stylesheet" href="/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary-gradient: linear-gradient(135deg, #ff0080 0%, #7928ca 100%);
-            --bg-dark: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
+            --primary: #007aff;
+            --bg-dark: #07090e;
+            --card-bg: rgba(15, 23, 42, 0.75);
+            --card-border: rgba(0, 122, 255, 0.15);
+            --text-main: #f8fafc;
+            --text-sub: #94a3b8;
         }
 
-        body.dark-mode { 
-            background-color: var(--bg-dark); 
-            color: #cbd5e0; 
-            margin: 0; 
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
-            -webkit-font-smoothing: antialiased;
+            background-image: 
+                radial-gradient(circle at 50% 10%, rgba(0, 122, 255, 0.1), transparent 50%),
+                linear-gradient(to bottom, rgba(7, 9, 14, 0.95), rgba(7, 9, 14, 0.99));
+            background-attachment: fixed;
+            min-height: 100vh;
         }
 
-        .legal-wrapper { 
-            max-width: 800px; 
-            margin: 0 auto; 
-            padding: 40px 20px; 
-            box-sizing: border-box;
+        /* HEADER */
+        header {
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            padding: 16px 8%; display: flex; justify-content: space-between; align-items: center;
+            background: rgba(7, 9, 14, 0.85); backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--card-border);
         }
 
-        /* Başlık ve Logo Alanı */
+        .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+        .brand-logo img { width: 36px; height: 36px; border-radius: 8px; border: 1px solid var(--card-border); object-fit: cover; }
+        .brand-logo h1 { font-size: 1.2rem; font-weight: 700; color: #fff; letter-spacing: -0.3px; }
+
+        .back-link {
+            display: inline-flex; align-items: center; gap: 8px;
+            color: var(--text-sub); text-decoration: none; font-size: 0.85rem; font-weight: 600;
+            padding: 8px 16px; border-radius: 8px; border: 1px solid var(--card-border);
+            background: rgba(255,255,255,0.02); transition: all 0.3s ease;
+        }
+        .back-link:hover { color: #fff; background: rgba(0, 122, 255, 0.1); border-color: var(--primary); }
+
+        /* WRAPPER */
+        .wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 130px 24px 60px;
+        }
+
         .legal-header {
-            text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 35px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            padding-bottom: 25px;
         }
-        .legal-header a {
-            text-decoration: none;
-            display: inline-block;
-        }
-        .legal-header img {
-            width: 60px;
-            height: 60px;
-            border-radius: 14px;
-            margin-bottom: 15px;
-            border: 2px solid #ff0080;
-            box-shadow: 0 5px 15px rgba(255, 0, 128, 0.2);
-            transition: transform 0.3s ease;
-        }
-        .legal-header img:hover {
-            transform: scale(1.05);
-        }
-        .legal-header h1 {
+
+        .legal-header h2 {
             font-size: 2rem;
-            margin: 0;
-            background: var(--primary-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
             font-weight: 800;
-        }
-        .update-date {
-            display: block;
-            margin-top: 10px;
-            font-size: 0.9rem;
-            color: #64748b;
-        }
-
-        /* İçerik Kutusu */
-        .content-box { 
-            background: var(--card-bg); 
-            padding: 40px; 
-            border-radius: 24px; 
-            border: 1px solid rgba(255,255,255,0.08);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-        }
-
-        h2 {
             color: #fff;
-            font-size: 1.3rem;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            border-left: 4px solid #ff0080;
-            padding-left: 15px;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
         }
 
-        p, li {
-            font-size: 1rem;
-            color: #94a3b8;
-            margin-bottom: 15px;
+        .update-date {
+            font-size: 0.85rem;
+            color: var(--text-sub);
+            font-weight: 500;
         }
 
-        ul {
-            padding-left: 20px;
-            margin-bottom: 25px;
-            list-style-type: none;
+        /* CONTENT */
+        .content-box {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 40px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
 
-        li {
-            margin-bottom: 12px;
-            position: relative;
-        }
-
-        li::before {
-            content: "•";
-            color: #ff0080;
-            font-weight: bold;
-            display: inline-block; 
-            width: 1em;
-            margin-left: -1em;
-        }
-
-        .contact-link {
-            color: #ff0080;
-            text-decoration: none;
+        .content-box h3 {
+            color: #fff;
+            font-size: 1.15rem;
             font-weight: 700;
-            transition: opacity 0.2s;
+            margin-top: 25px;
+            margin-bottom: 10px;
         }
-        .contact-link:hover {
-            opacity: 0.8;
-            text-decoration: underline;
+        .content-box h3:first-of-type { margin-top: 0; }
+
+        .content-box p, .content-box li {
+            font-size: 0.95rem;
+            color: var(--text-sub);
+            margin-bottom: 15px;
+            line-height: 1.7;
         }
 
-        /* Mobil Düzenlemeler */
+        .content-box ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+            list-style-type: square;
+        }
+
+        .content-box p strong, .content-box li strong {
+            color: #e2e8f0;
+        }
+
+        .contact-mail {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .contact-mail:hover { text-decoration: underline; }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: var(--text-sub);
+            font-size: 0.8rem;
+            border-top: 1px solid var(--card-border);
+            margin-top: 40px;
+        }
+
         @media (max-width: 600px) {
-            .legal-wrapper { padding: 20px 15px; }
-            .content-box { padding: 25px; border-radius: 18px; }
-            .legal-header h1 { font-size: 1.5rem; }
-            h2 { font-size: 1.1rem; }
-            p, li { font-size: 0.95rem; }
+            .wrapper { padding: 110px 16px 40px; }
+            .content-box { padding: 25px 20px; }
+            .legal-header h2 { font-size: 1.6rem; }
         }
     </style>
 </head>
 <body class="dark-mode">
-    <div class="legal-wrapper">
-        <header class="legal-header">
-            <a href="/flortzone/">
-                <img src="flortzone_logo.png" alt="FlörtZone Logo">
-            </a>
-            <h1>Gizlilik Politikası</h1>
-            <span class="update-date"><strong>Son Güncelleme:</strong> 29 Ocak 2026</span>
-        </header>
+
+    <header>
+        <a href="../index.html" class="brand-logo">
+            <img src="../flortzone_logo.png" alt="FlörtZone Logo">
+            <h1>FlörtZone</h1>
+        </a>
+        <a href="../index.html" class="back-link">
+            <i class="fas fa-arrow-left"></i> Geri Dön
+        </a>
+    </header>
+
+    <div class="wrapper">
+        <div class="legal-header">
+            <h2>Gizlilik Politikası</h2>
+            <div class="update-date">Son Güncelleme: 29 Ocak 2026</div>
+        </div>
 
         <div class="content-box">
-            <h2>1. Veri Sorumlusu ve Kapsam</h2>
+            <h3>1. Veri Sorumlusu ve Kapsam</h3>
             <p>İşbu Gizlilik Politikası, <strong>Kabex</strong> bünyesinde geliştirilen FlörtZone mobil uygulaması aracılığıyla toplanan verilerin işlenme süreçlerini açıklar. Kullanıcı gizliliği, teknik ve idari tedbirlerimizle en üst düzeyde korunmaktadır.</p>
 
-            <h2>2. Toplanan ve İşlenen Veriler</h2>
+            <h3>2. Toplanan ve İşlenen Veriler</h3>
             <p>Hizmet kalitemizi artırmak ve doğru eşleşmeleri sağlamak adına aşağıdaki veriler işlenmektedir:</p>
             <ul>
                 <li><strong>Profil Verileri:</strong> Ad, soyad, doğum tarihi, cinsiyet ve uygulama içi profil fotoğrafınız.</li>
@@ -163,7 +176,7 @@
                 <li><strong>Konum Verileri:</strong> Yakındaki kullanıcıları filtreleyebilmeniz için paylaştığınız şehir ve bölge bilgisi.</li>
             </ul>
 
-            <h2>3. Verilerin İşlenme Amacı</h2>
+            <h3>3. Verilerin İşlenme Amacı</h3>
             <p>Verileriniz, KVKK ve uluslararası veri koruma standartlarına uygun olarak şu amaçlarla kullanılır:</p>
             <ul>
                 <li>Kullanıcı hesabı oluşturulması ve kimlik doğrulaması.</li>
@@ -172,18 +185,23 @@
                 <li>Uygulama içi satın alımların ve Coin bakiyelerinin güvenli yönetimi.</li>
             </ul>
 
-            <h2>4. Veri Paylaşımı ve Üçüncü Taraflar</h2>
+            <h3>4. Veri Paylaşımı ve Üçüncü Taraflar</h3>
             <p>Kişisel verileriniz asla ticari amaçlarla üçüncü şahıslara satılmaz. Verileriniz, sadece hizmetin teknik altyapısını sağlayan güvenli servis sağlayıcıları (Firebase, RevenueCat vb.) ve yasal mercilerin resmi talepleri doğrultusunda paylaşılabilir.</p>
 
-            <h2>5. Kullanıcı Hakları ve Veri Silme</h2>
-            <p>Kullanıcılar, diledikleri an profil ayarları üzerinden hesaplarını kalıcı olarak silme hakkına sahiptir. Hesap silme işlemiyle birlikte tüm kişisel verileriniz sunucularımızdan temizlenir. Veri erişim talepleriniz için <a href="mailto:info@kabex.company" class="contact-link">info@kabex.company</a> üzerinden bizimle iletişime geçebilirsiniz.</p>
+            <h3>5. Kullanıcı Hakları ve Veri Silme</h3>
+            <p>Kullanıcılar, diledikleri an profil ayarları üzerinden hesaplarını kalıcı olarak silme hakkına sahiptir. Hesap silme işlemiyle birlikte tüm kişisel verileriniz sunucularımızdan temizlenir. Veri erişim talepleriniz için <a href="mailto:info@kabex.company" class="contact-mail">info@kabex.company</a> üzerinden bizimle iletişime geçebilirsiniz.</p>
 
-            <h2>6. Güvenlik Tedbirleri</h2>
+            <h3>6. Güvenlik Tedbirleri</h3>
             <p>Tüm verileriniz uçtan uca şifreleme ve modern bulut güvenlik protokolleri ile korunmaktadır. Yetkisiz erişime karşı sunucularımız düzenli olarak denetlenmektedir.</p>
 
-            <h2>7. İletişim</h2>
-            <p>Gizlilik süreçlerimizle ilgili daha detaylı bilgi veya şikayetleriniz için veri sorumlusu ekibimize <a href="mailto:info@kabex.company" class="contact-link">info@kabex.company</a> adresinden ulaşabilirsiniz.</p>
+            <h3>7. İletişim</h3>
+            <p>Gizlilik süreçlerimizle ilgili daha detaylı bilgi veya şikayetleriniz için veri sorumlusu ekibimize <a href="mailto:info@kabex.company" class="contact-mail">info@kabex.company</a> adresinden ulaşabilirsiniz.</p>
         </div>
+
+        <footer>
+            FlörtZone bir KABEX Bilişim A.Ş. ürünüdür. © 2026 Tüm Hakları Saklıdır.
+        </footer>
     </div>
+
 </body>
 </html>
