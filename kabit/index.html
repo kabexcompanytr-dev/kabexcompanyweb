@@ -186,13 +186,40 @@
         .module-header h3 { font-size: 1.35rem; font-weight: 800; color: #fff; }
         .module-intro { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 25px; font-style: italic; }
 
-        /* MODÜL LİSTE HİZALAMA DÜZELTMESİ */
         .module-list { list-style: none; display: flex; flex-direction: column; gap: 20px; }
         .module-list li { display: flex; align-items: flex-start; gap: 14px; }
         .module-list li i { color: var(--neon-cyan); font-size: 1rem; margin-top: 3px; flex-shrink: 0; }
         .module-list-content { display: flex; flex-direction: column; gap: 4px; }
         .module-list-content strong { color: #ffffff; font-size: 0.98rem; font-weight: 700; letter-spacing: -0.2px; }
         .module-list-content p { color: var(--text-dim); font-size: 0.9rem; margin: 0; line-height: 1.55; }
+
+        /* PRICING SECTION (ESNAF, ŞİRKET VE İKİLİ PAKET) */
+        .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
+        .price-card {
+            background: var(--glass-panel); border: 1px solid var(--glass-border);
+            border-radius: var(--radius-hud); padding: 35px 28px; backdrop-filter: blur(20px);
+            position: relative; transition: var(--transition); display: flex; flex-direction: column;
+            justify-content: space-between;
+        }
+        .price-card:hover { transform: translateY(-8px); border-color: rgba(0, 122, 255, 0.5); box-shadow: 0 20px 45px rgba(0,0,0,0.6); }
+        .price-card.featured {
+            border: 2px solid var(--neon-blue);
+            background: linear-gradient(180deg, rgba(15, 23, 42, 0.85) 0%, rgba(0, 122, 255, 0.12) 100%);
+            box-shadow: 0 0 35px rgba(0, 122, 255, 0.25);
+        }
+        .price-badge {
+            position: absolute; top: -14px; right: 20px; background: var(--neon-blue); color: #fff;
+            font-size: 0.7rem; font-weight: 800; padding: 5px 14px; border-radius: 100px;
+            letter-spacing: 0.8px; text-transform: uppercase; box-shadow: 0 0 15px rgba(0, 122, 255, 0.5);
+        }
+        .price-header h3 { font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
+        .price-header p { color: var(--text-dim); font-size: 0.85rem; line-height: 1.5; }
+        .price-amount { margin: 22px 0; display: flex; align-items: baseline; gap: 6px; }
+        .price-amount .val { font-size: 2.6rem; font-weight: 900; color: #fff; letter-spacing: -1px; }
+        .price-amount .period { color: var(--text-dim); font-size: 0.85rem; font-weight: 600; }
+        .price-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; }
+        .price-features li { display: flex; align-items: flex-start; gap: 10px; color: var(--text-dim); font-size: 0.88rem; line-height: 1.4; }
+        .price-features li i { color: var(--neon-cyan); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; }
 
         /* SHORTCUTS ENGINE HUD SHOWCASE */
         .shortcuts-hud {
@@ -280,6 +307,9 @@
         .footer-col a:hover { color: var(--neon-blue); }
         .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 25px; border-top: 1px solid rgba(255, 255, 255, 0.05); display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--text-dim); }
 
+        @media (max-width: 1100px) {
+            .pricing-grid { grid-template-columns: repeat(2, 1fr); }
+        }
         @media (max-width: 1024px) {
             .features-grid { grid-template-columns: repeat(2, 1fr); }
             .shortcuts-hud { grid-template-columns: repeat(2, 1fr); }
@@ -288,7 +318,7 @@
             .hero-flex { flex-direction: column; text-align: center; gap: 40px; }
             .hero-content p { margin-left: auto; margin-right: auto; }
             .cta-group { justify-content: center; }
-            .modules-grid { grid-template-columns: 1fr; }
+            .modules-grid, .pricing-grid { grid-template-columns: 1fr; }
             .mobile-teaser-box { flex-direction: column; text-align: center; }
             .mobile-teaser-content { flex-direction: column; }
             .footer-wrapper { grid-template-columns: 1fr; }
@@ -323,6 +353,7 @@
             <ul>
                 <li><a href="#features">Özellikler</a></li>
                 <li><a href="#modules">Modüller</a></li>
+                <li><a href="#pricing">Fiyatlandırma</a></li>
                 <li><a href="#system">Gereksinimler</a></li>
                 <li><a href="#" onclick="openEulaModal(event)">EULA Sözleşmesi</a></li>
             </ul>
@@ -532,6 +563,92 @@
             </div>
         </section>
 
+        <!-- FİYATLANDIRMA & LİSANS PAKETLERİ -->
+        <section id="pricing" class="container">
+            <div class="section-header">
+                <h2>Şeffaf & Uygun Lisans Paketleri</h2>
+                <p>Gizli maliyet yok, aylık dayatmalar yok. İhtiyacınıza uygun paketi seçip hemen başlayın.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <!-- 1. ESNAF PAKET -->
+                <div class="price-card" data-aos="fade-up">
+                    <div>
+                        <div class="price-header">
+                            <h3>Esnaf Paket</h3>
+                            <p>Veresiye takibi ve Müşteri/Toptancı borç takibi yapmak isteyen esnaflar için.</p>
+                        </div>
+                        <div class="price-amount">
+                            <span class="val">₺3.000</span>
+                            <span class="period">/ Yıllık</span>
+                        </div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> Tek Masaüstü Cihaz Lisansı (HWID)</li>
+                            <li><i class="fas fa-check"></i> Sınırsız Müşteri & Veresiye Takibi</li>
+                            <li><i class="fas fa-check"></i> Toptancı & Borç Yönetim Modülü</li>
+                            <li><i class="fas fa-check"></i> WhatsApp Bakiye Bildirim Hatırlatma</li>
+                            <li><i class="fas fa-check"></i> Otomatik & USB Bellek Yedekleme</li>
+                            <li><i class="fas fa-check"></i> Standart Teknik Destek</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/905407401998?text=Merhaba,%20KABİT%20Esnaf%20Paketi%20(3.000%20TL)%20satın%20almak%20istiyorum." target="_blank" class="btn-download" style="width: 100%; justify-content: center;">
+                        <i class="fab fa-whatsapp"></i> Lisans Satın Al
+                    </a>
+                </div>
+
+                <!-- 2. ŞİRKET PAKET -->
+                <div class="price-card" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <div class="price-header">
+                            <h3>Şirket Paket</h3>
+                            <p>Kasa, banka, döviz ve kredi takibini profesyonelce yönetmek isteyen şirketler için.</p>
+                        </div>
+                        <div class="price-amount">
+                            <span class="val">₺4.000</span>
+                            <span class="period">/ Yıllık</span>
+                        </div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> Tek Masaüstü Cihaz Lisansı (HWID)</li>
+                            <li><i class="fas fa-check"></i> Şirket Öz Finans Modülü</li>
+                            <li><i class="fas fa-check"></i> Patron Cebini Kasadan Ayıran Mimari</li>
+                            <li><i class="fas fa-check"></i> Canlı Döviz (TCMB) & Kur Farkı Analizi</li>
+                            <li><i class="fas fa-check"></i> Banka Kredi & Borç Takip Modülü</li>
+                            <li><i class="fas fa-check"></i> Öncelikli WhatsApp Destek Hattı</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/905407401998?text=Merhaba,%20KABİT%20Şirket%20Paketi%20(4.000%20TL)%20satın%20almak%20istiyorum." target="_blank" class="btn-download" style="width: 100%; justify-content: center;">
+                        <i class="fab fa-whatsapp"></i> Lisans Satın Al
+                    </a>
+                </div>
+
+                <!-- 3. İKİLİ PAKET (ÖNE ÇIKAN) -->
+                <div class="price-card featured" data-aos="fade-up" data-aos-delay="200">
+                    <span class="price-badge">AVANTAJLI HEPSİ BİR ARADA</span>
+                    <div>
+                        <div class="price-header">
+                            <h3>İkili Paket</h3>
+                            <p>Hem esnaf hem şirket modülünü tek çatı altında sınırsız kullanmak isteyenler için.</p>
+                        </div>
+                        <div class="price-amount">
+                            <span class="val">₺6.000</span>
+                            <span class="period">/ Yıllık</span>
+                        </div>
+                        <ul class="price-features">
+                            <li><i class="fas fa-check"></i> <strong>Esnaf Paket + Şirket Paket Dahil</strong></li>
+                            <li><i class="fas fa-check"></i> Tüm Veresiye, Kasa, Banka ve Döviz Modülleri</li>
+                            <li><i class="fas fa-check"></i> WhatsApp & SMS Mutabakat Entegrasyonu</li>
+                            <li><i class="fas fa-check"></i> Sıfır Veri Kaybı & Çift Yedekleme</li>
+                            <li><i class="fas fa-check"></i> Birebir Uzaktan Kurulum & Eğitim</li>
+                            <li><i class="fas fa-check"></i> VIP 7/24 Teknik Destek Desteği</li>
+                        </ul>
+                    </div>
+                    <a href="https://wa.me/905407401998?text=Merhaba,%20KABİT%20İkili%20Paket%20(6.000%20TL)%20satın%20almak%20istiyorum." target="_blank" class="btn-download" style="width: 100%; justify-content: center; background: linear-gradient(135deg, #00f0ff 0%, #007aff 100%);">
+                        <i class="fab fa-whatsapp"></i> İkili Paket Satın Al
+                    </a>
+                </div>
+            </div>
+        </section>
+
         <!-- SİSTEM GEREKSİNİMLERİ -->
         <section id="system" class="container">
             <div class="section-header">
@@ -619,6 +736,7 @@
                 <ul>
                     <li><a href="#features">Özellikler</a></li>
                     <li><a href="#modules">Modüller</a></li>
+                    <li><a href="#pricing">Fiyatlandırma</a></li>
                     <li><a href="#system">Gereksinimler</a></li>
                     <li><a href="#" onclick="openEulaModal(event)">EULA Sözleşmesi</a></li>
                 </ul>
