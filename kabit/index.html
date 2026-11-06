@@ -193,7 +193,7 @@
         .module-list-content strong { color: #ffffff; font-size: 0.98rem; font-weight: 700; letter-spacing: -0.2px; }
         .module-list-content p { color: var(--text-dim); font-size: 0.9rem; margin: 0; line-height: 1.55; }
 
-        /* PRICING SECTION (ESNAF, ŞİRKET VE İKİLİ PAKET) */
+        /* PRICING SECTION (MONTHLY FOCUSED) */
         .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; max-width: 1200px; margin: 0 auto; }
         .price-card {
             background: var(--glass-panel); border: 1px solid var(--glass-border);
@@ -214,9 +214,12 @@
         }
         .price-header h3 { font-size: 1.35rem; font-weight: 800; color: #fff; margin-bottom: 8px; }
         .price-header p { color: var(--text-dim); font-size: 0.85rem; line-height: 1.5; }
-        .price-amount { margin: 22px 0; display: flex; align-items: baseline; gap: 6px; }
-        .price-amount .val { font-size: 2.6rem; font-weight: 900; color: #fff; letter-spacing: -1px; }
-        .price-amount .period { color: var(--text-dim); font-size: 0.85rem; font-weight: 600; }
+        
+        .price-amount { margin: 20px 0 6px; display: flex; align-items: baseline; gap: 6px; }
+        .price-amount .val { font-size: 3rem; font-weight: 900; color: #fff; letter-spacing: -1.5px; line-height: 1; }
+        .price-amount .period { color: var(--neon-cyan); font-size: 0.95rem; font-weight: 700; }
+        .price-annual-sub { font-size: 0.82rem; color: var(--text-dim); margin-bottom: 20px; font-weight: 500; }
+
         .price-features { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 28px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 20px; }
         .price-features li { display: flex; align-items: flex-start; gap: 10px; color: var(--text-dim); font-size: 0.88rem; line-height: 1.4; }
         .price-features li i { color: var(--neon-cyan); font-size: 0.85rem; margin-top: 2px; flex-shrink: 0; }
@@ -579,9 +582,10 @@
                             <p>Veresiye takibi ve Müşteri/Toptancı borç takibi yapmak isteyen esnaflar için.</p>
                         </div>
                         <div class="price-amount">
-                            <span class="val">₺3.000</span>
-                            <span class="period">/ Yıllık</span>
+                            <span class="val">₺250</span>
+                            <span class="period">/ Ay</span>
                         </div>
+                        <div class="price-annual-sub">(Yıllık ₺3.000 olarak faturalandırılır)</div>
                         <ul class="price-features">
                             <li><i class="fas fa-check"></i> Tek Masaüstü Cihaz Lisansı (HWID)</li>
                             <li><i class="fas fa-check"></i> Sınırsız Müşteri & Veresiye Takibi</li>
@@ -591,7 +595,7 @@
                             <li><i class="fas fa-check"></i> Standart Teknik Destek</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/905407401998?text=Merhaba,%20KABİT%20Esnaf%20Paketi%20(3.000%20TL)%20satın%20almak%20istiyorum." target="_blank" class="btn-download" style="width: 100%; justify-content: center;">
+                    <a href="https://wa.me/905407401998?text=Merhaba,%20KABİT%20Esnaf%20Paketi%20(Aylık%20250%20TL%20/%20Yıllık%203.000%20TL)%20satın%20almak%20istiyorum." target="_blank" class="btn-download" style="width: 100%; justify-content: center;">
                         <i class="fab fa-whatsapp"></i> Lisans Satın Al
                     </a>
                 </div>
@@ -604,9 +608,10 @@
                             <p>Kasa, banka, döviz ve kredi takibini profesyonelce yönetmek isteyen şirketler için.</p>
                         </div>
                         <div class="price-amount">
-                            <span class="val">₺4.000</span>
-                            <span class="period">/ Yıllık</span>
+                            <span class="val">₺333</span>
+                            <span class="period">/ Ay</span>
                         </div>
+                        <div class="price-annual-sub">(Yıllık ₺4.000 olarak faturalandırılır)</div>
                         <ul class="price-features">
                             <li><i class="fas fa-check"></i> Tek Masaüstü Cihaz Lisansı (HWID)</li>
                             <li><i class="fas fa-check"></i> Şirket Öz Finans Modülü</li>
@@ -616,7 +621,7 @@
                             <li><i class="fas fa-check"></i> Öncelikli WhatsApp Destek Hattı</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/905407401998?text=Merhaba,%20KABİT%20Şirket%20Paketi%20(4.000%20TL)%20satın%20almak%20istiyorum." target="_blank" class="btn-download" style="width: 100%; justify-content: center;">
+                    <a href="https://wa.me/905407401998?text=Merhaba,%20KABİT%20Şirket%20Paketi%20(Aylık%20333%20TL%20/%20Yıllık%204.000%20TL)%20satın%20almak%20istiyorum." target="_blank" class="btn-download" style="width: 100%; justify-content: center;">
                         <i class="fab fa-whatsapp"></i> Lisans Satın Al
                     </a>
                 </div>
@@ -630,9 +635,10 @@
                             <p>Hem esnaf hem şirket modülünü tek çatı altında sınırsız kullanmak isteyenler için.</p>
                         </div>
                         <div class="price-amount">
-                            <span class="val">₺6.000</span>
-                            <span class="period">/ Yıllık</span>
+                            <span class="val">₺500</span>
+                            <span class="period">/ Ay</span>
                         </div>
+                        <div class="price-annual-sub">(Yıllık ₺6.000 olarak faturalandırılır)</div>
                         <ul class="price-features">
                             <li><i class="fas fa-check"></i> <strong>Esnaf Paket + Şirket Paket Dahil</strong></li>
                             <li><i class="fas fa-check"></i> Tüm Veresiye, Kasa, Banka ve Döviz Modülleri</li>
@@ -642,7 +648,7 @@
                             <li><i class="fas fa-check"></i> VIP 7/24 Teknik Destek Desteği</li>
                         </ul>
                     </div>
-                    <a href="https://wa.me/905407401998?text=Merhaba,%20KABİT%20İkili%20Paket%20(6.000%20TL)%20satın%20almak%20istiyorum." target="_blank" class="btn-download" style="width: 100%; justify-content: center; background: linear-gradient(135deg, #00f0ff 0%, #007aff 100%);">
+                    <a href="https://wa.me/905407401998?text=Merhaba,%20KABİT%20İkili%20Paket%20(Aylık%20500%20TL%20/%20Yıllık%206.000%20TL)%20satın%20almak%20istiyorum." target="_blank" class="btn-download" style="width: 100%; justify-content: center; background: linear-gradient(135deg, #00f0ff 0%, #007aff 100%);">
                         <i class="fab fa-whatsapp"></i> İkili Paket Satın Al
                     </a>
                 </div>
