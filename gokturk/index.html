@@ -8,7 +8,7 @@
     <link rel="icon" type="image/png" href="../k.png">
     <link rel="apple-touch-icon" href="../k.png">
 
-    <title>Göktürk Mahjong - Çok Yakında!</title>
+    <title>Göktürk Mahjong - Tarihi ve Eğlenceyi Bir Araya Getirin!</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,12 +16,13 @@
     <style>
         :root {
             --primary: #38bdf8;
-            --primary-glow: rgba(56, 189, 248, 0.35);
+            --primary-glow: rgba(56, 189, 248, 0.25);
             --gold-accent: #fbbf24;
             --gold-glow: rgba(251, 191, 36, 0.25);
+            --star-gold: #f59e0b;
             --bg-dark: #07090e;
             --card-bg: rgba(15, 23, 42, 0.75);
-            --card-border: rgba(56, 189, 248, 0.2);
+            --card-border: rgba(56, 189, 248, 0.15);
             --text-main: #f8fafc;
             --text-sub: #94a3b8;
             --radius-lg: 24px;
@@ -39,14 +40,11 @@
             line-height: 1.6;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 50% 30%, rgba(56, 189, 248, 0.18), transparent 55%),
-                radial-gradient(circle at 50% 80%, rgba(251, 191, 36, 0.1), transparent 50%),
+                radial-gradient(circle at 10% 20%, rgba(251, 191, 36, 0.14), transparent 45%),
+                radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.16), transparent 45%),
                 linear-gradient(to bottom, rgba(7, 9, 14, 0.95), rgba(7, 9, 14, 0.99));
             background-attachment: fixed;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
         /* HEADER */
@@ -57,9 +55,9 @@
             border-bottom: 1px solid var(--card-border);
         }
 
-        .brand-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-        .brand-logo img { width: 40px; height: 40px; border-radius: 10px; border: 1px solid var(--card-border); }
-        .brand-logo h1 { font-size: 1.25rem; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+        .brand-logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+        .brand-logo img { width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--card-border); object-fit: cover; }
+        .brand-logo h1 { font-size: 1.35rem; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
 
         .back-link {
             display: inline-flex; align-items: center; gap: 8px;
@@ -69,178 +67,209 @@
         }
         .back-link:hover { color: #fff; background: rgba(56, 189, 248, 0.1); border-color: var(--primary); }
 
-        /* CENTERED HERO / COMING SOON CONTAINER */
-        .wrapper {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 140px 24px 60px;
-            text-align: center;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+        /* WRAPPER */
+        .wrapper { max-width: 1100px; margin: 0 auto; padding: 125px 24px 60px; }
+
+        /* HERO SECTION */
+        .hero-section {
+            display: grid; grid-template-columns: 1.25fr 0.75fr; gap: 40px; align-items: center;
+            margin-bottom: 90px;
         }
 
-        .huge-logo-wrapper {
-            position: relative;
-            margin-bottom: 35px;
-            display: inline-block;
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(251, 191, 36, 0.12); color: var(--gold-accent);
+            padding: 6px 16px; border-radius: 100px; font-weight: 700; font-size: 0.78rem;
+            letter-spacing: 1px; border: 1px solid rgba(251, 191, 36, 0.3); margin-bottom: 20px;
         }
+        .hero-badge i { font-size: 0.75rem; }
 
-        .huge-logo-wrapper::before {
-            content: '';
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 220px; height: 220px;
-            background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
-            border-radius: 50%;
-            z-index: 0;
-            filter: blur(20px);
+        .hero-title {
+            font-size: clamp(2.2rem, 4.1vw, 3.4rem); font-weight: 900; line-height: 1.15;
+            color: #fff; margin-bottom: 18px; letter-spacing: -1px;
         }
-
-        .huge-logo {
-            width: 180px;
-            height: 180px;
-            border-radius: 38px;
-            border: 3px solid rgba(56, 189, 248, 0.4);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px var(--primary-glow);
-            object-fit: cover;
-            position: relative;
-            z-index: 1;
-            animation: pulseGlow 4s infinite alternate ease-in-out;
-        }
-
-        @keyframes pulseGlow {
-            0% { transform: scale(1); box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px var(--primary-glow); }
-            100% { transform: scale(1.03); box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 50px rgba(251, 191, 36, 0.4); }
-        }
-
-        .coming-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(251, 191, 36, 0.1);
-            color: var(--gold-accent);
-            padding: 8px 20px;
-            border-radius: 100px;
-            font-weight: 800;
-            font-size: 0.85rem;
-            letter-spacing: 1.5px;
-            border: 1px solid rgba(251, 191, 36, 0.3);
-            margin-bottom: 24px;
-            text-transform: uppercase;
-        }
-
-        .main-title {
-            font-size: clamp(2.5rem, 5vw, 4rem);
-            font-weight: 900;
-            line-height: 1.1;
-            color: #fff;
-            margin-bottom: 16px;
-            letter-spacing: -1.5px;
-        }
-
-        .main-title span {
+        .hero-title span {
             background: linear-gradient(135deg, var(--primary), var(--gold-accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        .sub-desc {
-            font-size: 1.15rem;
-            color: var(--text-sub);
-            max-width: 580px;
-            margin: 0 auto 40px;
-            font-weight: 400;
+        .hero-desc { font-size: 1.05rem; color: var(--text-sub); margin-bottom: 30px; font-weight: 400; line-height: 1.65; }
+
+        .tags-row { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 35px; }
+        .tag-pill {
+            background: rgba(56, 189, 248, 0.08); color: var(--primary);
+            padding: 6px 16px; border-radius: 100px; font-size: 0.82rem; font-weight: 600;
+            border: 1px solid rgba(56, 189, 248, 0.2); display: flex; align-items: center; gap: 6px;
         }
 
-        .status-card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: var(--radius-lg);
-            padding: 20px 32px;
+        /* DOWNLOAD BUTTONS */
+        .download-row { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+        .download-btn {
+            display: inline-flex; align-items: center; gap: 14px;
+            background: #000; color: #fff; padding: 12px 22px; border-radius: 14px;
+            text-decoration: none; border: 1px solid rgba(255,255,255,0.15);
+            transition: var(--transition); min-width: 190px;
+        }
+        .download-btn:hover {
+            transform: translateY(-3px); border-color: var(--primary);
+            box-shadow: 0 10px 25px var(--primary-glow);
+        }
+        .download-btn i { font-size: 26px; color: #fff; }
+        .btn-text { display: flex; flex-direction: column; line-height: 1.2; }
+        .btn-text small { font-size: 9px; text-transform: uppercase; opacity: 0.7; letter-spacing: 0.8px; }
+        .btn-text span { font-size: 15px; font-weight: 700; }
+
+        .btn-disabled {
+            opacity: 0.55; cursor: default; border-style: dashed; background: rgba(0,0,0,0.4);
+        }
+        .btn-disabled:hover { transform: none; box-shadow: none; border-color: rgba(255,255,255,0.15); }
+        .badge-soon {
+            font-size: 8px; background: var(--gold-accent); color: #07090e; font-weight: 800;
+            padding: 2px 6px; border-radius: 4px; margin-left: 6px; vertical-align: middle;
+        }
+
+        /* SOCIAL MEDIA LINKS */
+        .social-row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
+        .social-btn {
+            display: inline-flex; align-items: center; gap: 9px;
+            padding: 9px 18px; border-radius: 12px;
+            font-size: 0.84rem; font-weight: 700; text-decoration: none;
+            background: var(--card-bg); border: 1px solid var(--card-border);
+            color: var(--text-main); transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+        .social-btn.instagram:hover {
+            border-color: #e1306c;
+            background: rgba(225, 48, 108, 0.12);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(225, 48, 108, 0.25);
+        }
+        .social-btn.instagram i { color: #f43f5e; font-size: 1.05rem; }
+
+        .social-btn.facebook:hover {
+            border-color: #1877f2;
+            background: rgba(24, 119, 242, 0.12);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(24, 119, 242, 0.25);
+        }
+        .social-btn.facebook i { color: #38bdf8; font-size: 1.05rem; }
+
+        /* GOOGLE PLAY SHOWCASE CARD */
+        .mockup-wrapper { position: relative; display: flex; justify-content: center; align-items: center; }
+        .mockup-card {
+            width: 100%; max-width: 340px; background: var(--card-bg);
+            border-radius: 28px; padding: 26px; border: 1px solid var(--card-border);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6); backdrop-filter: blur(15px);
+            position: relative; overflow: hidden;
+        }
+        
+        .play-rating-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 15px; }
+        .play-brand { display: flex; align-items: center; gap: 10px; }
+        .play-brand i { font-size: 1.8rem; color: #34a853; }
+        .play-title { font-size: 0.88rem; font-weight: 800; color: #fff; letter-spacing: 0.5px; }
+        .play-subtitle { font-size: 0.72rem; color: var(--text-sub); }
+
+        .game-showcase-box { display: flex; align-items: center; gap: 16px; margin-bottom: 20px; }
+        .game-showcase-logo {
+            width: 68px; height: 68px; border-radius: 18px;
+            border: 2px solid rgba(251, 191, 36, 0.4);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+            object-fit: cover; flex-shrink: 0;
+        }
+        .rating-details { display: flex; flex-direction: column; gap: 4px; }
+        .game-card-name { font-size: 1.15rem; font-weight: 800; color: #fff; line-height: 1.2; }
+        .rating-stars { color: var(--star-gold); font-size: 0.85rem; display: flex; gap: 3px; }
+        .rating-count { font-size: 0.76rem; color: var(--text-sub); font-weight: 600; }
+
+        .mockup-stat-box {
+            background: rgba(255,255,255,0.03); border-radius: var(--radius-md);
+            padding: 14px; border: 1px solid rgba(255,255,255,0.05);
+        }
+        .mockup-stat-item { display: flex; justify-content: space-between; align-items: center; font-size: 0.82rem; margin-bottom: 9px; }
+        .mockup-stat-item:last-child { margin-bottom: 0; }
+        .mockup-stat-item span { color: var(--text-sub); }
+        .mockup-stat-item strong { color: var(--gold-accent); }
+
+        /* FEATURES SECTION */
+        .section-title { text-align: center; margin-bottom: 50px; }
+        .section-title h3 { font-size: 2rem; font-weight: 800; color: #fff; letter-spacing: -0.5px; }
+        .section-title p { color: var(--text-sub); font-size: 0.98rem; margin-top: 8px; }
+
+        .features-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px;
+            margin-bottom: 80px;
+        }
+        .feature-card {
+            background: var(--card-bg); border-radius: var(--radius-lg); padding: 32px 26px;
+            border: 1px solid var(--card-border); transition: var(--transition);
             backdrop-filter: blur(15px);
-            display: inline-flex;
-            align-items: center;
-            gap: 16px;
+        }
+        .feature-card:hover {
+            transform: translateY(-6px); border-color: rgba(56, 189, 248, 0.4);
             box-shadow: 0 15px 35px rgba(0,0,0,0.4);
         }
-
-        .status-card i {
-            font-size: 1.5rem;
-            color: var(--primary);
+        .feature-icon {
+            width: 52px; height: 52px; border-radius: 16px;
+            background: rgba(56, 189, 248, 0.1); color: var(--primary);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.35rem; margin-bottom: 22px; border: 1px solid rgba(56, 189, 248, 0.2);
         }
-
-        .status-card text {
-            font-size: 0.95rem;
-            font-weight: 600;
-            color: #fff;
+        .feature-card.gold .feature-icon {
+            background: rgba(251, 191, 36, 0.1); color: var(--gold-accent); border-color: rgba(251, 191, 36, 0.25);
         }
+        .feature-card h4 { font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 12px; }
+        .feature-card p { font-size: 0.9rem; color: var(--text-sub); line-height: 1.65; }
 
-        /* FOOTER / LEGAL */
-        footer {
-            border-top: 1px solid var(--card-border);
-            padding: 40px 8%;
-            width: 100%;
+        /* BANNER SECTION */
+        .cta-banner {
+            background: linear-gradient(135deg, rgba(56, 189, 248, 0.12), rgba(251, 191, 36, 0.12));
+            border-radius: 28px; padding: 45px 35px; border: 1px solid var(--card-border);
+            text-align: center; margin-bottom: 60px; backdrop-filter: blur(20px);
         }
+        .cta-banner h4 { font-size: 1.8rem; font-weight: 800; color: #fff; margin-bottom: 12px; }
+        .cta-banner p { color: var(--text-sub); max-width: 650px; margin: 0 auto 25px; font-size: 0.98rem; }
 
-        .legal-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            max-width: 800px;
-            margin: 0 auto 25px;
-        }
-
+        /* FOOTER / LEGAL & SOCIAL */
+        footer { border-top: 1px solid var(--card-border); padding-top: 40px; }
+        .legal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 30px; }
         .legal-card {
-            background: var(--card-bg);
-            padding: 18px 20px;
-            border-radius: var(--radius-md);
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            text-decoration: none;
-            border: 1px solid var(--card-border);
-            transition: var(--transition);
+            background: var(--card-bg); padding: 20px; border-radius: var(--radius-md);
+            display: flex; align-items: center; gap: 16px; text-decoration: none;
+            border: 1px solid var(--card-border); transition: var(--transition);
         }
-
-        .legal-card:hover {
-            background: rgba(56, 189, 248, 0.05);
-            border-color: var(--primary);
-        }
-
+        .legal-card:hover { background: rgba(56, 189, 248, 0.05); border-color: var(--primary); }
         .legal-card i {
-            width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            flex-shrink: 0;
+            width: 42px; height: 42px; border-radius: 12px; background: rgba(56, 189, 248, 0.1);
+            color: var(--primary); display: flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; flex-shrink: 0;
         }
+        .legal-card.ig-card i { background: rgba(244, 63, 94, 0.1); color: #f43f5e; }
+        .legal-card.ig-card:hover { border-color: #f43f5e; background: rgba(244, 63, 94, 0.05); }
+        .legal-card.fb-card i { background: rgba(24, 119, 242, 0.12); color: #38bdf8; }
+        .legal-card.fb-card:hover { border-color: #1877f2; background: rgba(24, 119, 242, 0.06); }
 
-        .legal-info h5 { color: #fff; font-size: 0.92rem; font-weight: 700; }
-        .legal-info p { color: var(--text-sub); font-size: 0.75rem; margin-top: 2px; }
+        .legal-info h5 { color: #fff; font-size: 0.95rem; font-weight: 700; }
+        .legal-info p { color: var(--text-sub); font-size: 0.78rem; margin-top: 2px; }
 
-        .copyright {
-            text-align: center;
-            color: var(--text-sub);
-            font-size: 0.8rem;
-            font-weight: 500;
-            opacity: 0.75;
+        .copyright { text-align: center; color: var(--text-sub); font-size: 0.8rem; font-weight: 500; opacity: 0.75; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .hero-section { grid-template-columns: 1fr; text-align: center; gap: 50px; }
+            .tags-row, .download-row, .social-row { justify-content: center; }
+            .hero-desc { margin-left: auto; margin-right: auto; max-width: 600px; }
+            .mockup-wrapper { order: -1; }
         }
 
         @media (max-width: 600px) {
             header { padding: 14px 5%; }
-            .wrapper { padding: 120px 16px 40px; }
-            .huge-logo { width: 140px; height: 140px; border-radius: 28px; }
+            .wrapper { padding: 100px 16px 40px; }
             .legal-grid { grid-template-columns: 1fr; }
-            .status-card { width: 100%; justify-content: center; }
+            .download-btn { width: 100%; justify-content: center; }
+            .social-btn { width: 100%; justify-content: center; }
+            .cta-banner { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -257,48 +286,198 @@
         </a>
     </header>
 
-    <!-- CENTERED CONTENT -->
+    <!-- MAIN CONTENT -->
     <div class="wrapper">
-        <div class="huge-logo-wrapper">
-            <img src="gokturk.png" alt="Göktürk Mahjong Dev Logo" class="huge-logo">
-        </div>
-
-        <span class="coming-badge"><i class="fas fa-hourglass-half"></i> ÇOK YAKINDA</span>
-
-        <h2 class="main-title">Kadim Simgeler <span>Geri Dönüyor!</span></h2>
         
-        <p class="sub-desc">
-            Orhun Alfabesi ve Türk tarihinin izlerini taşıyan Göktürk Mahjong çok yakında Google Play ve App Store mağazalarında yerini alacak.
-        </p>
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fas fa-chess-board"></i> TARİH & ZEKA OYUNU</span>
+                <h2 class="hero-title">Göktürk Mahjong ile <span>Tarihi ve Eğlenceyi</span> Bir Araya Getirin!</h2>
+                <p class="hero-desc">Binlerce yıllık Türk tarihinin eşsiz mirası Orhun Alfabesi, klasik Mahjong taş eşleştirme mekaniği ile buluşuyor. Göktürk Mahjong, zekanızı zorlarken sizi kadim Türk damgalarının ve sembollerinin dünyasında eğlenceli bir yolculuğa çıkarıyor.</p>
 
-        <div class="status-card">
-            <i class="fas fa-code-commit"></i>
-            <span>Geliştirme Süreci Devam Ediyor</span>
+                <div class="tags-row">
+                    <span class="tag-pill"><i class="fas fa-monument"></i> Orhun Alfabesi</span>
+                    <span class="tag-pill"><i class="fas fa-brain"></i> Zeka & Odaklanma</span>
+                    <span class="tag-pill"><i class="fas fa-wifi"></i> Çevrimdışı Oyun</span>
+                </div>
+
+                <div class="download-row">
+                    <a href="https://play.google.com/store/apps/details?id=com.kabex.gokturk_mahjong&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="download-btn">
+                        <i class="fab fa-google-play"></i>
+                        <div class="btn-text">
+                            <small>HEMEN ÜCRETSİZ İNDİR</small>
+                            <span>Google Play</span>
+                        </div>
+                    </a>
+
+                    <a href="javascript:void(0)" class="download-btn btn-disabled">
+                        <i class="fab fa-apple"></i>
+                        <div class="btn-text">
+                            <small>YAKINDA <span class="badge-soon">iOS</span></small>
+                            <span>App Store</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- SOSYAL MEDYA BUTONLARI -->
+                <div class="social-row">
+                    <a href="https://www.instagram.com/gokturkmahjong?avpt=MTExbGt5N2M1amxiNQ==" target="_blank" rel="noopener noreferrer" class="social-btn instagram">
+                        <i class="fab fa-instagram"></i> Instagram'da Takip Et
+                    </a>
+                    <a href="https://www.facebook.com/share/1CWg91Pq4B/" target="_blank" rel="noopener noreferrer" class="social-btn facebook">
+                        <i class="fab fa-facebook"></i> Facebook Sayfası
+                    </a>
+                </div>
+            </div>
+
+            <!-- GOOGLE PLAY SHOWCASE CARD -->
+            <div class="mockup-wrapper">
+                <div class="mockup-card">
+                    <div class="play-rating-header">
+                        <div class="play-brand">
+                            <i class="fab fa-google-play"></i>
+                            <div>
+                                <div class="play-title">Google Play</div>
+                                <div class="play-subtitle">Resmi Mağaza Yayını</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="game-showcase-box">
+                        <img src="gokturk.png" alt="Göktürk Mahjong İkon" class="game-showcase-logo">
+                        <div class="rating-details">
+                            <div class="game-card-name">Göktürk Mahjong</div>
+                            <div class="rating-stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="rating-count">Kabex Company</div>
+                        </div>
+                    </div>
+
+                    <div class="mockup-stat-box">
+                        <div class="mockup-stat-item">
+                            <span>Kategori</span>
+                            <strong>Bulmaca & Masa Oyunu</strong>
+                        </div>
+                        <div class="mockup-stat-item">
+                            <span>Bağlantı Durumu</span>
+                            <strong>Çevrimdışı Oynanabilir</strong>
+                        </div>
+                        <div class="mockup-stat-item">
+                            <span>Fiyatlandırma</span>
+                            <strong>Ücretsiz İndir</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FEATURES SECTION -->
+        <section>
+            <div class="section-title">
+                <h3>Oyun Özellikleri</h3>
+                <p>Kadim Türk damgalarıyla zihninizi dinlendirirken odaklanma gücünüzü zirveye taşıyın</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card gold">
+                    <div class="feature-icon"><i class="fas fa-monument"></i></div>
+                    <h4>Otantik Göktürk Damgaları</h4>
+                    <p>Binlerce yıllık Orhun Alfabesinden ilham alınarak özel olarak işlenmiş Göktürk harfleri ve kadim sembollerle tarihi hissedin.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+                    <h4>Zengin Seviye Tasarımları</h4>
+                    <p>Farklı zorluk derecelerinde özenle kurgulanmış taş dizilimleriyle her bölümde zihninizi tazeleyin ve stratejinizi geliştirin.</p>
+                </div>
+
+                <div class="feature-card gold">
+                    <div class="feature-icon"><i class="fas fa-eye"></i></div>
+                    <h4>Göz Yormayan Sade Arayüz</h4>
+                    <p>Uzun oyun seanslarında dahi gözünüzü yormayan, tarihi atmosfere yakışan otantik, modern ve sade arayüz tasarımı.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                    <h4>Akıcı Mobil Mekanik</h4>
+                    <p>Tüm Android cihazlarda yüksek performansla çalışan, gecikmesiz dokunuş hissine sahip hızlı ve akıcı Mahjong eşleştirme deneyimi.</p>
+                </div>
+
+                <div class="feature-card gold">
+                    <div class="feature-icon"><i class="fas fa-plane-slash"></i></div>
+                    <h4>Çevrimdışı Oynama İmkanı</h4>
+                    <p>Yolculukta, metroda veya internet bağlantısının olmadığı her yerde kesintisiz olarak panoları temizlemeye devam edin.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-bullseye"></i></div>
+                    <h4>Odaklanma & Zeka Gelişimi</h4>
+                    <p>Eşleşen taşları bularak hafızanızı güçlendirin, dikkat sürenizi artırın ve her panoyu tamamladıkça yeni semboller keşfedin.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA BANNER -->
+        <div class="cta-banner">
+            <h4>Zekanıza Güveniyorsanız Hemen Başlayın!</h4>
+            <p>Odaklanmanızı geliştirin, taşları eşleştirin ve panoyu temizleyerek kadim Göktürk sembollerini keşfedin. Hemen ücretsiz indirin ve oynamaya başlayın!</p>
+            <div class="download-row" style="justify-content: center; margin-bottom: 0;">
+                <a href="https://play.google.com/store/apps/details?id=com.kabex.gokturk_mahjong&pcampaignid=web_share" target="_blank" rel="noopener noreferrer" class="download-btn">
+                    <i class="fab fa-google-play"></i>
+                    <div class="btn-text">
+                        <small>ÜCRETSİZ İNDİR</small>
+                        <span>Google Play Store</span>
+                    </div>
+                </a>
+            </div>
         </div>
+
+        <!-- FOOTER & LEGAL -->
+        <footer>
+            <div class="legal-grid">
+                <a href="https://www.instagram.com/gokturkmahjong?avpt=MTExbGt5N2M1amxiNQ==" target="_blank" rel="noopener noreferrer" class="legal-card ig-card">
+                    <i class="fab fa-instagram"></i>
+                    <div class="legal-info">
+                        <h5>Instagram Sayfamız</h5>
+                        <p>@gokturkmahjong resmi hesabını takip edin.</p>
+                    </div>
+                </a>
+
+                <a href="https://www.facebook.com/share/1CWg91Pq4B/" target="_blank" rel="noopener noreferrer" class="legal-card fb-card">
+                    <i class="fab fa-facebook"></i>
+                    <div class="legal-info">
+                        <h5>Facebook Sayfamız</h5>
+                        <p>Topluluğumuza katılın ve güncellemeleri kaçırmayın.</p>
+                    </div>
+                </a>
+
+                <a href="gizlilik/index.html" class="legal-card">
+                    <i class="fas fa-user-shield"></i>
+                    <div class="legal-info">
+                        <h5>Gizlilik Politikası</h5>
+                        <p>Oyuncu verilerinin korunması ve işlenme detayları.</p>
+                    </div>
+                </a>
+
+                <a href="kullanim/index.html" class="legal-card">
+                    <i class="fas fa-file-contract"></i>
+                    <div class="legal-info">
+                        <h5>Kullanım Koşulları</h5>
+                        <p>Oyun kullanım kuralları ve sözleşme detayları.</p>
+                    </div>
+                </a>
+            </div>
+
+            <p class="copyright">Göktürk Mahjong bir KABEX Bilişim A.Ş. ürünüdür. © 2026 Tüm Hakları Saklıdır.</p>
+        </footer>
+
     </div>
-
-    <!-- FOOTER & LEGAL ONLY -->
-    <footer>
-        <div class="legal-grid">
-            <a href="gizlilik/index.html" class="legal-card">
-                <i class="fas fa-user-shield"></i>
-                <div class="legal-info">
-                    <h5>Gizlilik Politikası</h5>
-                    <p>Oyuncu verilerinin korunması hakkında.</p>
-                </div>
-            </a>
-
-            <a href="kullanim/index.html" class="legal-card">
-                <i class="fas fa-file-contract"></i>
-                <div class="legal-info">
-                    <h5>Kullanım Koşulları</h5>
-                    <p>Oyun kullanım kuralları ve şartları.</p>
-                </div>
-            </a>
-        </div>
-
-        <p class="copyright">Göktürk Mahjong bir KABEX Bilişim A.Ş. ürünüdür. © 2026 Tüm Hakları Saklıdır.</p>
-    </footer>
 
 </body>
 </html>

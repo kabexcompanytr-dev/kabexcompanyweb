@@ -236,13 +236,31 @@
         .contact-item a { color: var(--text-main); text-decoration: none; font-weight: 600; transition: var(--transition); }
         .contact-item a:hover { color: var(--neon-blue); }
 
-        .social-row { display: flex; gap: 12px; margin-top: 25px; }
+        .social-row { display: flex; gap: 12px; margin-top: 25px; align-items: center; flex-wrap: wrap; }
         .social-btn { 
             width: 40px; height: 40px; border-radius: 10px; background: rgba(255, 255, 255, 0.04); 
             border: 1px solid var(--glass-border); color: var(--text-dim); display: flex; 
             align-items: center; justify-content: center; text-decoration: none; transition: var(--transition);
         }
         .social-btn:hover { background: var(--neon-blue); color: #fff; box-shadow: 0 0 15px rgba(0, 122, 255, 0.4); transform: translateY(-3px); }
+        .social-btn.ig-pill {
+            width: auto;
+            padding: 0 16px;
+            gap: 8px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--text-main);
+            border-color: rgba(225, 48, 108, 0.35);
+            background: rgba(225, 48, 108, 0.08);
+        }
+        .social-btn.ig-pill i { color: #f43f5e; font-size: 1rem; }
+        .social-btn.ig-pill:hover {
+            background: linear-gradient(135deg, #f43f5e, #c026d3);
+            border-color: transparent;
+            color: #fff;
+            box-shadow: 0 0 20px rgba(244, 63, 94, 0.45);
+        }
+        .social-btn.ig-pill:hover i { color: #fff; }
 
         .input-field { 
             width: 100%; padding: 16px 20px; border-radius: 12px; 
@@ -355,12 +373,16 @@
         .footer-bottom-links {
             display: flex;
             gap: 20px;
+            align-items: center;
         }
 
         .footer-bottom-links a {
             color: var(--text-dim);
             text-decoration: none;
             transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .footer-bottom-links a:hover {
@@ -595,7 +617,9 @@
                     </div>
 
                     <div class="social-row">
-                        <a href="https://instagram.com/kabexcompany" class="social-btn" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/kabexcompany?gwpx=aHlyeXBzNHZ0N3dk" target="_blank" rel="noopener noreferrer" class="social-btn ig-pill" aria-label="Instagram">
+                            <i class="fab fa-instagram"></i> @kabexcompany
+                        </a>
                         <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#" class="social-btn" aria-label="GitHub"><i class="fab fa-github"></i></a>
                     </div>
@@ -678,6 +702,7 @@
         <div class="footer-bottom">
             <div>© 2026 Kabex Bilişim A.Ş. Tüm Hakları Saklıdır.</div>
             <div class="footer-bottom-links">
+                <a href="https://www.instagram.com/kabexcompany?gwpx=aHlyeXBzNHZ0N3dk" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i> Instagram</a>
                 <a href="mailto:info@kabex.company">info@kabex.company</a>
             </div>
         </div>
